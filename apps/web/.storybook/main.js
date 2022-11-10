@@ -6,6 +6,7 @@ module.exports = {
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
+		'@storybook/addon-next',
 		{
 			name: '@storybook/addon-postcss',
 			options: {
@@ -21,21 +22,21 @@ module.exports = {
 	},
 	webpackFinal: async (config) => {
 		config.resolve.plugins = [new TsconfigPathsPlugin()];
-		config.module.rules = [
-			...config.module.rules.map((rule) => {
-				if (/svg/.test(rule.test)) {
-					// Silence the Storybook loaders for SVG files
-					return { ...rule, exclude: /\.svg$/i };
-				}
+		// config.module.rules = [
+		// 	...config.module.rules.map((rule) => {
+		// 		if (/svg/.test(rule.test)) {
+		// 			// Silence the Storybook loaders for SVG files
+		// 			return { ...rule, exclude: /\.svg$/i };
+		// 		}
 
-				return rule;
-			}),
-			// Add your custom SVG loader
-			{
-				test: /\.svg$/i,
-				use: ['@svgr/webpack', 'url-loader'],
-			},
-		];
+		// 		return rule;
+		// 	}),
+		// 	// Add your custom SVG loader
+		// 	{
+		// 		test: /\.svg$/i,
+		// 		use: ['@svgr/webpack', 'url-loader'],
+		// 	},
+		// ];
 
 		return config;
 	},

@@ -1,5 +1,5 @@
-type HomeProps = {};
+import { Text } from '../atoms/text/Text';
 
-export const Home = ({}: HomeProps) => {
-	return <span className="text-3xl text-red-400">Hello World</span>;
+export const Home = () => {
+	return <Text>Hello World!</Text>;
 };

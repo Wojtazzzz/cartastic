@@ -12,6 +12,7 @@ const renderWithProviders = (component: ReactNode) => {
 		</Formik>
 	);
 };
+
 describe('InputNumber component', () => {
 	const user = userEvent.setup();
 
@@ -23,6 +24,16 @@ describe('InputNumber component', () => {
 		const input = screen.getByLabelText('Min price');
 
 		expect(input).toHaveValue(0);
+	});
+
+	it('has correct accessible name', () => {
+		renderWithProviders(
+			<InputNumber aria-label="Min price" name="minPrice" placeholder="Test placeholder" />
+		);
+
+		const input = screen.getByLabelText('Min price');
+
+		expect(input).toHaveAccessibleName('Min price');
 	});
 
 	it('set own value', async () => {

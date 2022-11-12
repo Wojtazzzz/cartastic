@@ -20,7 +20,7 @@ export const InputNumber = ({ name, placeholder, className, ...rest }: InputNumb
 			value={value}
 			name={name}
 			onChange={changeValue}
-			className={`w-[180px] flex justify-between bg-white focus:outline-none focus:border-gray-700 placeholder:text-black border-2 border-black uppercase p-3 ${className}`}
+			className={`w-[180px] flex justify-between bg-white focus:outline-none placeholder:text-black border-2 border-black uppercase p-3 ${className}`}
 			{...rest}
 		/>
 	);

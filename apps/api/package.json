@@ -2,17 +2,17 @@
 	"name": "api",
 	"version": "1.0.0",
 	"description": "This project was bootstrapped with Fastify-CLI.",
-	"main": "app.ts",
+	"main": "index.ts",
 	"directories": {
 		"test": "test"
 	},
 	"scripts": {
 		"test": "npm run build:ts && tsc -p test/tsconfig.json && tap --ts \"test/**/*.test.ts\"",
-		"start": "npm run build:ts && fastify start -l info dist/app.js",
+		"start": "npm run build:ts && fastify start -l info dist/index.js",
 		"build:ts": "tsc",
 		"watch:ts": "tsc -w",
 		"dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
-		"dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js --port 8000"
+		"dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/index.js --port 8000"
 	},
 	"keywords": [],
 	"author": "",
@@ -20,6 +20,7 @@
 	"dependencies": {
 		"@fastify/autoload": "^5.0.0",
 		"@fastify/sensible": "^5.0.0",
+		"@fastify/type-provider-typebox": "^2.3.0",
 		"@prisma/client": "^4.6.1",
 		"fastify": "^4.0.0",
 		"fastify-cli": "^5.5.1",

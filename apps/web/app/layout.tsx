@@ -3,6 +3,7 @@ import '../styles/tailwind.css';
 import { Titillium_Web } from '@next/font/google';
 import { Header } from 'components/organisms/header/Header';
 import { Search } from 'components/organisms/search/Search';
+import { SearchForm } from 'components/molecules/searchForm/SearchForm';
 
 const font = Titillium_Web({
 	weight: ['400', '600'],
@@ -22,7 +23,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
 			<body className="pt-[44px] md:pt-[64px]">
 				<Header />
-				<Search />
+
+				<Search>
+					{/* @ts-ignore */}
+					<SearchForm />
+				</Search>
 
 				{children}
 			</body>

@@ -1,3 +1,5 @@
+'use client';
+
 import type { SearchFormValues } from 'components/molecules/searchForm/SearchForm';
 import type { InputHTMLAttributes } from 'react';
 import { useInputNumber } from './useInputNumber';

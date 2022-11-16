@@ -3,8 +3,8 @@
 import { Heading } from 'components/atoms/heading/Heading';
 import { Text } from 'components/atoms/text/Text';
 import { SearchControls } from 'components/molecules/searchControls/SearchControls';
-import { SearchForm } from 'components/molecules/searchForm/SearchForm';
-import { Formik } from 'formik';
+import { Formik, Form } from 'formik';
+import type { ReactNode } from 'react';
 import { useSearch } from './useSearch';
 
 const initialValues = {
@@ -14,7 +14,11 @@ const initialValues = {
 	maxPrice: 0,
 };
 
-export const Search = () => {
+type SearchProps = {
+	children: ReactNode;
+};
+
+export const Search = ({ children }: SearchProps) => {
 	const { search } = useSearch();
 
 	return (
@@ -24,9 +28,7 @@ export const Search = () => {
 					WHAT ARE YOU LOOKING FOR?
 				</Heading>
 
-				<div className="my-14">
-					<SearchForm />
-				</div>
+				<Form className="flex my-14">{children}</Form>
 
 				<SearchControls />
 

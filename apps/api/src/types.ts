@@ -9,7 +9,7 @@ import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import type { FastifySchema } from 'fastify';
 import type { TSchema } from '@sinclair/typebox';
 
-export type RouteHandlerMethodTypeBox<TSchema> = RouteHandlerMethod<
+export type RouteHandlerMethodTypeBox<TSchema extends FastifySchema> = RouteHandlerMethod<
 	RawServerDefault,
 	RawRequestDefaultExpression<RawServerDefault>,
 	RawReplyDefaultExpression<RawServerDefault>,

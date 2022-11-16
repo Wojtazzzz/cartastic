@@ -5,6 +5,9 @@ export type AppOptions = {} & Partial<AutoloadPluginOptions>;
 const options: AppOptions = {};
 
 const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void> => {
+	void fastify.register(import('@fastify/swagger'));
+	void fastify.register(import('@fastify/swagger-ui'), { routePrefix: '/docs' });
+
 	void fastify.register(import('./plugins'), opts);
 	void fastify.register(import('./modules'), opts);
 };

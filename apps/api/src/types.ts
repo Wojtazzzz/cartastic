@@ -1,24 +1,27 @@
 import type {
 	ContextConfigDefault,
-	RawReplyDefaultExpression,
+	FastifyBaseLogger,
+	FastifyRequest,
+	FastifyTypeProviderDefault,
 	RawRequestDefaultExpression,
 	RawServerDefault,
 } from 'fastify';
-import type { RouteGenericInterface, RouteHandlerMethod } from 'fastify/types/route';
-import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
+import type { RouteGenericInterface } from 'fastify/types/route';
 import type { FastifySchema } from 'fastify';
 import type { TSchema } from '@sinclair/typebox';
-
-export type RouteHandlerMethodTypeBox<TSchema extends FastifySchema> = RouteHandlerMethod<
-	RawServerDefault,
-	RawRequestDefaultExpression<RawServerDefault>,
-	RawReplyDefaultExpression<RawServerDefault>,
-	RouteGenericInterface,
-	ContextConfigDefault,
-	TSchema,
-	TypeBoxTypeProvider
->;
+import { ResolveFastifyRequestType } from 'fastify/types/type-provider';
 
 export type FastifySchemaTypeBox = {
 	[key in keyof Omit<FastifySchema, 'response'>]: TSchema;
 } & { response?: { [key: number]: TSchema } };
+
+export type Request<Schema extends FastifySchema> = FastifyRequest<
+	RouteGenericInterface,
+	RawServerDefault,
+	RawRequestDefaultExpression<RawServerDefault>,
+	Schema,
+	FastifyTypeProviderDefault,
+	ContextConfigDefault,
+	FastifyBaseLogger,
+	ResolveFastifyRequestType<FastifyTypeProviderDefault, FastifySchema, RouteGenericInterface>
+>;

@@ -9,3 +9,13 @@ export const getBrands = (prisma: PrismaClient) => {
 
 	return brands;
 };
+
+export const getBrandModels = (prisma: PrismaClient, brandId: number) => {
+	const models = prisma.model.findMany({
+		where: {
+			brandId,
+		},
+	});
+
+	return models;
+};

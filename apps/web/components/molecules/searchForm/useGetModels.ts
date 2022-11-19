@@ -2,17 +2,24 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useSearchFormContext } from 'components/contexts/SearchFormContext';
 import type { Model } from 'components/organisms/search/Search';
+import { getBrandModelsQK } from 'utils/queryKeys';
 
 export const useGetModels = () => {
 	const { brand, changeModel } = useSearchFormContext();
 
+	/* brand is number | undefined */
+	/* assertion because it will be called only when brand is defined */
 	return useQuery<Model[]>({
-		queryKey: ['models', brand],
-		/* brand is number | undefined */
-		/* assertion because it will be called only when brand is defined */
+		queryKey: getBrandModelsQK(brand as number),
 		queryFn: async () => await fetchModels(brand as number),
 		enabled: Boolean(brand),
-		onSuccess: (data) => data[0] && changeModel(data[0].id),
+		onSuccess: (data) => {
+			if (data.length < 1) {
+				return;
+			}
+
+			changeModel(data[0].id);
+		},
 	});
 };
 

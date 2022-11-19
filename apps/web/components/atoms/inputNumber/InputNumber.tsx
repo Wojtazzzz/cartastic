@@ -10,7 +10,7 @@ export type InputNumberName = keyof Pick<SearchFormValues, 'minPrice' | 'maxPric
 type InputNumberProps = {
 	name: InputNumberName;
 	placeholder: string;
-	value: string | undefined;
+	value: number | undefined;
 	className?: string;
 	changeValue: (event: ChangeEvent<HTMLInputElement>) => void;
 } & InputHTMLAttributes<HTMLInputElement>;

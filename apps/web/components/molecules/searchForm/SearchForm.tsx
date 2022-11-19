@@ -48,7 +48,7 @@ export const SearchForm = ({ brands }: SearchFormProps) => {
 			<InputNumber
 				aria-label="Min price"
 				name="minPrice"
-				value={String(minPrice)}
+				value={minPrice}
 				changeValue={changeMinPrice}
 				placeholder="Min price"
 				step="500"
@@ -59,7 +59,7 @@ export const SearchForm = ({ brands }: SearchFormProps) => {
 			<InputNumber
 				aria-label="Max price"
 				name="maxPrice"
-				value={String(maxPrice)}
+				value={maxPrice}
 				changeValue={changeMaxPrice}
 				placeholder="Max price"
 				step="500"

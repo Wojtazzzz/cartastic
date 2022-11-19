@@ -44,11 +44,6 @@ export const InputSelect = ({
 	className = '',
 	...rest
 }: InputSelectProps) => {
-	if (name === 'brand') {
-		console.log(value);
-		console.log(options);
-	}
-
 	return (
 		<Root value={value} onValueChange={changeValue}>
 			<Trigger
@@ -60,8 +55,6 @@ export const InputSelect = ({
 				{...rest}
 			>
 				<Value placeholder={placeholder} />
-				{/* <span>{typeof value === 'undefined' ? placeholder : options![value].name}</span> */}
-				{/* </Value> */}
 				<Icon />
 			</Trigger>
 

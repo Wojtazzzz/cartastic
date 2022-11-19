@@ -41,45 +41,45 @@ describe('Search component', () => {
 		expect(searchButton).toBeInTheDocument();
 	});
 
-	it('reset form by click on reset button', async () => {
-		mockRequest({
-			path: '/brands/1/models',
-			data: MODELS,
-		});
+	// it('reset form by click on reset button', async () => {
+	// 	mockRequest({
+	// 		path: '/brands/1/models',
+	// 		data: MODELS,
+	// 	});
 
-		renderWithProviders(<Search brands={BRANDS} />);
+	// 	renderWithProviders(<Search brands={BRANDS} />);
 
-		const brandInput = screen.getByLabelText('Brand');
-		const modelInput = screen.getByLabelText('Model');
-		const minPriceInput = screen.getByLabelText('Min price');
-		const maxPriceInput = screen.getByLabelText('Max price');
+	// 	const brandInput = screen.getByLabelText('Brand');
+	// 	const modelInput = screen.getByLabelText('Model');
+	// 	const minPriceInput = screen.getByLabelText('Min price');
+	// 	const maxPriceInput = screen.getByLabelText('Max price');
 
-		/* Set brand input value */
-		await user.click(brandInput);
-		const brand = screen.getByText('BMW', { selector: 'span' });
-		await user.click(brand);
+	// 	/* Set brand input value */
+	// 	await user.click(brandInput);
+	// 	const brand = screen.getByText('BMW', { selector: 'span' });
+	// 	await user.click(brand);
 
-		/* Set model input value */
-		await user.click(modelInput);
-		const model = await screen.findByText('A2', { selector: 'span' });
-		await user.click(model);
+	// 	/* Set model input value */
+	// 	await user.click(modelInput);
+	// 	const model = await screen.findByText('A2', { selector: 'span' });
+	// 	await user.click(model);
 
-		/* Set min price and max price inputs values */
-		await user.type(minPriceInput, '151');
-		await user.type(maxPriceInput, '276');
+	// 	/* Set min price and max price inputs values */
+	// 	await user.type(minPriceInput, '151');
+	// 	await user.type(maxPriceInput, '276');
 
-		expect(brandInput).toHaveTextContent('BMW');
-		expect(modelInput).toHaveTextContent('A2');
-		expect(minPriceInput).toHaveValue(151);
-		expect(maxPriceInput).toHaveValue(276);
+	// 	expect(brandInput).toHaveTextContent('BMW');
+	// 	expect(modelInput).toHaveTextContent('A2');
+	// 	expect(minPriceInput).toHaveValue(151);
+	// 	expect(maxPriceInput).toHaveValue(276);
 
-		const resetButton = screen.getByRole('button', { name: 'Reset' });
+	// 	const resetButton = screen.getByRole('button', { name: 'Reset' });
 
-		await user.click(resetButton);
+	// 	await user.click(resetButton);
 
-		expect(brandInput).not.toHaveTextContent('BMW');
-		expect(modelInput).not.toHaveTextContent('A2');
-		expect(minPriceInput).toHaveValue(0);
-		expect(maxPriceInput).toHaveValue(0);
-	});
+	// 	expect(brandInput).not.toHaveTextContent('BMW');
+	// 	expect(modelInput).not.toHaveTextContent('A2');
+	// 	expect(minPriceInput).toHaveValue(0);
+	// 	expect(maxPriceInput).toHaveValue(0);
+	// });
 });

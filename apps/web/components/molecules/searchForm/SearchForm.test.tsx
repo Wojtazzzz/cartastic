@@ -1,24 +1,20 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Formik } from 'formik';
+import { BRANDS } from 'utils/mockedBrands';
+import MODELS from '__mocks__/models.json';
+import { mockRequest } from 'utils/mockRequest';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { SearchForm } from './SearchForm';
-
-const initialValues = {
-	brand: '',
-	model: '',
-	minPrice: 0,
-	maxPrice: 0,
-};
+import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 
 describe('SearchForm component', () => {
 	const user = userEvent.setup();
 
 	it('render correct inputs', () => {
 		renderWithProviders(
-			<Formik initialValues={initialValues} onSubmit={jest.fn()}>
-				<SearchForm />
-			</Formik>
+			<SearchFormContextProvider>
+				<SearchForm brands={BRANDS} />
+			</SearchFormContextProvider>
 		);
 
 		const brandInput = screen.getByLabelText('Brand');
@@ -34,9 +30,9 @@ describe('SearchForm component', () => {
 
 	it('inputs have correct default values', () => {
 		renderWithProviders(
-			<Formik initialValues={initialValues} onSubmit={jest.fn()}>
-				<SearchForm />
-			</Formik>
+			<SearchFormContextProvider>
+				<SearchForm brands={BRANDS} />
+			</SearchFormContextProvider>
 		);
 
 		const brandInput = screen.getByLabelText('Brand');
@@ -50,11 +46,16 @@ describe('SearchForm component', () => {
 		expect(maxPriceInput).toHaveValue(0);
 	});
 
-	it('fill form with own data', async () => {
+	it('fill form with custom data', async () => {
+		mockRequest({
+			path: '/brands/1/models',
+			data: MODELS,
+		});
+
 		renderWithProviders(
-			<Formik initialValues={initialValues} onSubmit={jest.fn()}>
-				<SearchForm />
-			</Formik>
+			<SearchFormContextProvider>
+				<SearchForm brands={BRANDS} />
+			</SearchFormContextProvider>
 		);
 
 		const brandInput = screen.getByLabelText('Brand');
@@ -64,20 +65,20 @@ describe('SearchForm component', () => {
 
 		/* Set brand input value */
 		await user.click(brandInput);
-		const brand = screen.getByText('Opel', { selector: 'span' });
+		const brand = screen.getByText('BMW', { selector: 'span' });
 		await user.click(brand);
 
 		/* Set model input value */
 		await user.click(modelInput);
-		const model = screen.getByText('Series 3', { selector: 'span' });
+		const model = await screen.findByText('A2', { selector: 'span' });
 		await user.click(model);
 
 		/* Set min price and max price inputs values */
 		await user.type(minPriceInput, '151');
 		await user.type(maxPriceInput, '276');
 
-		expect(brandInput).toHaveTextContent('Opel');
-		expect(modelInput).toHaveTextContent('Series 3');
+		expect(brandInput).toHaveTextContent('BMW');
+		expect(modelInput).toHaveTextContent('A2');
 		expect(minPriceInput).toHaveValue(151);
 		expect(maxPriceInput).toHaveValue(276);
 	});

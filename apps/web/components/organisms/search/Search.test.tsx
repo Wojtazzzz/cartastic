@@ -1,13 +1,16 @@
 import { screen } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
+import { BRANDS } from 'utils/mockedBrands';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { Search } from './Search';
+import MODELS from '__mocks__/models.json';
+import { mockRequest } from 'utils/mockRequest';
 
 describe('Search component', () => {
 	const user = userEvent.setup();
 
 	it('has head title', () => {
-		renderWithProviders(<Search />);
+		renderWithProviders(<Search brands={BRANDS} />);
 
 		const title = screen.getByText('WHAT ARE YOU LOOKING FOR?');
 
@@ -15,7 +18,7 @@ describe('Search component', () => {
 	});
 
 	it('has form for searching vehicles', () => {
-		renderWithProviders(<Search />);
+		renderWithProviders(<Search brands={BRANDS} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
@@ -29,17 +32,22 @@ describe('Search component', () => {
 	});
 
 	it('has controls for form', () => {
-		renderWithProviders(<Search />);
+		renderWithProviders(<Search brands={BRANDS} />);
 
 		const resetButton = screen.getByRole('button', { name: 'Reset' });
-		const searchButton = screen.getByRole('button', { name: 'Search' });
+		const searchButton = screen.getByRole('link', { name: 'Search' });
 
 		expect(resetButton).toBeInTheDocument();
 		expect(searchButton).toBeInTheDocument();
 	});
 
 	it('reset form by click on reset button', async () => {
-		renderWithProviders(<Search />);
+		mockRequest({
+			path: '/brands/1/models',
+			data: MODELS,
+		});
+
+		renderWithProviders(<Search brands={BRANDS} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
@@ -48,20 +56,20 @@ describe('Search component', () => {
 
 		/* Set brand input value */
 		await user.click(brandInput);
-		const brand = screen.getByText('Citroen', { selector: 'span' });
+		const brand = screen.getByText('BMW', { selector: 'span' });
 		await user.click(brand);
 
 		/* Set model input value */
 		await user.click(modelInput);
-		const model = screen.getByText('Series 7', { selector: 'span' });
+		const model = await screen.findByText('A2', { selector: 'span' });
 		await user.click(model);
 
 		/* Set min price and max price inputs values */
 		await user.type(minPriceInput, '151');
 		await user.type(maxPriceInput, '276');
 
-		expect(brandInput).toHaveTextContent('Citroen');
-		expect(modelInput).toHaveTextContent('Series 7');
+		expect(brandInput).toHaveTextContent('BMW');
+		expect(modelInput).toHaveTextContent('A2');
 		expect(minPriceInput).toHaveValue(151);
 		expect(maxPriceInput).toHaveValue(276);
 
@@ -69,8 +77,8 @@ describe('Search component', () => {
 
 		await user.click(resetButton);
 
-		expect(brandInput).not.toHaveTextContent('Citroen');
-		expect(modelInput).not.toHaveTextContent('Series 7');
+		expect(brandInput).not.toHaveTextContent('BMW');
+		expect(modelInput).not.toHaveTextContent('A2');
 		expect(minPriceInput).toHaveValue(0);
 		expect(maxPriceInput).toHaveValue(0);
 	});

@@ -1,19 +1,11 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Formik } from 'formik';
+import { BRANDS } from 'utils/mockedBrands';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { InputSelect } from './InputSelect';
 
-const BRANDS = [
-	{ value: 'bmw', name: 'BMW' },
-	{ value: 'mazda', name: 'Mazda' },
-	{ value: 'citroen', name: 'Citroen' },
-	{ value: 'lamborghini', name: 'Lamborghini' },
-	{ value: 'opel', name: 'Opel' },
-	{ value: 'ford', name: 'Ford' },
-];
-
-const initialValues = { brand: '' };
+const initialValues = { brand: undefined };
 const onSubmit = jest.fn();
 
 describe('InputSelect component', () => {
@@ -96,9 +88,9 @@ describe('InputSelect component', () => {
 
 		await user.click(input);
 
-		const secondOption = screen.getByText('Mazda', { selector: 'span' });
+		const secondOption = screen.getByText('Mercedes', { selector: 'span' });
 		await user.click(secondOption);
 
-		expect(input).toHaveTextContent('Mazda');
+		expect(input).toHaveTextContent('Mercedes');
 	});
 });

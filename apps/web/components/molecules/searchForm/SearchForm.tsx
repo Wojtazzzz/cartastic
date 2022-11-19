@@ -1,36 +1,55 @@
+'use client';
+
 import { InputSelect } from 'components/atoms/inputSelect/InputSelect';
 import { InputNumber } from 'components/atoms/inputNumber/InputNumber';
-import { Form } from 'formik';
+import type { Brand } from 'components/organisms/search/Search';
+import { useGetModels } from './useGetModels';
+import { useSearchFormContext } from 'components/contexts/SearchFormContext';
 
-export type SearchFormValues = {
-	brand: string;
-	model: string;
-	minPrice: number;
-	maxPrice: number;
+type SearchFormProps = {
+	brands: Brand[];
 };
 
-export const SearchForm = () => {
+export const SearchForm = ({ brands }: SearchFormProps) => {
+	const {
+		brand,
+		model,
+		minPrice,
+		maxPrice,
+		changeBrand,
+		changeModel,
+		changeMinPrice,
+		changeMaxPrice,
+	} = useSearchFormContext();
+	const { data } = useGetModels();
+
 	return (
-		<Form className="flex">
+		<div className="flex my-14">
 			<InputSelect
 				aria-label="Brand"
 				name="brand"
+				value={brand}
+				changeValue={changeBrand}
 				placeholder="Brand"
-				options={BRANDS}
+				options={brands}
 				className="rounded-l-md"
 			/>
 
 			<InputSelect
 				aria-label="Model"
 				name="model"
+				value={model}
+				changeValue={changeModel}
 				placeholder="Model"
-				options={MODELS}
+				options={data}
 				className="border-l-0"
 			/>
 
 			<InputNumber
 				aria-label="Min price"
 				name="minPrice"
+				value={String(minPrice)}
+				changeValue={changeMinPrice}
 				placeholder="Min price"
 				step="500"
 				min="0"
@@ -40,31 +59,13 @@ export const SearchForm = () => {
 			<InputNumber
 				aria-label="Max price"
 				name="maxPrice"
+				value={String(maxPrice)}
+				changeValue={changeMaxPrice}
 				placeholder="Max price"
 				step="500"
 				min="0"
 				className="rounded-r-md border-l-0"
 			/>
-		</Form>
+		</div>
 	);
 };
-
-const BRANDS = [
-	{ value: 'bmw', name: 'BMW' },
-	{ value: 'mazda', name: 'Mazda' },
-	{ value: 'citroen', name: 'Citroen' },
-	{ value: 'lamborghini', name: 'Lamborghini' },
-	{ value: 'opel', name: 'Opel' },
-	{ value: 'ford', name: 'Ford' },
-];
-
-const MODELS = [
-	{ value: 'series 1', name: 'Series 1' },
-	{ value: 'series 2', name: 'Series 2' },
-	{ value: 'series 3', name: 'Series 3' },
-	{ value: 'series 4', name: 'Series 4' },
-	{ value: 'series 5', name: 'Series 5' },
-	{ value: 'series 6', name: 'Series 6' },
-	{ value: 'series 7', name: 'Series 7' },
-	{ value: 'series 8', name: 'Series 8' },
-];

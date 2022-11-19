@@ -3,7 +3,7 @@ import '../styles/tailwind.css';
 import { Titillium_Web } from '@next/font/google';
 import { Header } from 'components/organisms/header/Header';
 import { Providers } from './Providers';
-import { Brand, Search } from 'components/organisms/searchSection/SearchSection';
+import { Brand, Search } from 'components/organisms/search/Search';
 import { fetchData } from 'utils/fetchData';
 
 const font = Titillium_Web({

@@ -1,20 +1,28 @@
 'use client';
 
-import type { SearchFormValues } from 'components/molecules/searchForm/SearchForm';
+import clsx from 'clsx';
+import type { SearchFormValues } from 'components/organisms/search/Search';
 import type { InputHTMLAttributes } from 'react';
-import { useInputNumber } from './useInputNumber';
+import type { ChangeEvent } from 'react';
 
 export type InputNumberName = keyof Pick<SearchFormValues, 'minPrice' | 'maxPrice'>;
 
 type InputNumberProps = {
 	name: InputNumberName;
 	placeholder: string;
+	value: string | undefined;
 	className?: string;
+	changeValue: (event: ChangeEvent<HTMLInputElement>) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const InputNumber = ({ name, placeholder, className, ...rest }: InputNumberProps) => {
-	const { value, changeValue } = useInputNumber(name);
-
+export const InputNumber = ({
+	name,
+	placeholder,
+	value,
+	className,
+	changeValue,
+	...rest
+}: InputNumberProps) => {
 	return (
 		<input
 			type="number"
@@ -22,7 +30,10 @@ export const InputNumber = ({ name, placeholder, className, ...rest }: InputNumb
 			value={value}
 			name={name}
 			onChange={changeValue}
-			className={`w-[180px] flex justify-between bg-white focus:outline-none placeholder:text-black border-2 border-black uppercase p-3 ${className}`}
+			className={clsx(
+				'w-[180px] flex justify-between bg-white focus:outline-none placeholder:text-black border-2 border-black uppercase p-3',
+				className
+			)}
 			{...rest}
 		/>
 	);

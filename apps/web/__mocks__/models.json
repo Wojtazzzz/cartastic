@@ -1,0 +1,10 @@
+[
+	{ "id": 1, "name": "A1", "brandId": 1 },
+	{ "id": 2, "name": "A2", "brandId": 1 },
+	{ "id": 3, "name": "A3", "brandId": 1 },
+	{ "id": 4, "name": "A4", "brandId": 1 },
+	{ "id": 5, "name": "A5", "brandId": 1 },
+	{ "id": 6, "name": "A6", "brandId": 1 },
+	{ "id": 7, "name": "A7", "brandId": 1 },
+	{ "id": 8, "name": "A8", "brandId": 1 }
+]

@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useSearchFormContext } from 'components/contexts/SearchFormContext';
 import type { Model } from 'components/organisms/search/Search';
+import { axios } from 'utils/axios';
 import { getBrandModelsQK } from 'utils/queryKeys';
 
 export const useGetModels = () => {
@@ -24,7 +24,5 @@ export const useGetModels = () => {
 };
 
 const fetchModels = async (brandId: number) => {
-	return await axios
-		.get(`http://localhost:8000/brands/${brandId}/models`)
-		.then((response) => response.data);
+	return await axios.get(`/brands/${brandId}/models`).then((response) => response.data);
 };

@@ -24,4 +24,5 @@ export const Invisible: HeadingStory = (props) => {
 Invisible.args = {
 	tag: 'h1',
 	children: 'Invisible heading',
+	invisible: true,
 };

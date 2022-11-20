@@ -6,6 +6,8 @@ import { Search } from './Search';
 import MODELS from '__mocks__/models.json';
 import { mockRequest } from 'utils/mockRequest';
 
+const BMWModels = MODELS.filter((model) => model.brandId === 1);
+
 describe('Search component', () => {
 	const user = userEvent.setup();
 
@@ -39,6 +41,60 @@ describe('Search component', () => {
 
 		expect(resetButton).toBeInTheDocument();
 		expect(searchButton).toBeInTheDocument();
+	});
+
+	it('search button generate link to all offers', () => {
+		renderWithProviders(<Search brands={BRANDS} />);
+
+		const searchButton = screen.getByRole('link', { name: 'Search' });
+
+		expect(searchButton).toHaveAttribute('href', '/all');
+	});
+
+	it('search button generate link to offers for specific brand', async () => {
+		mockRequest({
+			path: '/brands/1/models',
+			data: BMWModels,
+		});
+
+		renderWithProviders(<Search brands={BRANDS} />);
+
+		const brandInput = screen.getByLabelText('Brand');
+
+		/* Set brand input value */
+		await user.click(brandInput);
+		const brand = screen.getByText('BMW', { selector: 'span' });
+		await user.click(brand);
+
+		const searchButton = screen.getByRole('link', { name: 'Search' });
+
+		expect(searchButton).toHaveAttribute('href', '/1');
+	});
+
+	it('search button generate link to offers for specific model', async () => {
+		mockRequest({
+			path: '/brands/1/models',
+			data: BMWModels,
+		});
+
+		renderWithProviders(<Search brands={BRANDS} />);
+
+		const brandInput = screen.getByLabelText('Brand');
+		const modelInput = screen.getByLabelText('Model');
+
+		/* Set brand input value */
+		await user.click(brandInput);
+		const brand = screen.getByText('BMW', { selector: 'span' });
+		await user.click(brand);
+
+		/* Set model input value */
+		await user.click(modelInput);
+		const model = await screen.findByText('Series 7', { selector: 'span' });
+		await user.click(model);
+
+		const searchButton = screen.getByRole('link', { name: 'Search' });
+
+		expect(searchButton).toHaveAttribute('href', '/1/7');
 	});
 
 	// TODO: reset is bugged

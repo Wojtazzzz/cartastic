@@ -6,7 +6,7 @@ import { SearchFormContextProvider } from 'components/contexts/SearchFormContext
 import { SearchControls } from 'components/molecules/searchControls/SearchControls';
 import { SearchForm } from 'components/molecules/searchForm/SearchForm';
 
-/* @todo generate types by OpenAPI */
+/* TODO: generate types by OpenAPI */
 export type Brand = {
 	id: number;
 	name: string;

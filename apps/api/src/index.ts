@@ -6,7 +6,7 @@ const options: AppOptions = {};
 
 const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void> => {
 	fastify.register(import('@fastify/cors'), {
-		origin: 'http://localhost:3000',
+		origin: ['http://localhost:3000', 'http://localhost:6006'],
 		credentials: true,
 	});
 

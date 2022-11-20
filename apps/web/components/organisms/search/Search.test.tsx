@@ -41,6 +41,7 @@ describe('Search component', () => {
 		expect(searchButton).toBeInTheDocument();
 	});
 
+	// TODO: reset is bugged
 	// it('reset form by click on reset button', async () => {
 	// 	mockRequest({
 	// 		path: '/brands/1/models',

@@ -5,14 +5,16 @@ export type AppOptions = {} & Partial<AutoloadPluginOptions>;
 const options: AppOptions = {};
 
 const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void> => {
-	void fastify.register(import('@fastify/cors'), {
+	fastify.register(import('@fastify/cors'), {
 		origin: 'http://localhost:3000',
+		credentials: true,
 	});
-	void fastify.register(import('@fastify/swagger'));
-	void fastify.register(import('@fastify/swagger-ui'), { routePrefix: '/docs' });
 
-	void fastify.register(import('./plugins'), opts);
-	void fastify.register(import('./modules'), opts);
+	fastify.register(import('@fastify/swagger'));
+	fastify.register(import('@fastify/swagger-ui'), { routePrefix: '/docs' });
+
+	fastify.register(import('./plugins'), opts);
+	fastify.register(import('./modules'), opts);
 };
 
 export default app;

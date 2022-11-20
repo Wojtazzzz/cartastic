@@ -1,14 +1,12 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { BRANDS } from 'utils/mockedBrands';
-import MODELS from '__mocks__/models.json';
+import brands from '__mocks__/brands.json';
+import BMWModels from '__mocks__/models/bmw.json';
+import MercedesModels from '__mocks__/models/mercedes.json';
 import { mockRequest } from 'utils/mockRequest';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { SearchForm } from './SearchForm';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-
-const MercedesModels = MODELS.filter((model) => model.brandId === 3);
-const BMWModels = MODELS.filter((model) => model.brandId === 1);
 
 describe('SearchForm component', () => {
 	const user = userEvent.setup();
@@ -16,7 +14,7 @@ describe('SearchForm component', () => {
 	it('render correct inputs', () => {
 		renderWithProviders(
 			<SearchFormContextProvider>
-				<SearchForm brands={BRANDS} />
+				<SearchForm brands={brands} />
 			</SearchFormContextProvider>
 		);
 
@@ -34,7 +32,7 @@ describe('SearchForm component', () => {
 	it('inputs have correct default values', () => {
 		renderWithProviders(
 			<SearchFormContextProvider>
-				<SearchForm brands={BRANDS} />
+				<SearchForm brands={brands} />
 			</SearchFormContextProvider>
 		);
 
@@ -57,7 +55,7 @@ describe('SearchForm component', () => {
 
 		renderWithProviders(
 			<SearchFormContextProvider>
-				<SearchForm brands={BRANDS} />
+				<SearchForm brands={brands} />
 			</SearchFormContextProvider>
 		);
 
@@ -94,7 +92,7 @@ describe('SearchForm component', () => {
 
 		renderWithProviders(
 			<SearchFormContextProvider>
-				<SearchForm brands={BRANDS} />
+				<SearchForm brands={brands} />
 			</SearchFormContextProvider>
 		);
 

@@ -1,5 +1,5 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { BRANDS } from 'utils/mockedBrands';
+import Brands from '__mocks__/brands.json';
 import { InputSelect } from './InputSelect';
 
 export default {
@@ -17,5 +17,5 @@ Default.args = {
 	'aria-label': 'Brand',
 	name: 'brand',
 	placeholder: 'Brand',
-	options: BRANDS,
+	options: Brands,
 };

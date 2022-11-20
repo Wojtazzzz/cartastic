@@ -1,0 +1,10 @@
+[
+	{ "id": 1, "name": "Series 1", "brandId": 1 },
+	{ "id": 2, "name": "Series 2", "brandId": 1 },
+	{ "id": 3, "name": "Series 3", "brandId": 1 },
+	{ "id": 4, "name": "Series 4", "brandId": 1 },
+	{ "id": 5, "name": "Series 5", "brandId": 1 },
+	{ "id": 6, "name": "Series 6", "brandId": 1 },
+	{ "id": 7, "name": "Series 7", "brandId": 1 },
+	{ "id": 8, "name": "Series 8", "brandId": 1 }
+]

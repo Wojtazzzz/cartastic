@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { BRANDS } from 'utils/mockedBrands';
+import brands from '__mocks__/brands.json';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { InputSelect } from './InputSelect';
 
@@ -14,7 +14,7 @@ describe('InputSelect component', () => {
 				value={1}
 				changeValue={changeValue}
 				placeholder="Test placeholder"
-				options={BRANDS}
+				options={brands}
 			/>
 		);
 
@@ -33,7 +33,7 @@ describe('InputSelect component', () => {
 				value={1}
 				changeValue={changeValue}
 				placeholder="Test placeholder"
-				options={BRANDS}
+				options={brands}
 			/>
 		);
 

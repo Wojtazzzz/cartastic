@@ -1,18 +1,16 @@
 import { screen } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
-import { BRANDS } from 'utils/mockedBrands';
+import brands from '__mocks__/brands.json';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { Search } from './Search';
-import MODELS from '__mocks__/models.json';
+import BMWModels from '__mocks__/models/bmw.json';
 import { mockRequest } from 'utils/mockRequest';
-
-const BMWModels = MODELS.filter((model) => model.brandId === 1);
 
 describe('Search component', () => {
 	const user = userEvent.setup();
 
 	it('has head title', () => {
-		renderWithProviders(<Search brands={BRANDS} />);
+		renderWithProviders(<Search brands={brands} />);
 
 		const title = screen.getByText('WHAT ARE YOU LOOKING FOR?');
 
@@ -20,7 +18,7 @@ describe('Search component', () => {
 	});
 
 	it('has form for searching vehicles', () => {
-		renderWithProviders(<Search brands={BRANDS} />);
+		renderWithProviders(<Search brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
@@ -34,7 +32,7 @@ describe('Search component', () => {
 	});
 
 	it('has controls for form', () => {
-		renderWithProviders(<Search brands={BRANDS} />);
+		renderWithProviders(<Search brands={brands} />);
 
 		const resetButton = screen.getByRole('button', { name: 'Reset' });
 		const searchButton = screen.getByRole('link', { name: 'Search' });
@@ -44,7 +42,7 @@ describe('Search component', () => {
 	});
 
 	it('search button generate link to all offers', () => {
-		renderWithProviders(<Search brands={BRANDS} />);
+		renderWithProviders(<Search brands={brands} />);
 
 		const searchButton = screen.getByRole('link', { name: 'Search' });
 
@@ -57,7 +55,7 @@ describe('Search component', () => {
 			data: BMWModels,
 		});
 
-		renderWithProviders(<Search brands={BRANDS} />);
+		renderWithProviders(<Search brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 
@@ -77,7 +75,7 @@ describe('Search component', () => {
 			data: BMWModels,
 		});
 
-		renderWithProviders(<Search brands={BRANDS} />);
+		renderWithProviders(<Search brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
@@ -101,10 +99,10 @@ describe('Search component', () => {
 	// it('reset form by click on reset button', async () => {
 	// 	mockRequest({
 	// 		path: '/brands/1/models',
-	// 		data: MODELS,
+	// 		data: BMWModels,
 	// 	});
 
-	// 	renderWithProviders(<Search brands={BRANDS} />);
+	// 	renderWithProviders(<Search brands={brands} />);
 
 	// 	const brandInput = screen.getByLabelText('Brand');
 	// 	const modelInput = screen.getByLabelText('Model');

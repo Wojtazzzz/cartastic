@@ -3,8 +3,7 @@ import '../styles/tailwind.css';
 import { Titillium_Web } from '@next/font/google';
 import { Header } from 'components/organisms/header/Header';
 import { Providers } from './Providers';
-import { Brand, Search } from 'components/organisms/search/Search';
-import { fetchData } from 'utils/fetchData';
+import { Search } from 'components/organisms/search/Search';
 
 const font = Titillium_Web({
 	weight: ['400', '600'],
@@ -15,8 +14,6 @@ type RootLayoutProps = {
 };
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-	const brands = await fetchData<Brand[]>('http://localhost:8000/brands');
-
 	return (
 		<html lang="en" className={font.className}>
 			<head>
@@ -28,7 +25,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 				<Providers>
 					<Header />
 
-					<Search brands={brands} />
+					{/* @ts-ignore */}
+					<Search />
 
 					{children}
 				</Providers>

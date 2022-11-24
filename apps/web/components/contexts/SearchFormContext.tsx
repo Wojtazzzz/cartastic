@@ -15,8 +15,8 @@ export const SearchFormContextProvider = ({ children }: SearchFormContextProvide
 	const reset = () => {
 		const newState = {
 			...state,
-			brand: undefined,
-			model: undefined,
+			brand: 0,
+			model: 0,
 			minPrice: 0,
 			maxPrice: 0,
 		};

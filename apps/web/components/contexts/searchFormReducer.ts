@@ -13,8 +13,8 @@ export type SearchFormValues = {
 };
 
 export const initialState: SearchFormValues = {
-	brand: undefined,
-	model: undefined,
+	brand: 0,
+	model: 0,
 	minPrice: 0,
 	maxPrice: 0,
 	reset: () => null,
@@ -37,6 +37,7 @@ export const searchFormReducer = (state: SearchFormValues, action: Action) => {
 	switch (type) {
 		case 'RESET':
 			return {
+				...state,
 				...payload,
 			};
 

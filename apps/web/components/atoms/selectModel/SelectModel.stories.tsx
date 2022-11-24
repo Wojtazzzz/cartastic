@@ -1,11 +1,11 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Providers } from 'app/Providers';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-import { Search } from './Search';
+import { SelectModel } from './SelectModel';
 
 export default {
-	title: 'Main Library/organisms/Search',
-	component: Search,
+	title: 'Main Library/atoms/SelectModel',
+	component: SelectModel,
 	decorators: [
 		(Story) => (
 			<Providers>
@@ -15,17 +15,12 @@ export default {
 			</Providers>
 		),
 	],
-} as ComponentMeta<typeof Search>;
+} as ComponentMeta<typeof SelectModel>;
 
-type SearchStory = ComponentStory<typeof Search>;
+type SelectModelStory = ComponentStory<typeof SelectModel>;
 
-export const Default: SearchStory = (props) => {
-	return (
-		<>
-			{/* @ts-ignore */}
-			<Search {...props} />
-		</>
-	);
+export const Default: SelectModelStory = (props) => {
+	return <SelectModel {...props} />;
 };
 
 Default.args = {};

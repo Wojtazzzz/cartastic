@@ -24,7 +24,7 @@ export const SelectBrand = ({ brands, className }: SelectBrandProps) => {
 			>
 				<option value="0">BRAND</option>
 
-				{brands.map(({ id, name }) => (
+				{brands?.map(({ id, name }) => (
 					<option key={id} value={id}>
 						{name}
 					</option>

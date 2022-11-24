@@ -34,6 +34,6 @@ Default.loaders = [
 
 Default.parameters = {
 	backgrounds: {
-		default: true,
+		default: 'dark',
 	},
 };

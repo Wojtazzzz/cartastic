@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import brands from '__mocks__/brands.json';
 import BMWModels from '__mocks__/models/bmw.json';
@@ -6,17 +6,12 @@ import MercedesModels from '__mocks__/models/mercedes.json';
 import { mockRequest } from 'utils/mockRequest';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { SearchForm } from './SearchForm';
-import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 
 describe('SearchForm component', () => {
 	const user = userEvent.setup();
 
 	it('render correct inputs', () => {
-		renderWithProviders(
-			<SearchFormContextProvider>
-				<SearchForm brands={brands} />
-			</SearchFormContextProvider>
-		);
+		renderWithProviders(<SearchForm brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
@@ -30,19 +25,17 @@ describe('SearchForm component', () => {
 	});
 
 	it('inputs have correct default values', () => {
-		renderWithProviders(
-			<SearchFormContextProvider>
-				<SearchForm brands={brands} />
-			</SearchFormContextProvider>
-		);
+		renderWithProviders(<SearchForm brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
 		const minPriceInput = screen.getByLabelText('Min price');
 		const maxPriceInput = screen.getByLabelText('Max price');
 
-		expect(brandInput).toHaveValue('');
-		expect(modelInput).toHaveValue('');
+		expect(brandInput).toHaveValue('0');
+		expect(brandInput).toHaveTextContent('BRAND');
+		expect(modelInput).toHaveValue('0');
+		expect(modelInput).toHaveTextContent('MODEL');
 		expect(minPriceInput).toHaveValue(0);
 		expect(maxPriceInput).toHaveValue(0);
 	});
@@ -53,33 +46,29 @@ describe('SearchForm component', () => {
 			data: BMWModels,
 		});
 
-		renderWithProviders(
-			<SearchFormContextProvider>
-				<SearchForm brands={brands} />
-			</SearchFormContextProvider>
-		);
+		renderWithProviders(<SearchForm brands={brands} />);
 
-		const brandInput = screen.getByLabelText('Brand');
-		const modelInput = screen.getByLabelText('Model');
+		const brandInput = screen.getByLabelText('Brand', { selector: 'select' });
+		const modelInput = screen.getByLabelText('Model', { selector: 'select' });
 		const minPriceInput = screen.getByLabelText('Min price');
 		const maxPriceInput = screen.getByLabelText('Max price');
 
 		/* Set brand input value */
-		await user.click(brandInput);
-		const brand = screen.getByText('BMW', { selector: 'span' });
-		await user.click(brand);
+		await user.selectOptions(brandInput, 'BMW');
 
 		/* Set model input value */
-		await user.click(modelInput);
-		const model = await screen.findByText('Series 6', { selector: 'span' });
-		await user.click(model);
+		await waitFor(async () => {
+			await user.selectOptions(modelInput, 'Series 6');
+		});
 
 		/* Set min price and max price inputs values */
 		await user.type(minPriceInput, '151');
 		await user.type(maxPriceInput, '276');
 
 		expect(brandInput).toHaveTextContent('BMW');
+		expect(brandInput).toHaveValue('1');
 		expect(modelInput).toHaveTextContent('Series 6');
+		expect(modelInput).toHaveValue('6');
 		expect(minPriceInput).toHaveValue(151);
 		expect(maxPriceInput).toHaveValue(276);
 	});
@@ -90,34 +79,31 @@ describe('SearchForm component', () => {
 			data: BMWModels,
 		});
 
-		renderWithProviders(
-			<SearchFormContextProvider>
-				<SearchForm brands={brands} />
-			</SearchFormContextProvider>
-		);
+		renderWithProviders(<SearchForm brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
 
 		/* Set brand input value */
-		await user.click(brandInput);
-		const bmw = screen.getByText('BMW', { selector: 'span' });
-		await user.click(bmw);
+		await user.selectOptions(brandInput, 'BMW');
 
 		/* Set model input value */
-		await user.click(modelInput);
-		const Series3 = await screen.findByText('Series 3', { selector: 'span' });
-		await user.click(Series3);
+		await waitFor(async () => {
+			await user.selectOptions(modelInput, 'Series 3');
+		});
 
 		expect(brandInput).toHaveTextContent('BMW');
+		expect(brandInput).toHaveValue('1');
 		expect(modelInput).toHaveTextContent('Series 3');
+		expect(modelInput).toHaveValue('3');
 
 		/* Change model input value */
-		await user.click(modelInput);
-		const series7 = await screen.findByText('Series 7', { selector: 'span' });
-		await user.click(series7);
+		await waitFor(async () => {
+			await user.selectOptions(modelInput, 'Series 7');
+		});
 
 		expect(modelInput).toHaveTextContent('Series 7');
+		expect(modelInput).toHaveValue('7');
 
 		mockRequest({
 			path: '/brands/3/models',
@@ -125,27 +111,33 @@ describe('SearchForm component', () => {
 		});
 
 		/* Change brand input value */
-		await user.click(brandInput);
-		const mercedes = screen.getByText('Mercedes', { selector: 'span' });
-		await user.click(mercedes);
+		await user.selectOptions(brandInput, 'Mercedes');
 
 		expect(brandInput).toHaveTextContent('Mercedes');
-		expect(modelInput).not.toHaveTextContent('Series 7'); // TODO: after change brand, model input should has placeholder value
+		expect(brandInput).toHaveValue('3');
+		expect(modelInput).not.toHaveTextContent('Series 7');
+		expect(modelInput).not.toHaveValue('7');
+		expect(modelInput).toHaveTextContent('MODEL');
+		expect(modelInput).toHaveValue('0');
 
 		/* Model for new brand input value */
-		await user.click(modelInput);
-		const citan = await screen.findByText('Citan', { selector: 'span' });
-		await user.click(citan);
+		await waitFor(async () => {
+			await user.selectOptions(modelInput, 'Citan');
+		});
 
 		expect(brandInput).toHaveTextContent('Mercedes');
+		expect(brandInput).toHaveValue('3');
 		expect(modelInput).toHaveTextContent('Citan');
+		expect(modelInput).toHaveValue('18');
 
 		/* Change model for new brand input value */
-		await user.click(modelInput);
-		const cla = await screen.findByText('CLA', { selector: 'span' });
-		await user.click(cla);
+		await waitFor(async () => {
+			await user.selectOptions(modelInput, 'CLA');
+		});
 
 		expect(brandInput).toHaveTextContent('Mercedes');
+		expect(brandInput).toHaveValue('3');
 		expect(modelInput).toHaveTextContent('CLA');
+		expect(modelInput).toHaveValue('19');
 	});
 });

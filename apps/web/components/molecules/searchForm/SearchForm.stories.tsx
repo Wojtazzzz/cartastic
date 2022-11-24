@@ -1,6 +1,5 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Providers } from 'app/Providers';
-import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { SearchForm } from './SearchForm';
 import fetch from 'node-fetch';
 
@@ -10,9 +9,7 @@ export default {
 	decorators: [
 		(Story) => (
 			<Providers>
-				<SearchFormContextProvider>
-					<Story />
-				</SearchFormContextProvider>
+				<Story />
 			</Providers>
 		),
 	],

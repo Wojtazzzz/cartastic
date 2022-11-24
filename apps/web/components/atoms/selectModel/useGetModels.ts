@@ -5,7 +5,7 @@ import { axios } from 'utils/axios';
 import { getBrandModelsQK } from 'utils/queryKeys';
 
 export const useGetModels = () => {
-	const { brand, changeModel } = useSearchFormContext();
+	const { brand } = useSearchFormContext();
 
 	/* brand is number | undefined */
 	/* assertion because it will be called only when brand is defined */
@@ -13,13 +13,6 @@ export const useGetModels = () => {
 		queryKey: getBrandModelsQK(brand as number),
 		queryFn: async () => await fetchModels(brand as number),
 		enabled: Boolean(brand),
-		onSuccess: (data) => {
-			if (data.length < 1) {
-				return;
-			}
-
-			changeModel(data[0].id);
-		},
 	});
 };
 

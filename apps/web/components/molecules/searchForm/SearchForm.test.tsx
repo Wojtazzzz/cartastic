@@ -140,4 +140,47 @@ describe('SearchForm component', () => {
 		expect(modelInput).toHaveTextContent('CLA');
 		expect(modelInput).toHaveValue('19');
 	});
+
+	it('reset values', async () => {
+		mockRequest({
+			path: '/brands/1/models',
+			data: BMWModels,
+		});
+
+		renderWithProviders(<SearchForm brands={brands} />);
+
+		const brandInput = screen.getByLabelText('Brand', { selector: 'select' });
+		const modelInput = screen.getByLabelText('Model', { selector: 'select' });
+		const minPriceInput = screen.getByLabelText('Min price');
+		const maxPriceInput = screen.getByLabelText('Max price');
+
+		/* Set brand input value */
+		await user.selectOptions(brandInput, 'BMW');
+
+		/* Set model input value */
+		await waitFor(async () => {
+			await user.selectOptions(modelInput, 'Series 6');
+		});
+
+		/* Set min price and max price inputs values */
+		await user.type(minPriceInput, '151');
+		await user.type(maxPriceInput, '276');
+
+		expect(brandInput).toHaveTextContent('BMW');
+		expect(brandInput).toHaveValue('1');
+		expect(modelInput).toHaveTextContent('Series 6');
+		expect(modelInput).toHaveValue('6');
+		expect(minPriceInput).toHaveValue(151);
+		expect(maxPriceInput).toHaveValue(276);
+
+		const resetButton = screen.getByLabelText('Reset', { selector: 'button' });
+		await user.click(resetButton);
+
+		expect(brandInput).toHaveTextContent('BRAND');
+		expect(brandInput).toHaveValue('0');
+		expect(modelInput).toHaveTextContent('MODEL');
+		expect(modelInput).toHaveValue('0');
+		expect(minPriceInput).toHaveValue(0);
+		expect(maxPriceInput).toHaveValue(0);
+	});
 });

@@ -4,7 +4,7 @@ import { Button } from 'components/atoms/button/Button';
 import { Link } from 'components/atoms/link/Link';
 import { Text } from 'components/atoms/text/Text';
 import { useSearchFormContext } from 'components/contexts/SearchFormContext';
-import type { SearchFormValues } from 'components/organisms/search/Search';
+import type { SearchFormValues } from 'components/contexts/SearchFormContext';
 
 const getLink = ({ brand, model }: Pick<SearchFormValues, 'brand' | 'model'>) => {
 	if (brand && model) {

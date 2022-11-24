@@ -19,14 +19,9 @@ export default {
 
 type SearchStory = ComponentStory<typeof Search>;
 
-export const Default: SearchStory = (props, { loaded: { brands } }) => {
-	return <Search {...props} brands={brands} />;
+export const Default: SearchStory = (props) => {
+	/* @ts-ignore */
+	return <Search {...props} />;
 };
 
 Default.args = {};
-
-Default.loaders = [
-	async () => ({
-		brands: await (await fetch('http://localhost:8000/brands')).json(),
-	}),
-];

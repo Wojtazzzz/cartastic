@@ -1,7 +1,31 @@
 import { createContext, useContext, useReducer } from 'react';
 import type { ChangeEvent } from 'react';
 import type { ReactNode } from 'react';
-import { initialState, searchFormReducer } from './searchFormReducer';
+import { searchFormReducer } from './searchFormReducer';
+
+export type SearchFormValues = {
+	brand: number;
+	model: number;
+	minPrice: number;
+	maxPrice: number;
+	reset: () => void;
+	changeBrand: (value: number) => void;
+	changeModel: (value: number) => void;
+	changeMinPrice: (event: ChangeEvent<HTMLInputElement>) => void;
+	changeMaxPrice: (event: ChangeEvent<HTMLInputElement>) => void;
+};
+
+export const initialState: SearchFormValues = {
+	brand: 0,
+	model: 0,
+	minPrice: 0,
+	maxPrice: 0,
+	reset: () => null,
+	changeBrand: () => null,
+	changeModel: () => null,
+	changeMinPrice: () => null,
+	changeMaxPrice: () => null,
+};
 
 const SearchFormContext = createContext(initialState);
 
@@ -27,7 +51,7 @@ export const SearchFormContextProvider = ({ children }: SearchFormContextProvide
 		});
 	};
 
-	const changeBrand = (value: number | undefined) => {
+	const changeBrand = (value: number) => {
 		const newState = {
 			...state,
 			brand: value,
@@ -39,7 +63,7 @@ export const SearchFormContextProvider = ({ children }: SearchFormContextProvide
 		});
 	};
 
-	const changeModel = (value: number | undefined) => {
+	const changeModel = (value: number) => {
 		const newState = {
 			...state,
 			model: value,

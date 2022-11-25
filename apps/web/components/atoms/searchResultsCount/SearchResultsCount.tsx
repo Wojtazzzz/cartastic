@@ -10,7 +10,7 @@ export const SearchResultsCount = () => {
 
 	return (
 		<Text tag="small" className="text-base text-white font-bold mt-16">
-			Choose one of {formattedCount} cars
+			Choose one of {formattedCount} cars in our offer
 		</Text>
 	);
 };

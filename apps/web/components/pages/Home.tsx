@@ -1,5 +1,3 @@
-import { Text } from '../atoms/text/Text';
-
 export const Home = () => {
-	return <Text>Hello World!</Text>;
+	return <span>Hello World!</span>;
 };

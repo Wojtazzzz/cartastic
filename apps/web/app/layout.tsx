@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import '../styles/tailwind.css';
 import { Titillium_Web } from '@next/font/google';
-import { Header } from 'components/organisms/header/Header';
+import { Header } from 'components/molecules/header/Header';
 import { Providers } from './Providers';
 import { Search } from 'components/organisms/search/Search';
 

@@ -8,14 +8,17 @@ export type SearchFormValues = {
 	model: number;
 	minPrice: number;
 	maxPrice: number;
+};
+
+export type SearchFormState = {
 	reset: () => void;
 	changeBrand: (value: number) => void;
 	changeModel: (value: number) => void;
 	changeMinPrice: (event: ChangeEvent<HTMLInputElement>) => void;
 	changeMaxPrice: (event: ChangeEvent<HTMLInputElement>) => void;
-};
+} & SearchFormValues;
 
-export const initialState: SearchFormValues = {
+export const initialState: SearchFormState = {
 	brand: 0,
 	model: 0,
 	minPrice: 0,

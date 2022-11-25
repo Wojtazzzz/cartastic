@@ -1,5 +1,4 @@
 import { Heading } from 'components/atoms/heading/Heading';
-import { Text } from 'components/atoms/text/Text';
 import { SearchForm } from 'components/molecules/searchForm/SearchForm';
 import { fetchData } from 'utils/fetchData';
 
@@ -25,10 +24,6 @@ export const Search = async () => {
 			</Heading>
 
 			<SearchForm brands={brands} />
-
-			<Text tag="small" className="text-base text-white font-bold mt-16">
-				Choose one of 17,436 cars
-			</Text>
 		</section>
 	);
 };

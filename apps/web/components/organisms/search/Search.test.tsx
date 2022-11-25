@@ -5,16 +5,18 @@ import { renderWithProviders } from 'utils/renderWithProviders';
 import { Search } from './Search';
 import BMWModels from '__mocks__/models/bmw.json';
 import { mockRequest } from 'utils/mockRequest';
+import 'next';
+import { render } from '@testing-library/react';
 
-/* TODO: Cannot test server components: fetch is not defined.  */
+/* TODO: Cannot test async server components: Objects are not valid as a React child (found: [object Promise]).  */
 describe('Search component', () => {
 	const user = userEvent.setup();
 
 	it('BUG', () => {});
 
-	// it('has head title', () => {
-	// 	/* @ts-ignore */
-	// 	renderWithProviders(<Search />);
+	// it('has head title', async () => {
+	// 	// @ts-ignore
+	// 	render(<Search />);
 
 	// 	const title = screen.getByText('WHAT ARE YOU LOOKING FOR?');
 

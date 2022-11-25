@@ -10,6 +10,13 @@ import { SearchForm } from './SearchForm';
 describe('SearchForm component', () => {
 	const user = userEvent.setup();
 
+	beforeEach(() => {
+		mockRequest({
+			path: '/cars/count',
+			data: 4,
+		});
+	});
+
 	it('render correct inputs', () => {
 		renderWithProviders(<SearchForm brands={brands} />);
 

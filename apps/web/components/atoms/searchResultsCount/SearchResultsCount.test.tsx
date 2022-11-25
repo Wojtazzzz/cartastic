@@ -6,8 +6,10 @@ describe('SearchResultsCount component', () => {
 	it('has correct text', () => {
 		renderWithProviders(<SearchResultsCount />);
 
-		const text = screen.getByText('Choose one of 17,436 cars');
+		const text1 = screen.getByText(/Choose one of/);
+		const text2 = screen.getByText(/cars in our offer/);
 
-		expect(text).toBeInTheDocument();
+		expect(text1).toBeInTheDocument();
+		expect(text2).toBeInTheDocument();
 	});
 });

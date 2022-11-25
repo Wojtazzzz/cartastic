@@ -1,0 +1,37 @@
+[
+	{ "id": 1, "name": "Series 1", "brandId": 1 },
+	{ "id": 2, "name": "Series 2", "brandId": 1 },
+	{ "id": 3, "name": "Series 3", "brandId": 1 },
+	{ "id": 4, "name": "Series 4", "brandId": 1 },
+	{ "id": 5, "name": "Series 5", "brandId": 1 },
+	{ "id": 6, "name": "Series 6", "brandId": 1 },
+	{ "id": 7, "name": "Series 7", "brandId": 1 },
+	{ "id": 8, "name": "Series 8", "brandId": 1 },
+
+	{ "id": 9, "name": "A1", "brandId": 2 },
+	{ "id": 10, "name": "A2", "brandId": 2 },
+	{ "id": 11, "name": "A3", "brandId": 2 },
+	{ "id": 12, "name": "A4", "brandId": 2 },
+	{ "id": 13, "name": "A5", "brandId": 2 },
+	{ "id": 14, "name": "A6", "brandId": 2 },
+	{ "id": 15, "name": "A7", "brandId": 2 },
+	{ "id": 16, "name": "A8", "brandId": 2 },
+
+	{ "id": 17, "name": "AMG GT", "brandId": 3 },
+	{ "id": 18, "name": "Citan", "brandId": 3 },
+	{ "id": 19, "name": "CLA", "brandId": 3 },
+	{ "id": 20, "name": "CLS", "brandId": 3 },
+	{ "id": 21, "name": "EQA", "brandId": 3 },
+	{ "id": 22, "name": "EQB", "brandId": 3 },
+	{ "id": 23, "name": "EQC", "brandId": 3 },
+	{ "id": 24, "name": "EQE", "brandId": 3 },
+
+	{ "id": 25, "name": "Agila", "brandId": 4 },
+	{ "id": 26, "name": "Astra", "brandId": 4 },
+	{ "id": 27, "name": "Vectra", "brandId": 4 },
+	{ "id": 28, "name": "Vivaro", "brandId": 4 },
+	{ "id": 29, "name": "Insignia", "brandId": 4 },
+	{ "id": 30, "name": "Speedster", "brandId": 4 },
+	{ "id": 31, "name": "Zafira", "brandId": 4 },
+	{ "id": 32, "name": "Corsa", "brandId": 4 }
+]

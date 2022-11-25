@@ -1,0 +1,10 @@
+[
+	{ "id": 25, "name": "Agila", "brandId": 4 },
+	{ "id": 26, "name": "Astra", "brandId": 4 },
+	{ "id": 27, "name": "Vectra", "brandId": 4 },
+	{ "id": 28, "name": "Vivaro", "brandId": 4 },
+	{ "id": 29, "name": "Insignia", "brandId": 4 },
+	{ "id": 30, "name": "Speedster", "brandId": 4 },
+	{ "id": 31, "name": "Zafira", "brandId": 4 },
+	{ "id": 32, "name": "Corsa", "brandId": 4 }
+]

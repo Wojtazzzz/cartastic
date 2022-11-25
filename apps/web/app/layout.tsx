@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
 import '../styles/tailwind.css';
 import { Titillium_Web } from '@next/font/google';
-import { Header } from 'components/organisms/header/Header';
+import { Header } from 'components/molecules/header/Header';
+import { Providers } from './Providers';
+import { Search } from 'components/organisms/search/Search';
 
 const font = Titillium_Web({
 	weight: ['400', '600'],
@@ -11,7 +13,7 @@ type RootLayoutProps = {
 	children: ReactNode;
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="en" className={font.className}>
 			<head>
@@ -20,9 +22,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
 			</head>
 
 			<body className="pt-[44px] md:pt-[64px]">
-				<Header />
+				<Providers>
+					<Header />
 
-				{children}
+					{/* @ts-ignore */}
+					<Search />
+
+					{children}
+				</Providers>
 			</body>
 		</html>
 	);

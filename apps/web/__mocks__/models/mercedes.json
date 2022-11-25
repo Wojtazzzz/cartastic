@@ -1,0 +1,10 @@
+[
+	{ "id": 17, "name": "AMG GT", "brandId": 3 },
+	{ "id": 18, "name": "Citan", "brandId": 3 },
+	{ "id": 19, "name": "CLA", "brandId": 3 },
+	{ "id": 20, "name": "CLS", "brandId": 3 },
+	{ "id": 21, "name": "EQA", "brandId": 3 },
+	{ "id": 22, "name": "EQB", "brandId": 3 },
+	{ "id": 23, "name": "EQC", "brandId": 3 },
+	{ "id": 24, "name": "EQE", "brandId": 3 }
+]

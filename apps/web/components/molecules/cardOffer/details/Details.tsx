@@ -2,6 +2,7 @@ import { SingleDetail } from 'components/atoms/cardOffer/singleDetail/SingleDeta
 import { Heading } from 'components/atoms/heading/Heading';
 import FuelIcon from 'components/icons/fuel.svg';
 import EngineIcon from 'components/icons/engine.svg';
+import RoadIcon from 'components/icons/road.svg';
 import GearboxIcon from 'components/icons/gearbox.svg';
 import VehicleBodyIcon from 'components/icons/vehicle-body.svg';
 
@@ -17,10 +18,10 @@ export const Details = ({}: DetailsProps) => {
 				9.700 €
 			</Heading>
 
-			<div className="flex justify-center gap-1 mt-2">
+			<div className="flex justify-center gap-0.5 mt-2">
 				<SingleDetail icon={FuelIcon} value="Petrol" label="Fuel type" />
 				<SingleDetail icon={EngineIcon} value="2.0" label="Engine size" />
-				<SingleDetail icon={<MilesIcon miles="17.9k" />} value="Miles" label="Miles" />
+				<SingleDetail icon={RoadIcon} value="17.9k" label="Miles" />
 				<SingleDetail icon={GearboxIcon} value="Manual" label="Gearbox" />
 				<SingleDetail icon={VehicleBodyIcon} value="Saloon" label="Vehicle body" />
 			</div>

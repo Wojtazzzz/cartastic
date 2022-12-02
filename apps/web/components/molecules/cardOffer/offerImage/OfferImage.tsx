@@ -10,7 +10,7 @@ export const OfferImage = ({ src }: OfferImageProps) => {
 	return (
 		<div className="relative">
 			<Image width="295" height="196" src={src} alt="BMW, Series 3" />
-			<ImagesCount count={10} />
+			<ImagesCount count={999999998} />
 			<LikeOffer />
 		</div>
 	);

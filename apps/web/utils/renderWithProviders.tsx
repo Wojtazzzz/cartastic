@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { Providers } from 'app/Providers';
-import type { ReactElement } from 'react';
+import type { ReactNode } from 'react';
 
-export const renderWithProviders = (component: ReactElement) => {
+export const renderWithProviders = (component: ReactNode) => {
 	render(<Providers>{component}</Providers>);
 };

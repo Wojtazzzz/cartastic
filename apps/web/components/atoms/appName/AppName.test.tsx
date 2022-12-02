@@ -3,19 +3,11 @@ import { renderWithProviders } from 'utils/renderWithProviders';
 import { AppName } from './AppName';
 
 describe('AppName component', () => {
-	it('is link with correct path', () => {
-		renderWithProviders(<AppName variant="dark" />);
-
-		const link = screen.getByRole('link');
-
-		expect(link).toHaveAttribute('href', '/');
-	});
-
 	it('has correct text', () => {
 		renderWithProviders(<AppName variant="dark" />);
 
-		const link = screen.getByRole('link');
+		const text = screen.getByText(/CAR/);
 
-		expect(link).toHaveTextContent('CARTASTIC');
+		expect(text.parentElement?.textContent).toBe('CARTASTIC');
 	});
 });

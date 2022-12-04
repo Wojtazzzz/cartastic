@@ -1,3 +1,9 @@
+import { LatestOffers } from 'components/organisms/latestOffers/LatestOffers';
+
 export const Home = () => {
-	return <span>Hello World!</span>;
+	return (
+		<div className="">
+			<LatestOffers />
+		</div>
+	);
 };

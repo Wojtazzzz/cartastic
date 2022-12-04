@@ -9,7 +9,7 @@ type AppNameProps = {
 
 export const AppName = ({ variant }: AppNameProps) => {
 	return (
-		<div className="font-bold">
+		<div data-testid="app-name" className="font-bold">
 			<span className="text-blue-700">CAR</span>
 			<span className={variantsStyles[variant]}>TASTIC</span>
 		</div>

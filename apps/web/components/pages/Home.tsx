@@ -1,11 +1,9 @@
-import { CardOffer } from 'components/organisms/cardOffer/CardOffer';
+import { LatestOffers } from 'components/organisms/latestOffers/LatestOffers';
 
 export const Home = () => {
 	return (
-		<div className="w-full flex justify-center my-8">
-			<span>Hello World!</span>
-
-			<CardOffer />
+		<div className="">
+			<LatestOffers />
 		</div>
 	);
 };

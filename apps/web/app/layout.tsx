@@ -4,6 +4,7 @@ import { Titillium_Web } from '@next/font/google';
 import { Header } from 'components/molecules/header/Header';
 import { Providers } from './Providers';
 import { Search } from 'components/organisms/search/Search';
+import { Footer } from 'components/organisms/footer/Footer';
 
 const font = Titillium_Web({
 	weight: ['400', '600'],
@@ -29,6 +30,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 					<Search />
 
 					{children}
+
+					<Footer />
 				</Providers>
 			</body>
 		</html>

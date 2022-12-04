@@ -12,7 +12,7 @@ export const Details = ({}: DetailsProps) => {
 	return (
 		<div className="py-3 px-4">
 			<Heading
-				tag="h3"
+				tag="h4"
 				className="text-lg font-bold border-b-[1.5px] border-gray-500/25 pb-1"
 			>
 				9.700 €

@@ -14,7 +14,7 @@ describe('CardOffer component', () => {
 	it('has correct header', () => {
 		renderWithProviders(<CardOffer />);
 
-		const header = screen.getByRole('heading', { level: 2 });
+		const header = screen.getByRole('heading', { level: 3 });
 
 		expect(header).toHaveTextContent('BMW, Series 3');
 	});
@@ -46,7 +46,7 @@ describe('CardOffer component', () => {
 	it('has correct price', () => {
 		renderWithProviders(<CardOffer />);
 
-		const price = screen.getByRole('heading', { level: 3 });
+		const price = screen.getByRole('heading', { level: 4 });
 
 		expect(price).toHaveTextContent('9.700 €');
 	});

@@ -6,7 +6,7 @@ describe('Details component', () => {
 	it('has correct price', () => {
 		renderWithProviders(<Details />);
 
-		const heading = screen.getByRole('heading');
+		const heading = screen.getByRole('heading', { level: 4 });
 
 		expect(heading).toHaveTextContent('9.700 €');
 	});

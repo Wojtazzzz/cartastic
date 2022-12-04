@@ -9,7 +9,7 @@ type HeaderProps = {
 export const Header = ({ brand, model, productionDate }: HeaderProps) => {
 	return (
 		<header className="py-3 px-4">
-			<Heading tag="h2" className="text-lg font-extrabold -mb-2">
+			<Heading tag="h3" className="text-lg font-extrabold -mb-2">
 				{brand}, {model}
 			</Heading>
 

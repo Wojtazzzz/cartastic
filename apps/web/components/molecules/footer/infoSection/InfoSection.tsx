@@ -4,7 +4,7 @@ import { InfoSectionContainer } from 'components/atoms/footer/infoSectionContain
 export const InfoSection = () => {
 	return (
 		<InfoSectionContainer>
-			<AppName variant="dark" />
+			<AppName />
 
 			<span className="text-sm">
 				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium

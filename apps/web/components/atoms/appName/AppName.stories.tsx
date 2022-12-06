@@ -8,24 +8,8 @@ export default {
 
 type AppNameStory = ComponentStory<typeof AppName>;
 
-export const Dark: AppNameStory = (props) => {
+export const Default: AppNameStory = (props) => {
 	return <AppName {...props} />;
 };
 
-Dark.args = {
-	variant: 'dark',
-};
-
-export const Light: AppNameStory = (props) => {
-	return <AppName {...props} />;
-};
-
-Light.args = {
-	variant: 'light',
-};
-
-Light.parameters = {
-	backgrounds: {
-		default: 'dark',
-	},
-};
+Default.args = {};

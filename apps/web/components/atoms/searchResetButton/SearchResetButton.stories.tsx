@@ -21,3 +21,9 @@ export const Default: SearchResetButtonStory = (props) => {
 };
 
 Default.args = {};
+
+Default.parameters = {
+	backgrounds: {
+		default: 'dark',
+	},
+};

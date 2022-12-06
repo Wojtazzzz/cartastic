@@ -1,4 +1,5 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Providers } from 'app/Providers';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { SearchResultsCount } from './SearchResultsCount';
 
@@ -7,9 +8,11 @@ export default {
 	component: SearchResultsCount,
 	decorators: [
 		(Story) => (
-			<SearchFormContextProvider>
-				<Story />
-			</SearchFormContextProvider>
+			<Providers>
+				<SearchFormContextProvider>
+					<Story />
+				</SearchFormContextProvider>
+			</Providers>
 		),
 	],
 } as ComponentMeta<typeof SearchResultsCount>;
@@ -21,3 +24,8 @@ export const Default: SearchResultsCountStory = (props) => {
 };
 
 Default.args = {};
+Default.parameters = {
+	backgrounds: {
+		default: 'dark',
+	},
+};

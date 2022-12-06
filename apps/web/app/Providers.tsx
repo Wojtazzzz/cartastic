@@ -8,8 +8,8 @@ type ProvidersProps = {
 	children: ReactNode;
 };
 
-const queryClient = createQueryClient();
-
 export const Providers = ({ children }: ProvidersProps) => {
+	const queryClient = createQueryClient();
+
 	return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 };

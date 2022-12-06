@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const Header = () => {
 	return (
-		<header className="fixed top-0 left-0 z-30 w-full h-[44px] md:h-[64px] flex justify-between items-center shadow-md py-2 md:py-4 px-3 md:px-6 lg:px-10">
+		<header className="fixed top-0 left-0 z-30 w-full h-[44px] md:h-[64px] flex justify-between items-center bg-white shadow-md py-2 md:py-4 px-3 md:px-6 lg:px-10">
 			<h1 className="text-xl md:text-2xl">
 				<Link href="/">
 					<AppName variant="dark" />

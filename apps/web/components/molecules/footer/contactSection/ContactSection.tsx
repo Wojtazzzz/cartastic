@@ -14,21 +14,21 @@ export const ContactSection = () => {
 				Contact
 			</Heading>
 
-			<Link href="mailto: marcin.witas72@gmail.com" className="w-fit hover:underline">
+			<Link href="mailto: marcin.witas72@gmail.com" className="w-fit hover:underline text-sm">
 				Email
 			</Link>
 
-			<Link href="https://github.com/Wojtazzzz" className="w-fit hover:underline">
+			<Link href="https://github.com/Wojtazzzz" className="w-fit hover:underline text-sm">
 				Github
 			</Link>
 
-			<button className="w-fit hover:underline" onClick={copyDiscord}>
+			<button className="w-fit hover:underline text-sm" onClick={copyDiscord}>
 				Discord
 			</button>
 
 			<Link
 				href="https://www.linkedin.com/in/marcin-witas-486682202/"
-				className="w-fit hover:underline"
+				className="w-fit hover:underline text-sm"
 			>
 				Linkedin
 			</Link>

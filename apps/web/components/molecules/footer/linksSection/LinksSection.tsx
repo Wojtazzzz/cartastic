@@ -9,15 +9,15 @@ export const LinksSection = () => {
 				Links
 			</Heading>
 
-			<Link href="/" className="w-fit hover:underline">
+			<Link href="/" className="w-fit hover:underline text-sm">
 				Home
 			</Link>
 
-			<Link href="/shortlist" className="w-fit hover:underline">
+			<Link href="/shortlist" className="w-fit hover:underline text-sm">
 				Shortlist
 			</Link>
 
-			<Link href="/sell" className="w-fit hover:underline">
+			<Link href="/sell" className="w-fit hover:underline text-sm">
 				Sell own car
 			</Link>
 		</InfoSectionContainer>

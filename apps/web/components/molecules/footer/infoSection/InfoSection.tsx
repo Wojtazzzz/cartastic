@@ -6,12 +6,12 @@ export const InfoSection = () => {
 		<InfoSectionContainer>
 			<AppName variant="dark" />
 
-			<span>
+			<span className="text-sm">
 				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 				doloremque laudantium, totam rem aperiam.
 			</span>
 
-			<span>
+			<span className="text-sm">
 				Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
 				sunt explicabo.
 			</span>

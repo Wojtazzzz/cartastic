@@ -17,19 +17,21 @@ type SearchFormProps = {
 export const SearchForm = ({ brands }: SearchFormProps) => {
 	return (
 		<SearchFormContextProvider>
-			<div className="w-full flex flex-wrap gap-1 sm:gap-0 justify-center my-8 sm:my-12 md:my-14">
-				<SelectBrand brands={brands} />
-				<SelectModel />
-				<MinPrice />
-				<MaxPrice />
-			</div>
+			<div className="flex flex-col items-center justify-center">
+				<div className="w-full flex flex-wrap gap-1 sm:gap-0 justify-center my-8 sm:my-12 md:my-14">
+					<SelectBrand brands={brands} />
+					<SelectModel />
+					<MinPrice />
+					<MaxPrice />
+				</div>
 
-			<div className="flex self-center gap-5">
-				<SearchResetButton />
-				<SearchButton />
-			</div>
+				<div className="flex self-center gap-5">
+					<SearchResetButton />
+					<SearchButton />
+				</div>
 
-			<SearchResultsCount />
+				<SearchResultsCount />
+			</div>
 		</SearchFormContextProvider>
 	);
 };

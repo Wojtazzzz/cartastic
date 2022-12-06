@@ -1,15 +1,32 @@
 import { screen } from '@testing-library/dom';
+import { mockRequest } from 'utils/mockRequest';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { SearchResultsCount } from './SearchResultsCount';
 
 describe('SearchResultsCount component', () => {
-	it('has correct text', () => {
+	it('has correct text', async () => {
+		mockRequest({
+			path: '/cars/count',
+			data: 5,
+		});
+
 		renderWithProviders(<SearchResultsCount />);
 
-		const text1 = screen.getByText(/Choose one of/);
-		const text2 = screen.getByText(/cars in our offer/);
+		const text = await screen.findByText(/Choose one of 5 cars in our offer/);
 
-		expect(text1).toBeInTheDocument();
-		expect(text2).toBeInTheDocument();
+		expect(text).toBeInTheDocument();
+	});
+
+	it('count of offers is in correct format', async () => {
+		mockRequest({
+			path: '/cars/count',
+			data: 6545646743,
+		});
+
+		renderWithProviders(<SearchResultsCount />);
+
+		const text = await screen.findByText(/Choose one of 6,545,646,743 cars in our offer/);
+
+		expect(text).toBeInTheDocument();
 	});
 });

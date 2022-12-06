@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/dom';
+import { APP_NAME } from 'utils/env';
 import { renderWithProviders } from 'utils/renderWithProviders';
 import { Footer } from './Footer';
 
@@ -38,7 +39,7 @@ describe('Footer component', () => {
 	it('has copyrights info', () => {
 		const year = new Date().getFullYear();
 
-		const text = `© Copyright ${year} Cartastic. All rights reserved.`;
+		const text = `© Copyright ${year} ${APP_NAME}. All rights reserved.`;
 
 		renderWithProviders(<Footer />);
 

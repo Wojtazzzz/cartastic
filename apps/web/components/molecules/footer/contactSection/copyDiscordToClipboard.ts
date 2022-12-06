@@ -1,4 +1,4 @@
-const DISCORD = 'Wojtazz#8680';
+import { DISCORD } from 'utils/env';
 
 export const copyDiscordToClipboard = () => {
 	const copy = () => {

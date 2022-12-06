@@ -1,5 +1,5 @@
 import nock from 'nock';
-import { API_URL, env } from './env';
+import { API_URL } from './env';
 
 const allowedHeaders = [
 	'ClientName',

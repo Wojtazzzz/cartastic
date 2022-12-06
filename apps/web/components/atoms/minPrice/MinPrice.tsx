@@ -1,11 +1,6 @@
-import clsx from 'clsx';
 import { useMinPrice } from './useMinPrice';
 
-type MinPriceProps = {
-	className?: string;
-};
-
-export const MinPrice = ({ className }: MinPriceProps) => {
+export const MinPrice = () => {
 	const { minPrice, changeMinPrice } = useMinPrice();
 
 	return (
@@ -17,10 +12,7 @@ export const MinPrice = ({ className }: MinPriceProps) => {
 			step="500"
 			min="0"
 			onChange={changeMinPrice}
-			className={clsx(
-				'w-[180px] flex justify-between bg-white focus:outline-none placeholder:text-black border-2 border-black uppercase p-3',
-				className
-			)}
+			className="w-[150px] md:w-[180px] text-sm md:text-base flex justify-between bg-white focus:outline-none placeholder:text-black border-2 border-black sm:border-l-0 uppercase p-2 md:p-3"
 		/>
 	);
 };

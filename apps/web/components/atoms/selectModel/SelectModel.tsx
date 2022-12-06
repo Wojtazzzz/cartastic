@@ -1,12 +1,7 @@
-import clsx from 'clsx';
 import { useGetModels } from './useGetModels';
 import { useModels } from './useModels';
 
-type SelectModelProps = {
-	className?: string;
-};
-
-export const SelectModel = ({ className }: SelectModelProps) => {
+export const SelectModel = () => {
 	const { model, changeModel } = useModels();
 	const { data: models } = useGetModels();
 
@@ -16,10 +11,7 @@ export const SelectModel = ({ className }: SelectModelProps) => {
 				aria-label="Model"
 				name="model"
 				value={model}
-				className={clsx(
-					'w-[180px] appearance-none flex justify-between bg-white border-2 border-black uppercase p-3',
-					className
-				)}
+				className="w-[150px] md:w-[180px] text-sm md:text-base appearance-none flex justify-between bg-white border-2 border-black sm:border-l-0 uppercase p-2 md:p-3"
 				onChange={(event) => changeModel(Number(event.target.value))}
 			>
 				<option value="0">MODEL</option>

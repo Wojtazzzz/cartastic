@@ -1,13 +1,11 @@
-import clsx from 'clsx';
 import type { Brand } from 'components/organisms/search/Search';
 import { useBrand } from './useBrand';
 
 type SelectBrandProps = {
 	brands: Brand[];
-	className?: string;
 };
 
-export const SelectBrand = ({ brands, className }: SelectBrandProps) => {
+export const SelectBrand = ({ brands }: SelectBrandProps) => {
 	const { brand, changeBrand } = useBrand();
 
 	return (
@@ -16,10 +14,7 @@ export const SelectBrand = ({ brands, className }: SelectBrandProps) => {
 				aria-label="Brand"
 				name="brand"
 				value={brand}
-				className={clsx(
-					'w-[180px] appearance-none flex justify-between bg-white border-2 border-black uppercase p-3',
-					className
-				)}
+				className="w-[150px] md:w-[180px] text-sm md:text-base appearance-none flex justify-between bg-white border-2 border-black uppercase sm:rounded-l-md p-2 md:p-3"
 				onChange={(event) => changeBrand(Number(event.target.value))}
 			>
 				<option value="0">BRAND</option>

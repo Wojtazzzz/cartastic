@@ -4,7 +4,7 @@ import { AppName } from './AppName';
 
 describe('AppName component', () => {
 	it('has correct text', () => {
-		renderWithProviders(<AppName variant="dark" />);
+		renderWithProviders(<AppName />);
 
 		const text = screen.getByText(/CAR/);
 

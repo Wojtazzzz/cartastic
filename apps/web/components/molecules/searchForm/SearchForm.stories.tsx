@@ -2,6 +2,7 @@ import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Providers } from 'app/Providers';
 import { SearchForm } from './SearchForm';
 import fetch from 'node-fetch';
+import { API_URL } from 'utils/env';
 
 export default {
 	title: 'Main Library/molecules/SearchForm',
@@ -25,7 +26,7 @@ Default.args = {};
 
 Default.loaders = [
 	async () => ({
-		brands: await (await fetch('http://localhost:8000/brands')).json(),
+		brands: await (await fetch(`${API_URL}/brands`)).json(),
 	}),
 ];
 

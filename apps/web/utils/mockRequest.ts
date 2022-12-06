@@ -1,4 +1,5 @@
 import nock from 'nock';
+import { API_URL, env } from './env';
 
 const allowedHeaders = [
 	'ClientName',
@@ -35,15 +36,6 @@ export const mockRequest = ({
 	method = 'get',
 	times = 0,
 }: IMockFunctionArguments) => {
-	nock('http://localhost:8000')
-		.defaultReplyHeaders(ReplyHeaders)
-		.options(path)
-		.times(times)
-		.reply(200);
-
-	nock('http://localhost:8000')
-		.defaultReplyHeaders(ReplyHeaders)
-		[method](path)
-		.times(times)
-		.reply(status, data);
+	nock(API_URL).defaultReplyHeaders(ReplyHeaders).options(path).times(times).reply(200);
+	nock(API_URL).defaultReplyHeaders(ReplyHeaders)[method](path).times(times).reply(status, data);
 };

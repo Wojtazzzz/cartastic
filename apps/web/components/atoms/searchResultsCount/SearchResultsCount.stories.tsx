@@ -19,11 +19,10 @@ export default {
 
 type SearchResultsCountStory = ComponentStory<typeof SearchResultsCount>;
 
-export const Default: SearchResultsCountStory = (props) => {
-	return <SearchResultsCount {...props} />;
+export const Default: SearchResultsCountStory = () => {
+	return <SearchResultsCount />;
 };
 
-Default.args = {};
 Default.parameters = {
 	backgrounds: {
 		default: 'dark',

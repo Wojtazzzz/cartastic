@@ -16,11 +16,9 @@ export default {
 
 type SearchResetButtonStory = ComponentStory<typeof SearchResetButton>;
 
-export const Default: SearchResetButtonStory = (props) => {
-	return <SearchResetButton {...props} />;
+export const Default: SearchResetButtonStory = () => {
+	return <SearchResetButton />;
 };
-
-Default.args = {};
 
 Default.parameters = {
 	backgrounds: {

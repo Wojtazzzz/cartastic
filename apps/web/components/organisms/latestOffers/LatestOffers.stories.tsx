@@ -8,8 +8,6 @@ export default {
 
 type LatestOffersStory = ComponentStory<typeof LatestOffers>;
 
-export const Default: LatestOffersStory = (props) => {
-	return <LatestOffers {...props} />;
+export const Default: LatestOffersStory = () => {
+	return <LatestOffers />;
 };
-
-Default.args = {};

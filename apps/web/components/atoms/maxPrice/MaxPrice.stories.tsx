@@ -16,8 +16,6 @@ export default {
 
 type MaxPriceStory = ComponentStory<typeof MaxPrice>;
 
-export const Default: MaxPriceStory = (props) => {
-	return <MaxPrice {...props} />;
+export const Default: MaxPriceStory = () => {
+	return <MaxPrice />;
 };
-
-Default.args = {};

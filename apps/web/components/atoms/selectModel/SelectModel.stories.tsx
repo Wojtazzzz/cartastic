@@ -19,8 +19,6 @@ export default {
 
 type SelectModelStory = ComponentStory<typeof SelectModel>;
 
-export const Default: SelectModelStory = (props) => {
-	return <SelectModel {...props} />;
+export const Default: SelectModelStory = () => {
+	return <SelectModel />;
 };
-
-Default.args = {};

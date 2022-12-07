@@ -8,8 +8,6 @@ export default {
 
 type ContactSectionStory = ComponentStory<typeof ContactSection>;
 
-export const Default: ContactSectionStory = (props) => {
-	return <ContactSection {...props} />;
+export const Default: ContactSectionStory = () => {
+	return <ContactSection />;
 };
-
-Default.args = {};

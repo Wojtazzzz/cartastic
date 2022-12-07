@@ -16,8 +16,6 @@ export default {
 
 type MinPriceStory = ComponentStory<typeof MinPrice>;
 
-export const Default: MinPriceStory = (props) => {
-	return <MinPrice {...props} />;
+export const Default: MinPriceStory = () => {
+	return <MinPrice />;
 };
-
-Default.args = {};

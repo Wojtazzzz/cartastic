@@ -1,10 +1,38 @@
 import { PrismaClient } from '@prisma/client';
-import { carSeeder } from './carSeeder';
 
 const prisma = new PrismaClient();
 
 const main = async () => {
-	carSeeder();
+	await prisma.car.deleteMany({});
+
+	await prisma.car.createMany({
+		data: [
+			{
+				images: {},
+				price: 20000,
+				productionYear: 2021,
+				miles: 1000,
+				fuel: 'diesel',
+				engine: 2.0,
+				body: 'saloon',
+				transmission: 'auto',
+				brandId: 1,
+				modelId: 1,
+			},
+			{
+				images: {},
+				price: 20000,
+				productionYear: 2021,
+				miles: 1000,
+				fuel: 'diesel',
+				engine: 2.0,
+				body: 'saloon',
+				transmission: 'auto',
+				brandId: 1,
+				modelId: 2,
+			},
+		],
+	});
 };
 
 main()

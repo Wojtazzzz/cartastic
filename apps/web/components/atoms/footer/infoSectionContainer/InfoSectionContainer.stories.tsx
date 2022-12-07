@@ -19,7 +19,7 @@ export const Default: InfoSectionContainerStory = (props) => {
 	return (
 		<InfoSectionContainer {...props}>
 			<div className="w-full h-full bg-black text-white font-bold">
-				THIS COMPONENT GETS ONLY 33% OF ALL SPACE
+				THIS COMPONENT GETS ONLY 33% OF ALL SPACE {'(FOR SCREENS > LG)'}
 			</div>
 		</InfoSectionContainer>
 	);

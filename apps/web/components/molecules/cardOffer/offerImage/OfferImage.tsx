@@ -4,13 +4,15 @@ import Image from 'next/image';
 
 type OfferImageProps = {
 	src: string;
+	imagesCount: number;
+	alt: string;
 };
 
-export const OfferImage = ({ src }: OfferImageProps) => {
+export const OfferImage = ({ src, imagesCount, alt }: OfferImageProps) => {
 	return (
-		<div className="relative">
-			<Image width="295" height="196" src={src} alt="BMW, Series 3" />
-			<ImagesCount count={999999998} />
+		<div className="w-[295px] h-[196px] relative">
+			<Image src={src} alt={alt} className="w-full h-[196px]" fill />
+			<ImagesCount count={imagesCount} />
 			<LikeOffer />
 		</div>
 	);

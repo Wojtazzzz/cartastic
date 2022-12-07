@@ -1,3 +1,7 @@
-export const formatNumber = (number: number, separator: string) => {
-	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+export const formatNumber = (number: number, unit: string, options?: Intl.NumberFormatOptions) => {
+	return new Intl.NumberFormat('en-US', {
+		style: 'unit',
+		unit,
+		...options,
+	}).format(number);
 };

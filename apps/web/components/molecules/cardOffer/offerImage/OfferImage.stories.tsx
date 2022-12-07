@@ -21,4 +21,6 @@ export const Default: OfferImageStory = (props) => {
 
 Default.args = {
 	src: '/img/offer-image.png',
+	imagesCount: 8,
+	alt: 'Simple Alt',
 };

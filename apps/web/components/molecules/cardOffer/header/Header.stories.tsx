@@ -13,7 +13,6 @@ export const Default: HeaderStory = (props) => {
 };
 
 Default.args = {
-	brand: 'Brand',
-	model: 'Model',
-	productionDate: 2022,
+	text: 'Brand, Model',
+	productionYear: 2022,
 };

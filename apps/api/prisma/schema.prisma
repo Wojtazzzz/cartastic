@@ -52,7 +52,7 @@ model Car {
   id             Int          @id @default(autoincrement())
   images         Json
   price          Float
-  productionDate DateTime
+  productionYear Int
   miles          Int
   fuel           Fuel
   engine         Float

@@ -3,13 +3,17 @@ import type {
 	TypeBoxTypeProvider,
 } from '@fastify/type-provider-typebox';
 import { getCarsCountSchema, getLatestCarsSchema } from './cars.schema';
-import { getCarsCount } from './cars.service';
 
 const carsModule: FastifyPluginCallbackTypebox = (fastify, _options, done) => {
-	fastify.get('/count', { schema: getCarsCountSchema }, (req) => {
-		const prisma = fastify.prisma;
+	fastify.withTypeProvider<TypeBoxTypeProvider>().route({
+		url: '/count',
+		method: 'GET',
+		schema: getCarsCountSchema,
+		async handler(request, reply) {
+			const count = await fastify.prisma.car.count();
 
-		return getCarsCount(prisma);
+			return count;
+		},
 	});
 
 	fastify.withTypeProvider<TypeBoxTypeProvider>().route({

@@ -8,8 +8,6 @@ export default {
 
 type CopyrightsStory = ComponentStory<typeof Copyrights>;
 
-export const Default: CopyrightsStory = (props) => {
-	return <Copyrights {...props} />;
+export const Default: CopyrightsStory = () => {
+	return <Copyrights />;
 };
-
-Default.args = {};

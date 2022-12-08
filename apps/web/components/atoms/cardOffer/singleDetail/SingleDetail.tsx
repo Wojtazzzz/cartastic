@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 type SingleDetailProps = {
 	icon: string;
-	value: string;
+	value: string | number;
 	label: string;
 };
 
@@ -13,7 +13,7 @@ export const SingleDetail = ({ icon, value, label }: SingleDetailProps) => {
 				<Image width="35" height="40" src={icon} alt={label} />
 			</div>
 
-			<span className="text-sm font-bold">{value}</span>
+			<span className="text-xs font-bold text-center uppercase">{value}</span>
 		</div>
 	);
 };

@@ -8,8 +8,6 @@ export default {
 
 type FooterStory = ComponentStory<typeof Footer>;
 
-export const Default: FooterStory = (props) => {
-	return <Footer {...props} />;
+export const Default: FooterStory = () => {
+	return <Footer />;
 };
-
-Default.args = {};

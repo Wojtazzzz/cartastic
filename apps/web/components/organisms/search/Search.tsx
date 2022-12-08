@@ -1,5 +1,6 @@
 import { Heading } from 'components/atoms/heading/Heading';
 import { SearchForm } from 'components/molecules/searchForm/SearchForm';
+import { use } from 'react';
 import { fetchData } from 'utils/fetchData';
 
 /* TODO: generate types by OpenAPI */
@@ -14,8 +15,8 @@ export type Model = {
 	brandId: number;
 };
 
-export const Search = async () => {
-	const brands = await fetchData<Brand[]>('/brands');
+export const Search = () => {
+	const brands = use(fetchData<Brand[]>('/brands'));
 
 	return (
 		<section className="w-full h-[450px] flex flex-col items-center justify-center bg-[url('/img/search-bg.jpg')] bg-cover bg-center px-1">

@@ -16,8 +16,6 @@ export default {
 
 type SearchButtonStory = ComponentStory<typeof SearchButton>;
 
-export const Default: SearchButtonStory = (props) => {
-	return <SearchButton {...props} />;
+export const Default: SearchButtonStory = () => {
+	return <SearchButton />;
 };
-
-Default.args = {};

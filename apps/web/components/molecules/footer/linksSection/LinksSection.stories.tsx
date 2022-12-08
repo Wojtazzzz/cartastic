@@ -8,8 +8,6 @@ export default {
 
 type LinksSectionStory = ComponentStory<typeof LinksSection>;
 
-export const Default: LinksSectionStory = (props) => {
-	return <LinksSection {...props} />;
+export const Default: LinksSectionStory = () => {
+	return <LinksSection />;
 };
-
-Default.args = {};

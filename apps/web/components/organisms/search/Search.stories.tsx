@@ -16,13 +16,6 @@ export default {
 
 type SearchStory = ComponentStory<typeof Search>;
 
-export const Default: SearchStory = (props) => {
-	return (
-		<>
-			{/* @ts-ignore */}
-			<Search {...props} />
-		</>
-	);
+export const Default: SearchStory = () => {
+	return <Search />;
 };
-
-Default.args = {};

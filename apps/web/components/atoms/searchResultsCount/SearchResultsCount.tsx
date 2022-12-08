@@ -1,11 +1,11 @@
 'use client';
 
-import { formatPrice } from 'utils/formatPrice';
+import { formatCount } from './formatCount';
 import { useGetResultsCount } from './useGetResultsCount';
 
 export const SearchResultsCount = () => {
 	const count = useGetResultsCount();
-	const formattedCount = formatPrice(count);
+	const formattedCount = formatCount(count);
 
 	return (
 		<small className="text-base text-white font-bold mt-16">

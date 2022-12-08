@@ -20,7 +20,7 @@ model Brand {
 model Model {
   id      Int    @id @default(autoincrement())
   name    String
-  brand   Brand  @relation(fields: [brandId], references: [id])
+  brand   Brand  @relation(fields: [brandId], references: [id], onDelete: Cascade)
   brandId Int
   Car     Car[]
 }
@@ -52,14 +52,14 @@ model Car {
   id             Int          @id @default(autoincrement())
   images         Json
   price          Float
-  productionDate DateTime
+  productionYear Int
   miles          Int
   fuel           Fuel
   engine         Float
   body           Body
   transmission   Transmission
-  brand          Brand        @relation(fields: [brandId], references: [id])
+  brand          Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
   brandId        Int
-  model          Model        @relation(fields: [modelId], references: [id])
+  model          Model        @relation(fields: [modelId], references: [id], onDelete: Cascade)
   modelId        Int
 }

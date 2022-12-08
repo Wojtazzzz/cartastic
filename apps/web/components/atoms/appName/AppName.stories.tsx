@@ -8,8 +8,6 @@ export default {
 
 type AppNameStory = ComponentStory<typeof AppName>;
 
-export const Default: AppNameStory = (props) => {
-	return <AppName {...props} />;
+export const Default: AppNameStory = () => {
+	return <AppName />;
 };
-
-Default.args = {};

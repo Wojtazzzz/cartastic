@@ -8,8 +8,6 @@ export default {
 
 type InfoSectionStory = ComponentStory<typeof InfoSection>;
 
-export const Default: InfoSectionStory = (props) => {
-	return <InfoSection {...props} />;
+export const Default: InfoSectionStory = () => {
+	return <InfoSection />;
 };
-
-Default.args = {};

@@ -19,4 +19,11 @@ export const Default: DetailsStory = (props) => {
 	return <Details {...props} />;
 };
 
-Default.args = {};
+Default.args = {
+	body: 'convertible',
+	engine: 7.4,
+	fuel: 'electric',
+	miles: 324000,
+	transmission: 'auto',
+	price: 28500,
+};

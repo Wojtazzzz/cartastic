@@ -8,8 +8,6 @@ export default {
 
 type HeaderStory = ComponentStory<typeof Header>;
 
-export const Default: HeaderStory = (props) => {
-	return <Header {...props} />;
+export const Default: HeaderStory = () => {
+	return <Header />;
 };
-
-Default.args = {};

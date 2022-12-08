@@ -1,8 +1,10 @@
 import { Heading } from 'components/atoms/heading/Heading';
+import Image from 'next/image';
 import { use } from 'react';
 import { fetchData } from 'utils/fetchData';
 import { CardOffer } from '../cardOffer/CardOffer';
 import type { Brand, Model } from '../search/Search';
+import SadSmileIcon from 'components/icons/sad-smile.svg';
 
 export type Car = {
 	id: number;
@@ -44,7 +46,13 @@ export const LatestOffers = () => {
 			</Heading>
 
 			{data.length <= 0 ? (
-				<span>Empty</span>
+				<div className="w-full flex flex-col gap-5 items-center">
+					<Image src={SadSmileIcon} width="120" height="120" alt="Long face" />
+
+					<span className="text-2xl text-center font-medium">
+						At this moment we {"don't"} have any car notice
+					</span>
+				</div>
 			) : (
 				<ul className="flex flex-wrap justify-center gap-6">
 					{data.map((car, i) => (

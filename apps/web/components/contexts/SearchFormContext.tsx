@@ -6,8 +6,8 @@ import { searchFormReducer } from './searchFormReducer';
 export type SearchFormValues = {
 	brand: number;
 	model: number;
-	minPrice: number | string;
-	maxPrice: number | string;
+	minPrice: number | '';
+	maxPrice: number | '';
 };
 
 export type SearchFormState = {

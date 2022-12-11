@@ -6,8 +6,8 @@ import { searchFormReducer } from './searchFormReducer';
 export type SearchFormValues = {
 	brand: number;
 	model: number;
-	minPrice: number;
-	maxPrice: number;
+	minPrice: number | '';
+	maxPrice: number | '';
 };
 
 export type SearchFormState = {
@@ -21,8 +21,8 @@ export type SearchFormState = {
 export const initialState: SearchFormState = {
 	brand: 0,
 	model: 0,
-	minPrice: 0,
-	maxPrice: 0,
+	minPrice: '',
+	maxPrice: '',
 	reset: () => null,
 	changeBrand: () => null,
 	changeModel: () => null,

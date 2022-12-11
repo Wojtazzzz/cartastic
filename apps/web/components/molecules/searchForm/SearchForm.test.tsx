@@ -43,8 +43,8 @@ describe('SearchForm component', () => {
 		expect(brandInput).toHaveTextContent('BRAND');
 		expect(modelInput).toHaveValue('0');
 		expect(modelInput).toHaveTextContent('MODEL');
-		expect(minPriceInput).toHaveValue(0);
-		expect(maxPriceInput).toHaveValue(0);
+		expect(minPriceInput).toHaveValue(null);
+		expect(maxPriceInput).toHaveValue(null);
 	});
 
 	it('fill form with custom data', async () => {

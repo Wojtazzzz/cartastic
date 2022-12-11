@@ -16,7 +16,7 @@ describe('MaxPrice component', () => {
 
 		const input = screen.getByLabelText('Max price');
 
-		expect(input).toHaveValue(0);
+		expect(input).toHaveValue(null);
 	});
 
 	it('set own value', async () => {

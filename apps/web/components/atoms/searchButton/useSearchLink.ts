@@ -2,19 +2,17 @@ import type { SearchFormValues } from 'components/contexts/SearchFormContext';
 import { useSearchFormContext } from 'components/contexts/SearchFormContext';
 
 export const useSearchLink = () => {
-	const { brand, model } = useSearchFormContext();
+	const { brand, model, minPrice, maxPrice } = useSearchFormContext();
 
-	return getLink({ brand, model });
+	return getLink({ brand, model, minPrice, maxPrice });
 };
 
-const getLink = ({ brand, model }: Pick<SearchFormValues, 'brand' | 'model'>) => {
-	if (brand && model) {
-		return `/${brand}/${model}`;
-	}
+const getLink = ({ brand, model, minPrice, maxPrice }: SearchFormValues) => {
+	const brandParam = brand ? `/${brand}` : '/all';
+	const modelParam = model && brand ? `/${model}` : '';
 
-	if (brand && !model) {
-		return `/${brand}`;
-	}
+	const minPriceQuery = minPrice ? `?minPrice=${minPrice}` : '';
+	const maxPriceQuery = maxPrice ? `?maxPrice=${maxPrice}` : '';
 
-	return '/all';
+	return brandParam + modelParam + minPriceQuery + maxPriceQuery;
 };

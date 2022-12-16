@@ -3,7 +3,7 @@ import { Providers } from 'app/Providers';
 import { Search } from './Search';
 
 export default {
-	title: 'Search/organisms/Search',
+	title: 'Main Library/organisms/Search',
 	component: Search,
 	decorators: [
 		(Story) => (

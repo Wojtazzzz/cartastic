@@ -1,5 +1,5 @@
 import { Heading } from 'components/atoms/heading/Heading';
-import { Form } from 'components/molecules/search/form/Form';
+import { SearchForm } from 'components/molecules/searchForm/SearchForm';
 import { use } from 'react';
 import { fetchData } from 'utils/fetchData';
 
@@ -27,7 +27,7 @@ export const Search = () => {
 				WHAT ARE YOU LOOKING FOR?
 			</Heading>
 
-			<Form brands={brands} />
+			<SearchForm brands={brands} />
 		</section>
 	);
 };

@@ -4,7 +4,7 @@ import { SearchFormContextProvider } from 'components/contexts/SearchFormContext
 import { SelectModel } from './SelectModel';
 
 export default {
-	title: 'Main Library/atoms/SelectModel',
+	title: 'Search/atoms/SelectModel',
 	component: SelectModel,
 	decorators: [
 		(Story) => (

@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/dom';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { SearchButton } from './SearchButton';
+import { SubmitButton } from './SubmitButton';
 
-describe('SearchButton component', () => {
+describe('SubmitButton component', () => {
 	it('has correct default link', () => {
-		renderWithProviders(<SearchButton />);
+		renderWithProviders(<SubmitButton />);
 
 		const link = screen.getByRole('link');
 

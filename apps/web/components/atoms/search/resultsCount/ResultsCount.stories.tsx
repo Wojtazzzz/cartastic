@@ -1,11 +1,11 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Providers } from 'app/Providers';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-import { SearchResultsCount } from './SearchResultsCount';
+import { ResultsCount } from './ResultsCount';
 
 export default {
-	title: 'Main Library/atoms/SearchResultsCount',
-	component: SearchResultsCount,
+	title: 'Search/atoms/ResultsCount',
+	component: ResultsCount,
 	decorators: [
 		(Story) => (
 			<Providers>
@@ -15,12 +15,12 @@ export default {
 			</Providers>
 		),
 	],
-} as ComponentMeta<typeof SearchResultsCount>;
+} as ComponentMeta<typeof ResultsCount>;
 
-type SearchResultsCountStory = ComponentStory<typeof SearchResultsCount>;
+type ResultsCountStory = ComponentStory<typeof ResultsCount>;
 
-export const Default: SearchResultsCountStory = () => {
-	return <SearchResultsCount />;
+export const Default: ResultsCountStory = () => {
+	return <ResultsCount />;
 };
 
 Default.parameters = {

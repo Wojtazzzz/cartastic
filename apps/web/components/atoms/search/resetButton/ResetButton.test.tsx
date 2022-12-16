@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/dom';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { SearchResetButton } from './SearchResetButton';
+import { ResetButton } from './ResetButton';
 
-describe('SearchResetButton component', () => {
+describe('ResetButton component', () => {
 	it('has correct title', () => {
-		renderWithProviders(<SearchResetButton />);
+		renderWithProviders(<ResetButton />);
 
 		const button = screen.getByRole('button');
 

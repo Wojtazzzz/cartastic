@@ -1,10 +1,10 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-import { MaxPrice } from './MaxPrice';
+import { MinPrice } from './MinPrice';
 
 export default {
-	title: 'Main Library/atoms/MaxPrice',
-	component: MaxPrice,
+	title: 'Search/atoms/MinPrice',
+	component: MinPrice,
 	decorators: [
 		(Story) => (
 			<SearchFormContextProvider>
@@ -12,10 +12,10 @@ export default {
 			</SearchFormContextProvider>
 		),
 	],
-} as ComponentMeta<typeof MaxPrice>;
+} as ComponentMeta<typeof MinPrice>;
 
-type MaxPriceStory = ComponentStory<typeof MaxPrice>;
+type MinPriceStory = ComponentStory<typeof MinPrice>;
 
-export const Default: MaxPriceStory = () => {
-	return <MaxPrice />;
+export const Default: MinPriceStory = () => {
+	return <MinPrice />;
 };

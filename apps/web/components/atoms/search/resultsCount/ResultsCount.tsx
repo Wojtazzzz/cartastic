@@ -3,7 +3,7 @@
 import { formatCount } from './formatCount';
 import { useGetResultsCount } from './useGetResultsCount';
 
-export const SearchResultsCount = () => {
+export const ResultsCount = () => {
 	const count = useGetResultsCount();
 	const formattedCount = formatCount(count);
 

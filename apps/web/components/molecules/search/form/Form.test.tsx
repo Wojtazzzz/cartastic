@@ -5,9 +5,9 @@ import BMWModels from '__mocks__/models/bmw.json';
 import MercedesModels from '__mocks__/models/mercedes.json';
 import { mockRequest } from 'utils/mockRequest';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { SearchForm } from './SearchForm';
+import { Form } from './Form';
 
-describe('SearchForm component', () => {
+describe('Form component', () => {
 	const user = userEvent.setup();
 
 	beforeEach(() => {
@@ -18,7 +18,7 @@ describe('SearchForm component', () => {
 	});
 
 	it('render correct inputs', () => {
-		renderWithProviders(<SearchForm brands={brands} />);
+		renderWithProviders(<Form brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
@@ -32,7 +32,7 @@ describe('SearchForm component', () => {
 	});
 
 	it('inputs have correct default values', () => {
-		renderWithProviders(<SearchForm brands={brands} />);
+		renderWithProviders(<Form brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
@@ -53,7 +53,7 @@ describe('SearchForm component', () => {
 			data: BMWModels,
 		});
 
-		renderWithProviders(<SearchForm brands={brands} />);
+		renderWithProviders(<Form brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand', { selector: 'select' });
 		const modelInput = screen.getByLabelText('Model', { selector: 'select' });
@@ -86,7 +86,7 @@ describe('SearchForm component', () => {
 			data: BMWModels,
 		});
 
-		renderWithProviders(<SearchForm brands={brands} />);
+		renderWithProviders(<Form brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand');
 		const modelInput = screen.getByLabelText('Model');
@@ -154,7 +154,7 @@ describe('SearchForm component', () => {
 			data: BMWModels,
 		});
 
-		renderWithProviders(<SearchForm brands={brands} />);
+		renderWithProviders(<Form brands={brands} />);
 
 		const brandInput = screen.getByLabelText('Brand', { selector: 'select' });
 		const modelInput = screen.getByLabelText('Model', { selector: 'select' });

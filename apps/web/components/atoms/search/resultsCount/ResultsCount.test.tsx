@@ -1,16 +1,16 @@
 import { screen } from '@testing-library/dom';
 import { mockRequest } from 'utils/mockRequest';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { SearchResultsCount } from './SearchResultsCount';
+import { ResultsCount } from './ResultsCount';
 
-describe('SearchResultsCount component', () => {
+describe('ResultsCount component', () => {
 	it('has correct text', async () => {
 		mockRequest({
 			path: '/cars/count',
 			data: 5,
 		});
 
-		renderWithProviders(<SearchResultsCount />);
+		renderWithProviders(<ResultsCount />);
 
 		const text = await screen.findByText(/Choose one of 5 cars in our offer/);
 
@@ -23,7 +23,7 @@ describe('SearchResultsCount component', () => {
 			data: 6545646743,
 		});
 
-		renderWithProviders(<SearchResultsCount />);
+		renderWithProviders(<ResultsCount />);
 
 		const text = await screen.findByText(/Choose one of 6,545,646,743 cars in our offer/);
 

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useSearchLink } from './useSearchLink';
 
-export const SearchButton = () => {
+export const SubmitButton = () => {
 	const link = useSearchLink();
 
 	return (

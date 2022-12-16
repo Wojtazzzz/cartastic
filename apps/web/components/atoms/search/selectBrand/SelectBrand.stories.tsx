@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 import { API_URL } from 'utils/env';
 
 export default {
-	title: 'Main Library/atoms/SelectBrand',
+	title: 'Search/atoms/SelectBrand',
 	component: SelectBrand,
 	decorators: [
 		(Story) => (

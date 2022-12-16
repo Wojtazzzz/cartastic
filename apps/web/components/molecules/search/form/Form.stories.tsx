@@ -1,12 +1,12 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Providers } from 'app/Providers';
-import { SearchForm } from './SearchForm';
+import { Form } from './Form';
 import fetch from 'node-fetch';
 import { API_URL } from 'utils/env';
 
 export default {
-	title: 'Main Library/molecules/SearchForm',
-	component: SearchForm,
+	title: 'Search/molecules/Form',
+	component: Form,
 	decorators: [
 		(Story) => (
 			<Providers>
@@ -14,15 +14,13 @@ export default {
 			</Providers>
 		),
 	],
-} as ComponentMeta<typeof SearchForm>;
+} as ComponentMeta<typeof Form>;
 
-type SearchFormStory = ComponentStory<typeof SearchForm>;
+type FormStory = ComponentStory<typeof Form>;
 
-export const Default: SearchFormStory = (props, { loaded: { brands } }) => {
-	return <SearchForm {...props} brands={brands} />;
+export const Default: FormStory = (props, { loaded: { brands } }) => {
+	return <Form {...props} brands={brands} />;
 };
-
-Default.args = {};
 
 Default.loaders = [
 	async () => ({

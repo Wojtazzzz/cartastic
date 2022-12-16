@@ -1,10 +1,10 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-import { SearchResetButton } from './SearchResetButton';
+import { ResetButton } from './ResetButton';
 
 export default {
-	title: 'Main Library/atoms/SearchResetButton',
-	component: SearchResetButton,
+	title: 'Search/atoms/ResetButton',
+	component: ResetButton,
 	decorators: [
 		(Story) => (
 			<SearchFormContextProvider>
@@ -12,12 +12,12 @@ export default {
 			</SearchFormContextProvider>
 		),
 	],
-} as ComponentMeta<typeof SearchResetButton>;
+} as ComponentMeta<typeof ResetButton>;
 
-type SearchResetButtonStory = ComponentStory<typeof SearchResetButton>;
+type ResetButtonStory = ComponentStory<typeof ResetButton>;
 
-export const Default: SearchResetButtonStory = () => {
-	return <SearchResetButton />;
+export const Default: ResetButtonStory = () => {
+	return <ResetButton />;
 };
 
 Default.parameters = {

@@ -1,10 +1,10 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-import { MinPrice } from './MinPrice';
+import { SubmitButton } from './SubmitButton';
 
 export default {
-	title: 'Main Library/atoms/MinPrice',
-	component: MinPrice,
+	title: 'Search/atoms/SubmitButton',
+	component: SubmitButton,
 	decorators: [
 		(Story) => (
 			<SearchFormContextProvider>
@@ -12,10 +12,10 @@ export default {
 			</SearchFormContextProvider>
 		),
 	],
-} as ComponentMeta<typeof MinPrice>;
+} as ComponentMeta<typeof SubmitButton>;
 
-type MinPriceStory = ComponentStory<typeof MinPrice>;
+type SubmitButtonStory = ComponentStory<typeof SubmitButton>;
 
-export const Default: MinPriceStory = () => {
-	return <MinPrice />;
+export const Default: SubmitButtonStory = () => {
+	return <SubmitButton />;
 };

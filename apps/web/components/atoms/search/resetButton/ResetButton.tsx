@@ -1,7 +1,7 @@
+import { Button } from 'components/atoms/button/Button';
 import { useSearchFormContext } from 'components/contexts/SearchFormContext';
-import { Button } from '../button/Button';
 
-export const SearchResetButton = () => {
+export const ResetButton = () => {
 	const { reset } = useSearchFormContext();
 
 	return (

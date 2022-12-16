@@ -1,8 +1,8 @@
 <br>
-<h1 align="center" style="font-size: 42px">
+<h1 align="center" style="font-size: 48px">
 Cartastic
 </h1>
-<h3 align="center">Advertising platform including motor offers</h3>
+<h3 align="center">Advertising platform with motorization offers</h3>
 
 <p align="center">
   <a href="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
@@ -54,4 +54,6 @@ $ npm start
 
 MIT
 
-> marcin.witas72@gmail.com &nbsp;&middot;&nbsp; > [GitHub](https://github.com/Wojtazzzz) &nbsp;&middot;&nbsp; > [Linkedin](https://www.linkedin.com/in/marcin-witas-486682202/)
+> marcin.witas72@gmail.com &nbsp;&middot;&nbsp;             
+> [GitHub](https://github.com/Wojtazzzz) &nbsp;&middot;&nbsp;
+> [Linkedin](https://www.linkedin.com/in/marcin-witas-486682202/)

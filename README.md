@@ -54,6 +54,6 @@ $ npm start
 
 MIT
 
-> marcin.witas72@gmail.com &nbsp;&middot;&nbsp;             
+> marcin.witas72@gmail.com &nbsp;&middot;&nbsp;
 > [GitHub](https://github.com/Wojtazzzz) &nbsp;&middot;&nbsp;
 > [Linkedin](https://www.linkedin.com/in/marcin-witas-486682202/)

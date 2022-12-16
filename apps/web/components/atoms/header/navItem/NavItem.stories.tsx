@@ -5,7 +5,7 @@ import SellIcon from 'components/icons/sell.svg';
 import UserIcon from 'components/icons/user.svg';
 
 export default {
-	title: 'Main Library/molecules/NavItem',
+	title: 'Header/atoms/NavItem',
 	component: NavItem,
 } as ComponentMeta<typeof NavItem>;
 

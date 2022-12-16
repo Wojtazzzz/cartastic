@@ -5,7 +5,7 @@ import HeartIcon from 'components/icons/heart.svg';
 
 describe('NavItem component', () => {
 	it('is link with correct path', () => {
-		renderWithProviders(<NavItem href="/test" title="Test NavItem" />);
+		renderWithProviders(<NavItem href="/test" title="Test NavItem" icon={HeartIcon} />);
 
 		const navItem = screen.getByRole('link');
 
@@ -13,7 +13,7 @@ describe('NavItem component', () => {
 	});
 
 	it('has correct title', () => {
-		renderWithProviders(<NavItem href="/test" title="Test NavItem" />);
+		renderWithProviders(<NavItem href="/test" title="Test NavItem" icon={HeartIcon} />);
 
 		const title = screen.getByText('Test NavItem');
 
@@ -26,13 +26,5 @@ describe('NavItem component', () => {
 		const svg = screen.getByRole('img');
 
 		expect(svg).toBeInTheDocument();
-	});
-
-	it('not render icon when is not passed as prop', () => {
-		renderWithProviders(<NavItem href="/test" title="Test NavItem" />);
-
-		const svg = screen.queryByRole('img');
-
-		expect(svg).not.toBeInTheDocument();
 	});
 });

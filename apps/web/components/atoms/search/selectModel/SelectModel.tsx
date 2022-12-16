@@ -12,7 +12,7 @@ export const SelectModel = () => {
 				name="model"
 				value={model}
 				className="w-[150px] md:w-[180px] text-sm md:text-base appearance-none flex justify-between bg-white border-2 border-black sm:border-l-0 uppercase p-2 md:p-3"
-				onChange={(event) => changeModel(Number(event.target.value))}
+				onChange={changeModel}
 			>
 				<option value="0">MODEL</option>
 

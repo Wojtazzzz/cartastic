@@ -15,7 +15,7 @@ export const SelectBrand = ({ brands }: SelectBrandProps) => {
 				name="brand"
 				value={brand}
 				className="w-[150px] md:w-[180px] text-sm md:text-base appearance-none flex justify-between bg-white border-2 border-black uppercase sm:rounded-l-md p-2 md:p-3"
-				onChange={(event) => changeBrand(Number(event.target.value))}
+				onChange={changeBrand}
 			>
 				<option value="0">BRAND</option>
 

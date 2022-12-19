@@ -1,15 +1,13 @@
-import type {
-	FastifyPluginCallbackTypebox,
-	TypeBoxTypeProvider,
-} from '@fastify/type-provider-typebox';
+import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
+import type { FastifyPluginAsync } from 'fastify';
 import { getBrandModelsSchema, getBrandsSchema } from './brands.schema';
 
-const brandsModule: FastifyPluginCallbackTypebox = (fastify, _options, done) => {
+const brandsModule: FastifyPluginAsync = async (fastify) => {
 	fastify.withTypeProvider<TypeBoxTypeProvider>().route({
 		url: '/',
 		method: 'GET',
 		schema: getBrandsSchema,
-		async handler(request, reply) {
+		async handler() {
 			const brands = await fastify.prisma.brand.findMany({
 				include: {
 					models: true,
@@ -24,7 +22,7 @@ const brandsModule: FastifyPluginCallbackTypebox = (fastify, _options, done) => 
 		url: '/:brandId/models',
 		method: 'GET',
 		schema: getBrandModelsSchema,
-		async handler(request, reply) {
+		async handler(request) {
 			const brandId = request.params.brandId;
 
 			const models = await fastify.prisma.model.findMany({
@@ -36,8 +34,6 @@ const brandsModule: FastifyPluginCallbackTypebox = (fastify, _options, done) => 
 			return models;
 		},
 	});
-
-	done();
 };
 
 export default brandsModule;

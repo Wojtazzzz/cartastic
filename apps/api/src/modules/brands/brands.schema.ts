@@ -19,11 +19,11 @@ export const getBrandsSchema = createSchema({
 	},
 });
 
-export const getBrandModelsSchema = createSchema({
+export const getBrandModelsSchema = {
+	params: Type.Object({
+		brandId: Type.Integer(),
+	}),
 	response: {
 		200: Type.Array(modelSchema),
 	},
-	params: Type.Object({
-		brandId: Type.Number(),
-	}),
-});
+};

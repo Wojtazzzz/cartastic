@@ -44,9 +44,9 @@ export const SearchFormContextProvider = ({ children }: SearchFormContextProvide
 			...state,
 			brand: 0,
 			model: 0,
-			minPrice: 0,
-			maxPrice: 0,
-		};
+			minPrice: '',
+			maxPrice: '',
+		} satisfies SearchFormValues;
 
 		dispatch({
 			type: 'RESET',

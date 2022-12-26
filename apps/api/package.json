@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"start": "node ./dist/index.js",
+		"start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/index.js --port 8000",
 		"dev": "pnpm run build && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix --quiet",

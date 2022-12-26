@@ -5,5 +5,5 @@ type InfoSectionContainerProps = {
 };
 
 export const InfoSectionContainer = ({ children }: InfoSectionContainerProps) => {
-	return <div className="w-full lg:w-1/3 flex flex-col lg:px-5">{children}</div>;
+	return <section className="w-full lg:w-1/3 flex flex-col lg:px-5">{children}</section>;
 };

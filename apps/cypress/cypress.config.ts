@@ -8,6 +8,8 @@ export default defineConfig({
 		baseUrl: 'http://localhost:3000',
 		fileServerFolder: './',
 		supportFile: './support/e2e.ts',
+		screenshotsFolder: './screenshots/',
+		videosFolder: './videos/',
 		specPattern: './e2e/**/*.ts',
 		scrollBehavior: 'bottom',
 	},

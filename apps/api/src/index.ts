@@ -1,11 +1,11 @@
 import type { AutoloadPluginOptions } from '@fastify/autoload';
 import type { FastifyPluginAsync } from 'fastify';
 
-export type AppOptions = {} & Partial<AutoloadPluginOptions>;
+export type AppOptions = Partial<AutoloadPluginOptions>;
 const options: AppOptions = {};
 
 const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void> => {
-	fastify.register(import('@fastify/cors'), {
+	await fastify.register(import('@fastify/cors'), {
 		origin: [
 			'http://localhost:3000', // web
 			'http://localhost:6006', // storybook
@@ -13,7 +13,7 @@ const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void>
 		credentials: true,
 	});
 
-	fastify.register(import('@fastify/swagger'), {
+	await fastify.register(import('@fastify/swagger'), {
 		openapi: {
 			info: {
 				title: 'Cartastic API',
@@ -22,10 +22,10 @@ const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void>
 		},
 	});
 
-	fastify.register(import('@fastify/swagger-ui'), { routePrefix: '/docs' });
+	await fastify.register(import('@fastify/swagger-ui'), { routePrefix: '/docs' });
 
-	fastify.register(import('./plugins'), opts);
-	fastify.register(import('./modules'), opts);
+	await fastify.register(import('./plugins'), opts);
+	await fastify.register(import('./modules'), opts);
 };
 
 export default app;

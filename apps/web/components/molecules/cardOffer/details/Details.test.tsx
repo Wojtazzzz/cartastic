@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { Details } from './Details';
 import type { DetailsProps } from './Details';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 const details: DetailsProps = {
 	price: 218700,

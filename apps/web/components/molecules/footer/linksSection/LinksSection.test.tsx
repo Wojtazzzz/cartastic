@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { LinksSection } from './LinksSection';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('LinksSection component', () => {
 	it('has correct header', () => {

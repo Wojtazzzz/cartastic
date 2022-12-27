@@ -1,10 +1,12 @@
-import { Heading } from 'components/atoms/heading/Heading';
+// TODO: @svgr-webpack
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Image from 'next/image';
 import { use } from 'react';
-import { fetchData } from 'utils/fetchData';
-import { CardOffer } from '../cardOffer/CardOffer';
-import SadSmileIcon from 'components/icons/sad-smile.svg';
 import type { CarsLatestResponse } from 'utils/types';
+import SadSmileIcon from 'components/icons/sad-smile.svg';
+import { Heading } from 'components/atoms/heading/Heading';
+import { CardOffer } from '../cardOffer/CardOffer';
+import { fetchData } from 'utils/fetchData';
 
 export const LatestOffers = () => {
 	const cars = use(fetchData<CarsLatestResponse>('/cars/latest'));

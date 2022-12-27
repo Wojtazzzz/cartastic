@@ -1,6 +1,8 @@
+// TODO: svgr-webpack
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { SingleDetail } from './SingleDetail';
+import { renderWithProviders } from 'utils/renderWithProviders';
 import FuelIcon from 'components/icons/fuel.svg';
 
 describe('SingleDetail component', () => {

@@ -5,9 +5,7 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
 	extends: [
-		'next',
 		'turbo',
-		'next/core-web-vitals',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:@typescript-eslint/recommended-requiring-type-checking',
 		'plugin:import/recommended',
@@ -27,10 +25,10 @@ module.exports = {
 	},
 	ignorePatterns: ['build/', '.turbo/', 'dist/', 'node_modules/', '*.js', '*.jsx'],
 	rules: {
-		'@typescript-eslint/require-await': 'off',
-		'@typescript-eslint/no-empty-interface': 'off',
-		'@typescript-eslint/no-unused-vars': 'off',
-		'@next/next/no-html-link-for-pages': 'off',
-		'import/order': 'error',
+		'@typescript-eslint/require-await': 'error',
+		'@typescript-eslint/no-empty-interface': 'error',
+		'@typescript-eslint/no-unused-vars': 'error',
+		'import/order': 'off',
+		'import/no-unresolved': 'off',
 	},
 };

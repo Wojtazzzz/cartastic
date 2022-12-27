@@ -1,6 +1,6 @@
+import { use } from 'react';
 import { Heading } from 'components/atoms/heading/Heading';
 import { Form } from 'components/molecules/search/form/Form';
-import { use } from 'react';
 import { fetchData } from 'utils/fetchData';
 import type { BrandsResponse } from 'utils/types';
 

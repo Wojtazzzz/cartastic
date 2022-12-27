@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { MaxPrice } from './MaxPrice';
+import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 
 export default {
 	title: 'Search/atoms/MaxPrice',

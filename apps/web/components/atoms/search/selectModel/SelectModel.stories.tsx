@@ -1,7 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import { SelectModel } from './SelectModel';
 import { Providers } from 'app/Providers';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-import { SelectModel } from './SelectModel';
 
 export default {
 	title: 'Search/atoms/SelectModel',

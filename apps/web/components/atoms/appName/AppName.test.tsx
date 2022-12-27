@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { AppName } from './AppName';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('AppName component', () => {
 	it('has correct text', () => {

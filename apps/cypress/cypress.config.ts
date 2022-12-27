@@ -2,7 +2,7 @@ import { defineConfig } from 'cypress';
 
 export default defineConfig({
 	e2e: {
-		setupNodeEvents(on, config) {},
+		// setupNodeEvents(on, config) {},
 		viewportWidth: 1560,
 		viewportHeight: 768,
 		baseUrl: 'http://localhost:3000',

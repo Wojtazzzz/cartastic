@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { InfoSectionContainer } from './InfoSectionContainer';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('InfoSectionContainer component', () => {
 	it('render correct children', () => {

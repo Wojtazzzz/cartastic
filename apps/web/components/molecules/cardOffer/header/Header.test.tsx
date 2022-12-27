@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { Header } from './Header';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('Header component', () => {
 	it('has correct accessible name', () => {

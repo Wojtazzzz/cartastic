@@ -1,6 +1,6 @@
-import { renderWithProviders } from 'utils/renderWithProviders';
-import { AppNameLink } from './AppNameLink';
 import { screen } from '@testing-library/dom';
+import { AppNameLink } from './AppNameLink';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('AppNameLink component', () => {
 	it('has correct accessible name', () => {

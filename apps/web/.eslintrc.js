@@ -1,6 +1,6 @@
 module.exports = {
 	root: true,
-	extends: ['cartastic', 'plugin:storybook/recommended'],
+	extends: ['next', 'cartastic', 'plugin:storybook/recommended', 'next/core-web-vitals'],
 	parserOptions: {
 		tsconfigRootDir: __dirname,
 	},

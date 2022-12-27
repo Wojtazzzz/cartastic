@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import { ImagesCount } from 'components/atoms/cardOffer/imagesCount/ImagesCount';
 import { LikeOffer } from 'components/atoms/cardOffer/likeOffer/LikeOffer';
-import Image from 'next/image';
 
 type OfferImageProps = {
 	src: string;

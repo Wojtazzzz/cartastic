@@ -1,5 +1,5 @@
-import { LatestOffers } from 'components/organisms/latestOffers/LatestOffers';
 import { Suspense } from 'react';
+import { LatestOffers } from 'components/organisms/latestOffers/LatestOffers';
 
 export const Home = () => {
 	return (

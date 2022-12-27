@@ -1,5 +1,5 @@
-import { useSearchFormContext } from 'components/contexts/SearchFormContext';
 import type { ChangeEvent } from 'react';
+import { useSearchFormContext } from 'components/contexts/SearchFormContext';
 
 export const useModels = () => {
 	const { model, changeModel } = useSearchFormContext();

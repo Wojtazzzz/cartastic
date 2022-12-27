@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
+import { MinPrice } from './MinPrice';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { MinPrice } from './MinPrice';
 
 describe('MinPrice component', () => {
 	const user = userEvent.setup();

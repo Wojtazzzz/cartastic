@@ -1,3 +1,5 @@
+// TODO: svgr-webpack
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { NavItem } from './NavItem';
 import HeartIcon from 'components/icons/heart.svg';

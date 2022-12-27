@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from 'react';
-import type { ChangeEvent } from 'react';
-import type { ReactNode } from 'react';
+import type { ChangeEvent , ReactNode } from 'react';
+
 import { searchFormReducer } from './searchFormReducer';
 
 export type SearchFormValues = {

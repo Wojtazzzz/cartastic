@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { ContactSection } from './ContactSection';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('ContactSection component', () => {
 	it('has correct header', () => {

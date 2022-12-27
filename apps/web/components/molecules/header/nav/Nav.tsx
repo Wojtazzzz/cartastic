@@ -1,3 +1,6 @@
+// TODO: @svgr/webpack
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable import/no-unresolved */
 import { NavItem } from 'components/atoms/header/navItem/NavItem';
 import HeartIcon from 'components/icons/heart.svg';
 import SellIcon from 'components/icons/sell.svg';

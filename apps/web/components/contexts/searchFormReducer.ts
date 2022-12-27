@@ -47,6 +47,6 @@ export const searchFormReducer = (state: SearchFormValues, action: Action) => {
 			};
 
 		default:
-			throw new Error(`No case for type ${type} found in searchFormReducer.`);
+			throw new Error(`No case for type ${String(type)} found in searchFormReducer.`);
 	}
 };

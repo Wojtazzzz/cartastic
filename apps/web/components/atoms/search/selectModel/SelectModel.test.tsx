@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/dom';
+import { SelectModel } from './SelectModel';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { SelectModel } from './SelectModel';
 
 describe('SelectModel component', () => {
 	it('has correct default value', () => {

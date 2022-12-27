@@ -1,8 +1,8 @@
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import type { FastifyPluginAsync } from 'fastify';
+import type { FastifyPluginCallback } from 'fastify';
 import { getBrandModelsSchema, getBrandsSchema } from './brands.schema';
 
-const brandsModule: FastifyPluginAsync = async (fastify) => {
+const brandsModule: FastifyPluginCallback = (fastify) => {
 	fastify.withTypeProvider<TypeBoxTypeProvider>().route({
 		url: '/',
 		method: 'GET',

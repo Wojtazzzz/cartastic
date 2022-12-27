@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { OfferImage } from './OfferImage';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('OfferImage component', () => {
 	it('has main image with correct accessible name', () => {

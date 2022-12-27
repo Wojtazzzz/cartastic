@@ -1,7 +1,7 @@
+import Link from 'next/link';
 import { Details } from 'components/molecules/cardOffer/details/Details';
 import { Header } from 'components/molecules/cardOffer/header/Header';
 import { OfferImage } from 'components/molecules/cardOffer/offerImage/OfferImage';
-import Link from 'next/link';
 import type { Car } from 'utils/types';
 
 type CardOfferProps = Car;

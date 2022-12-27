@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Providers } from 'app/Providers';
 import { Search } from './Search';
+import { Providers } from 'app/Providers';
 
 export default {
 	title: 'Search/organisms/Search',

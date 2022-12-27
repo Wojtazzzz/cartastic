@@ -1,12 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import { copyDiscordToClipboard } from './copyDiscordToClipboard';
 import { InfoSectionContainer } from 'components/atoms/footer/infoSectionContainer/InfoSectionContainer';
 import { Heading } from 'components/atoms/heading/Heading';
-import { copyDiscordToClipboard } from './copyDiscordToClipboard';
+import { use } from 'react';
 
 export const ContactSection = () => {
 	const copyDiscord = copyDiscordToClipboard();
+
+	const handleCopyToClipboard = () => use(copyDiscord());
 
 	return (
 		<InfoSectionContainer>
@@ -22,7 +25,7 @@ export const ContactSection = () => {
 				Github
 			</Link>
 
-			<button className="w-fit hover:underline text-sm" onClick={copyDiscord}>
+			<button className="w-fit hover:underline text-sm" onClick={handleCopyToClipboard}>
 				Discord
 			</button>
 

@@ -5,9 +5,9 @@ import type {
 	FastifyTypeProviderDefault,
 	RawRequestDefaultExpression,
 	RawServerDefault,
+	FastifySchema,
 } from 'fastify';
 import type { RouteGenericInterface } from 'fastify/types/route';
-import type { FastifySchema } from 'fastify';
 import type { TSchema } from '@sinclair/typebox';
 import { ResolveFastifyRequestType } from 'fastify/types/type-provider';
 

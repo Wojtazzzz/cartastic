@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/dom';
+import { ResultsCount } from './ResultsCount';
 import { mockRequest } from 'utils/mockRequest';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { ResultsCount } from './ResultsCount';
 
 describe('ResultsCount component', () => {
 	it('has correct text', async () => {

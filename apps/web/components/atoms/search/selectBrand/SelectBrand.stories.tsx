@@ -1,7 +1,9 @@
+// TODO: svgr-webpack
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-import { SelectBrand } from './SelectBrand';
 import fetch from 'node-fetch';
+import { SelectBrand } from './SelectBrand';
+import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { API_URL } from 'utils/env';
 
 export default {

@@ -10,8 +10,7 @@
 	"extends": [
 		"plugin:@typeofweb/recommended",
 		"next/core-web-vitals",
-		"plugin:jsx-a11y/recommended",
-		"plugin:css-modules/recommended"
+		"plugin:jsx-a11y/recommended"
 	],
 	"rules": {
 		"react-hooks/exhaustive-deps": ["error"],

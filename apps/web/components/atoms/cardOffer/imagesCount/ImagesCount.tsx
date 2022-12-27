@@ -1,5 +1,7 @@
-import PhotoIcon from 'components/icons/photo-icon.svg';
+// TODO: svgr-webpack
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Image from 'next/image';
+import PhotoIcon from 'components/icons/photo-icon.svg';
 
 type ImagesCountProps = {
 	count: number;

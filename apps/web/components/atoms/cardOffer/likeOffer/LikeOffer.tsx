@@ -1,6 +1,5 @@
 'use client';
-// TODO: svgr-webpack
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import Image from 'next/image';
 import Heart from 'components/icons/red-heart.svg';
 

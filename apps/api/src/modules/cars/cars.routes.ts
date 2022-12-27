@@ -1,8 +1,10 @@
-import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import type { FastifyPluginCallback } from 'fastify';
+import type {
+	FastifyPluginCallbackTypebox,
+	TypeBoxTypeProvider,
+} from '@fastify/type-provider-typebox';
 import { getCarsCountSchema, getLatestCarsSchema } from './cars.schema';
 
-const carsModule: FastifyPluginCallback = (fastify, _options, done) => {
+const carsModule: FastifyPluginCallbackTypebox = (fastify, options, done) => {
 	fastify.withTypeProvider<TypeBoxTypeProvider>().route({
 		url: '/count',
 		method: 'GET',

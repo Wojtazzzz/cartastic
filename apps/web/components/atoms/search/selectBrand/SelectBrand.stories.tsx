@@ -1,4 +1,4 @@
-// TODO: svgr-webpack
+// TODO: storybook loader
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import fetch from 'node-fetch';

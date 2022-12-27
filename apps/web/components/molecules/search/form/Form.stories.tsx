@@ -1,5 +1,5 @@
-// TODO: svgr-webpack
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+// TODO: storybook loader
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import fetch from 'node-fetch';
 import { Form } from './Form';

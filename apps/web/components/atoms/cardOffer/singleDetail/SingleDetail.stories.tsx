@@ -1,5 +1,3 @@
-// TODO: svgr-webpack
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SingleDetail } from './SingleDetail';
 import FuelIcon from 'components/icons/fuel.svg';

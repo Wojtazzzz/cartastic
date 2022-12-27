@@ -4,12 +4,11 @@ import Link from 'next/link';
 import { copyDiscordToClipboard } from './copyDiscordToClipboard';
 import { InfoSectionContainer } from 'components/atoms/footer/infoSectionContainer/InfoSectionContainer';
 import { Heading } from 'components/atoms/heading/Heading';
-import { use } from 'react';
 
 export const ContactSection = () => {
 	const copyDiscord = copyDiscordToClipboard();
 
-	const handleCopyToClipboard = () => use(copyDiscord());
+	const handleCopyToClipboard = () => void copyDiscord();
 
 	return (
 		<InfoSectionContainer>

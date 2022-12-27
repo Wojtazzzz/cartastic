@@ -1,5 +1,3 @@
-// TODO: svgr-webpack
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { screen } from '@testing-library/react';
 import { NavItem } from './NavItem';
 import { renderWithProviders } from 'utils/renderWithProviders';

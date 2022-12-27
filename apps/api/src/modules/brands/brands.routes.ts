@@ -1,8 +1,10 @@
-import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import type { FastifyPluginCallback } from 'fastify';
+import type {
+	FastifyPluginCallbackTypebox,
+	TypeBoxTypeProvider,
+} from '@fastify/type-provider-typebox';
 import { getBrandModelsSchema, getBrandsSchema } from './brands.schema';
 
-const brandsModule: FastifyPluginCallback = (fastify) => {
+const brandsModule: FastifyPluginCallbackTypebox = (fastify, options, done) => {
 	fastify.withTypeProvider<TypeBoxTypeProvider>().route({
 		url: '/',
 		method: 'GET',
@@ -34,6 +36,8 @@ const brandsModule: FastifyPluginCallback = (fastify) => {
 			return models;
 		},
 	});
+
+	done();
 };
 
 export default brandsModule;

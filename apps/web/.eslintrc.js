@@ -4,5 +4,8 @@ module.exports = {
 	parserOptions: {
 		tsconfigRootDir: __dirname,
 	},
-	rules: {},
+	rules: {
+		'@typescript-eslint/ban-ts-comment': 'off',
+		'@typescript-eslint/no-unsafe-assignment': 'off',
+	},
 };

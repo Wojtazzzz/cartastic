@@ -1,6 +1,6 @@
-import { renderWithProviders } from 'utils/renderWithProviders';
-import { Nav } from './Nav';
 import { screen } from '@testing-library/dom';
+import { Nav } from './Nav';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('Nav component', () => {
 	it('has all links with correct paths', () => {

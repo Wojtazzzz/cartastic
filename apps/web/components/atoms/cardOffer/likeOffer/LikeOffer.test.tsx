@@ -1,6 +1,6 @@
 import { screen, within } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { LikeOffer } from './LikeOffer';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('LikeOffer component', () => {
 	it('has correct accessible name', () => {

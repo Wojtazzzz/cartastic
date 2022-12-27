@@ -1,11 +1,11 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Form } from './Form';
 import brands from '__mocks__/brands.json';
 import BMWModels from '__mocks__/models/bmw.json';
 import MercedesModels from '__mocks__/models/mercedes.json';
 import { mockRequest } from 'utils/mockRequest';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { Form } from './Form';
 
 describe('Form component', () => {
 	const user = userEvent.setup();

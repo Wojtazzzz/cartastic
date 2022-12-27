@@ -14,7 +14,7 @@ type RootLayoutProps = {
 	children: ReactNode;
 };
 
-export default async function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="en" className={font.className}>
 			<head>
@@ -26,6 +26,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 				<Providers>
 					<Header />
 
+					{/* @ts-ignore */}
 					<Search />
 
 					{children}

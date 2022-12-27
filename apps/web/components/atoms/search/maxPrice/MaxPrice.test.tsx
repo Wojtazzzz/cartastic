@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
+import { MaxPrice } from './MaxPrice';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { MaxPrice } from './MaxPrice';
 
 describe('MaxPrice component', () => {
 	const user = userEvent.setup();

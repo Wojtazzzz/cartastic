@@ -1,5 +1,5 @@
-import type { Brand } from 'utils/types';
 import { useBrand } from './useBrand';
+import type { Brand } from 'utils/types';
 
 type SelectBrandProps = {
 	brands: Brand[];

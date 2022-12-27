@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { ResetButton } from './ResetButton';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('ResetButton component', () => {
 	it('has correct title', () => {

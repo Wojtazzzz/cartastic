@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { SubmitButton } from './SubmitButton';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('SubmitButton component', () => {
 	it('has correct default link', () => {

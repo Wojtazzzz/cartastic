@@ -3,9 +3,7 @@
 import Image from 'next/image';
 import Heart from 'components/icons/red-heart.svg';
 
-type LikeOfferProps = {};
-
-export const LikeOffer = ({}: LikeOfferProps) => {
+export const LikeOffer = () => {
 	const like = () => {
 		console.log('LIKE');
 	};

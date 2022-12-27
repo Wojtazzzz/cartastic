@@ -1,12 +1,12 @@
+import { formatEngine } from './formatEngine';
+import { formatMiles } from './formatMiles';
 import { SingleDetail } from 'components/atoms/cardOffer/singleDetail/SingleDetail';
 import { Heading } from 'components/atoms/heading/Heading';
 import FuelIcon from 'components/icons/fuel.svg';
 import EngineIcon from 'components/icons/engine.svg';
 import RoadIcon from 'components/icons/road.svg';
 import GearboxIcon from 'components/icons/gearbox.svg';
-import VehicleBodyIcon from 'components/icons/vehicle-body.svg';
-import { formatEngine } from './formatEngine';
-import { formatMiles } from './formatMiles';
+import VehicleBodyIcon from 'components/icons/vehicle.svg';
 import { formatPrice } from 'utils/formatPrice';
 import type { Car } from 'utils/types';
 

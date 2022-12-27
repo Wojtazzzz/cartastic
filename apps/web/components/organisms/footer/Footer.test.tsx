@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/dom';
+import { Footer } from './Footer';
 import { APP_NAME } from 'utils/env';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { Footer } from './Footer';
 
 describe('Footer component', () => {
 	it('has correct accessible name', () => {

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/dom';
+import { Copyrights } from './Copyrights';
 import { APP_NAME } from 'utils/env';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import { Copyrights } from './Copyrights';
 
 describe('Copyrights component', () => {
 	it('has correct text', () => {

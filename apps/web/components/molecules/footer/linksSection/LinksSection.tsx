@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { InfoSectionContainer } from 'components/atoms/footer/infoSectionContainer/InfoSectionContainer';
 import { Heading } from 'components/atoms/heading/Heading';
-import Link from 'next/link';
 
 export const LinksSection = () => {
 	return (

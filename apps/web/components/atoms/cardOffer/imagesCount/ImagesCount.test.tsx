@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { ImagesCount } from './ImagesCount';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('ImagesCount component', () => {
 	it('display correct count', () => {

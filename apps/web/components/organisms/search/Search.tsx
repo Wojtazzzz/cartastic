@@ -1,11 +1,10 @@
 import { Heading } from 'components/atoms/heading/Heading';
 import { Form } from 'components/molecules/search/form/Form';
-import { use } from 'react';
 import { fetchData } from 'utils/fetchData';
 import type { BrandsResponse } from 'utils/types';
 
-export const Search = () => {
-	const brands = use(fetchData<BrandsResponse>('/brands'));
+export const Search = async () => {
+	const brands = await fetchData<BrandsResponse>('/brands');
 
 	return (
 		<section className="w-full h-[450px] flex flex-col items-center justify-center bg-[url('/img/search-bg.jpg')] bg-cover bg-center px-1">

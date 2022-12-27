@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { Heading } from './Heading';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('Heading component', () => {
 	it('has correct text', () => {

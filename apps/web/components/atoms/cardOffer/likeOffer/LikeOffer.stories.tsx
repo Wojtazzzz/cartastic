@@ -15,8 +15,6 @@ export default {
 
 type LikeOfferStory = ComponentStory<typeof LikeOffer>;
 
-export const Default: LikeOfferStory = (props) => {
-	return <LikeOffer {...props} />;
+export const Default: LikeOfferStory = () => {
+	return <LikeOffer />;
 };
-
-Default.args = {};

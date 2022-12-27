@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/dom';
-import { renderWithProviders } from 'utils/renderWithProviders';
-import type { Car } from '../latestOffers/LatestOffers';
 import { CardOffer } from './CardOffer';
+import { renderWithProviders } from 'utils/renderWithProviders';
+import type { Car } from 'utils/types';
 
 const car = {
 	id: 24,
@@ -22,9 +22,8 @@ const car = {
 	model: {
 		id: 1,
 		name: 'A7',
-		brandId: 1,
 	},
-} as Car;
+} satisfies Car;
 
 describe('CardOffer component', () => {
 	it('has correct link', () => {

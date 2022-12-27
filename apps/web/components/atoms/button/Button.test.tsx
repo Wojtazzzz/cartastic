@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithProviders } from 'utils/renderWithProviders';
 import { Button } from './Button';
+import { renderWithProviders } from 'utils/renderWithProviders';
 
 describe('Button component', () => {
 	const user = userEvent.setup();

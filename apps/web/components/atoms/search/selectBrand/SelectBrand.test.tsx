@@ -1,9 +1,9 @@
-import { renderWithProviders } from 'utils/renderWithProviders';
-import { SelectBrand } from './SelectBrand';
-import brands from '__mocks__/brands.json';
 import { screen } from '@testing-library/dom';
-import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import userEvent from '@testing-library/user-event';
+import { SelectBrand } from './SelectBrand';
+import { renderWithProviders } from 'utils/renderWithProviders';
+import brands from '__mocks__/brands.json';
+import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { mockRequest } from 'utils/mockRequest';
 
 describe('SelectBrand component', () => {

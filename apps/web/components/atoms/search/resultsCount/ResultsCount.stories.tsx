@@ -1,7 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ResultsCount } from './ResultsCount';
 import { Providers } from 'app/Providers';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
-import { ResultsCount } from './ResultsCount';
 
 export default {
 	title: 'Search/atoms/ResultsCount',

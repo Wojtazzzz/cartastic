@@ -1,0 +1,13 @@
+{
+	"name": "openapi-types",
+	"version": "0.0.0",
+	"main": "index.ts",
+	"types": "index.ts",
+	"license": "MIT",
+	"scripts": {
+		"generate": "openapi-typescript http://localhost:8000/docs/json --output types.ts"
+	},
+	"devDependencies": {
+		"openapi-typescript": "6.1.0"
+	}
+}

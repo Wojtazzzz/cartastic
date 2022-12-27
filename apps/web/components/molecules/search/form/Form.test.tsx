@@ -49,7 +49,7 @@ describe('Form component', () => {
 
 	it('fill form with custom data', async () => {
 		mockRequest({
-			path: '/brands/1/models',
+			path: '/brands/15/models',
 			data: BMWModels,
 		});
 
@@ -73,7 +73,7 @@ describe('Form component', () => {
 		await user.type(maxPriceInput, '276');
 
 		expect(brandInput).toHaveTextContent('BMW');
-		expect(brandInput).toHaveValue('1');
+		expect(brandInput).toHaveValue('15');
 		expect(modelInput).toHaveTextContent('Series 6');
 		expect(modelInput).toHaveValue('6');
 		expect(minPriceInput).toHaveValue(151);
@@ -82,7 +82,7 @@ describe('Form component', () => {
 
 	it('multiple change brands and models', async () => {
 		mockRequest({
-			path: '/brands/1/models',
+			path: '/brands/15/models',
 			data: BMWModels,
 		});
 
@@ -100,7 +100,7 @@ describe('Form component', () => {
 		});
 
 		expect(brandInput).toHaveTextContent('BMW');
-		expect(brandInput).toHaveValue('1');
+		expect(brandInput).toHaveValue('15');
 		expect(modelInput).toHaveTextContent('Series 3');
 		expect(modelInput).toHaveValue('3');
 
@@ -113,15 +113,15 @@ describe('Form component', () => {
 		expect(modelInput).toHaveValue('7');
 
 		mockRequest({
-			path: '/brands/3/models',
+			path: '/brands/80/models',
 			data: MercedesModels,
 		});
 
 		/* Change brand input value */
-		await user.selectOptions(brandInput, 'Mercedes');
+		await user.selectOptions(brandInput, 'Mercedes-Benz');
 
-		expect(brandInput).toHaveTextContent('Mercedes');
-		expect(brandInput).toHaveValue('3');
+		expect(brandInput).toHaveTextContent('Mercedes-Benz');
+		expect(brandInput).toHaveValue('80');
 		expect(modelInput).not.toHaveTextContent('Series 7');
 		expect(modelInput).not.toHaveValue('7');
 		expect(modelInput).toHaveTextContent('MODEL');
@@ -132,8 +132,8 @@ describe('Form component', () => {
 			await user.selectOptions(modelInput, 'Citan');
 		});
 
-		expect(brandInput).toHaveTextContent('Mercedes');
-		expect(brandInput).toHaveValue('3');
+		expect(brandInput).toHaveTextContent('Mercedes-Benz');
+		expect(brandInput).toHaveValue('80');
 		expect(modelInput).toHaveTextContent('Citan');
 		expect(modelInput).toHaveValue('18');
 
@@ -142,15 +142,15 @@ describe('Form component', () => {
 			await user.selectOptions(modelInput, 'CLA');
 		});
 
-		expect(brandInput).toHaveTextContent('Mercedes');
-		expect(brandInput).toHaveValue('3');
+		expect(brandInput).toHaveTextContent('Mercedes-Benz');
+		expect(brandInput).toHaveValue('80');
 		expect(modelInput).toHaveTextContent('CLA');
 		expect(modelInput).toHaveValue('19');
 	});
 
 	it('reset values', async () => {
 		mockRequest({
-			path: '/brands/1/models',
+			path: '/brands/15/models',
 			data: BMWModels,
 		});
 
@@ -174,7 +174,7 @@ describe('Form component', () => {
 		await user.type(maxPriceInput, '276');
 
 		expect(brandInput).toHaveTextContent('BMW');
-		expect(brandInput).toHaveValue('1');
+		expect(brandInput).toHaveValue('15');
 		expect(modelInput).toHaveTextContent('Series 6');
 		expect(modelInput).toHaveValue('6');
 		expect(minPriceInput).toHaveValue(151);
@@ -187,7 +187,7 @@ describe('Form component', () => {
 		expect(brandInput).toHaveValue('0');
 		expect(modelInput).toHaveTextContent('MODEL');
 		expect(modelInput).toHaveValue('0');
-		expect(minPriceInput).toHaveValue(0);
-		expect(maxPriceInput).toHaveValue(0);
+		expect(minPriceInput).not.toHaveValue();
+		expect(maxPriceInput).not.toHaveValue();
 	});
 });

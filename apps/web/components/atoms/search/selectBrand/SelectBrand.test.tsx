@@ -4,6 +4,7 @@ import brands from '__mocks__/brands.json';
 import { screen } from '@testing-library/dom';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import userEvent from '@testing-library/user-event';
+import { mockRequest } from 'utils/mockRequest';
 
 describe('SelectBrand component', () => {
 	const user = userEvent.setup();
@@ -22,6 +23,10 @@ describe('SelectBrand component', () => {
 	});
 
 	it('set brand', async () => {
+		mockRequest({
+			path: '/brands/15/models',
+		});
+
 		renderWithProviders(
 			<SearchFormContextProvider>
 				<SelectBrand brands={brands} />
@@ -33,10 +38,14 @@ describe('SelectBrand component', () => {
 		await user.selectOptions(input, 'BMW');
 
 		expect(input).toHaveTextContent('BMW');
-		expect(input).toHaveValue('1');
+		expect(input).toHaveValue('15');
 	});
 
 	it('set and change brand', async () => {
+		mockRequest({
+			path: '/brands/15/models',
+		});
+
 		renderWithProviders(
 			<SearchFormContextProvider>
 				<SelectBrand brands={brands} />
@@ -48,11 +57,15 @@ describe('SelectBrand component', () => {
 		await user.selectOptions(input, 'BMW');
 
 		expect(input).toHaveTextContent('BMW');
-		expect(input).toHaveValue('1');
+		expect(input).toHaveValue('15');
+
+		mockRequest({
+			path: '/brands/91/models',
+		});
 
 		await user.selectOptions(input, 'Opel');
 
 		expect(input).toHaveTextContent('Opel');
-		expect(input).toHaveValue('4');
+		expect(input).toHaveValue('91');
 	});
 });

@@ -3,9 +3,6 @@
 	"version": "0.1.0",
 	"description": "This project was bootstrapped with Fastify-CLI.",
 	"main": "index.ts",
-	"directories": {
-		"test": "test"
-	},
 	"scripts": {
 		"build": "tsc",
 		"start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/index.js --port 8000",

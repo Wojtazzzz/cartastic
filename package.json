@@ -8,12 +8,16 @@
 		"dev": "turbo run dev --parallel",
 		"lint": "turbo run lint",
 		"lint:fix": "turbo run lint:fix",
-		"test": "turbo run test",
+		"test:unit": "turbo run test:unit",
+		"test:e2e": "turbo run test:e2e",
+		"cypress": "turbo run cypress",
 		"storybook": "turbo run storybook",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\""
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
-		"eslint-config-custom": "*",
+		"eslint-config-cartastic": "*",
+		"husky": "^8.0.2",
 		"prettier": "latest",
 		"turbo": "latest"
 	},

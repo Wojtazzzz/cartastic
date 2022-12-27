@@ -1,4 +1,4 @@
-import type { Brand } from 'components/organisms/search/Search';
+import type { Brand } from 'utils/types';
 import { useBrand } from './useBrand';
 
 type SelectBrandProps = {
@@ -19,7 +19,7 @@ export const SelectBrand = ({ brands }: SelectBrandProps) => {
 			>
 				<option value="0">BRAND</option>
 
-				{brands?.map(({ id, name }) => (
+				{brands.map(({ id, name }) => (
 					<option key={id} value={id}>
 						{name}
 					</option>

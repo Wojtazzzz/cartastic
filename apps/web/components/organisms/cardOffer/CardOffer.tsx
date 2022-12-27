@@ -2,9 +2,9 @@ import { Details } from 'components/molecules/cardOffer/details/Details';
 import { Header } from 'components/molecules/cardOffer/header/Header';
 import { OfferImage } from 'components/molecules/cardOffer/offerImage/OfferImage';
 import Link from 'next/link';
-import { Car } from '../latestOffers/LatestOffers';
+import type { Car } from 'utils/types';
 
-type CardOfferProps = {} & Car;
+type CardOfferProps = Car;
 
 export const CardOffer = ({
 	id,

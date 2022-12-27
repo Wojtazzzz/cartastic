@@ -30,7 +30,6 @@ Default.args = {
 	modelId: 1,
 	model: {
 		id: 1,
-		brandId: 1,
 		name: 'Series 1',
 	},
 };

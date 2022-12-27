@@ -5,12 +5,12 @@ import EngineIcon from 'components/icons/engine.svg';
 import RoadIcon from 'components/icons/road.svg';
 import GearboxIcon from 'components/icons/gearbox.svg';
 import VehicleBodyIcon from 'components/icons/vehicle-body.svg';
-import type { Car } from 'components/organisms/latestOffers/LatestOffers';
 import { formatEngine } from './formatEngine';
 import { formatMiles } from './formatMiles';
 import { formatPrice } from 'utils/formatPrice';
+import type { Car } from 'utils/types';
 
-export type DetailsProps = {} & Pick<
+export type DetailsProps = Pick<
 	Car,
 	'price' | 'fuel' | 'engine' | 'miles' | 'transmission' | 'body'
 >;

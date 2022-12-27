@@ -1,0 +1,5 @@
+.next
+.swc
+.vscode
+node_modules
+storybook-static

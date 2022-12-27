@@ -1,8 +1,8 @@
 module.exports = {
 	root: true,
-	extends: ['custom'],
-	plugins: ['eslint-plugin-storybook'],
-	rules: {
-		'@next/next/no-head-element': 'off',
+	extends: ['cartastic', 'plugin:storybook/recommended'],
+	parserOptions: {
+		tsconfigRootDir: __dirname,
 	},
+	rules: {},
 };

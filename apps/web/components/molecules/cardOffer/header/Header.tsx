@@ -1,5 +1,5 @@
 import { Heading } from 'components/atoms/heading/Heading';
-import type { Car } from 'components/organisms/latestOffers/LatestOffers';
+import { Car } from 'utils/types';
 
 type HeaderProps = {
 	text: string;

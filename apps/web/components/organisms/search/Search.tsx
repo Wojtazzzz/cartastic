@@ -2,21 +2,10 @@ import { Heading } from 'components/atoms/heading/Heading';
 import { Form } from 'components/molecules/search/form/Form';
 import { use } from 'react';
 import { fetchData } from 'utils/fetchData';
-
-/* TODO: generate types by OpenAPI */
-export type Brand = {
-	id: number;
-	name: string;
-};
-
-export type Model = {
-	id: number;
-	name: string;
-	brandId: number;
-};
+import type { BrandsResponse } from 'utils/types';
 
 export const Search = () => {
-	const brands = use(fetchData<Brand[]>('/brands'));
+	const brands = use(fetchData<BrandsResponse>('/brands'));
 
 	return (
 		<section className="w-full h-[450px] flex flex-col items-center justify-center bg-[url('/img/search-bg.jpg')] bg-cover bg-center px-1">

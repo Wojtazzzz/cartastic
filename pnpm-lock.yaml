@@ -108,6 +108,7 @@ importers:
       next: 13.0.6
       nock: ^13.2.9
       node-fetch: ^3.3.0
+      openapi-types: workspace:*
       postcss: ^8.4.18
       react: 18.2.0
       react-dom: 18.2.0
@@ -157,6 +158,7 @@ importers:
       jest: 29.3.1_@types+node@18.11.11
       jest-environment-jsdom: 29.3.1
       nock: 13.2.9
+      openapi-types: link:../../packages/openapi-types
       postcss: 8.4.19
       storybook-addon-next: 1.7.1_36bfaut7slt3nc3ic224l6ssnu
       tailwindcss: 3.2.4_postcss@8.4.19

@@ -1,6 +1,5 @@
 'use client';
 
-import type { Brand } from 'components/organisms/search/Search';
 import { MaxPrice } from 'components/atoms/search/maxPrice/MaxPrice';
 import { SelectBrand } from 'components/atoms/search/selectBrand/SelectBrand';
 import { SelectModel } from 'components/atoms/search/selectModel/SelectModel';
@@ -9,6 +8,7 @@ import { ResetButton } from 'components/atoms/search/resetButton/ResetButton';
 import { ResultsCount } from 'components/atoms/search/resultsCount/ResultsCount';
 import { SearchFormContextProvider } from 'components/contexts/SearchFormContext';
 import { SubmitButton } from 'components/atoms/search/submitButton/SubmitButton';
+import type { Brand } from 'utils/types';
 
 type FormProps = {
 	brands: Brand[];

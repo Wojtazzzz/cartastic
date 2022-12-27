@@ -9,6 +9,7 @@
 		"lint": "next lint",
 		"lint:fix": "next lint --fix --quiet",
 		"test": "jest --watchAll",
+		"test:unit": "jest",
 		"storybook": "start-storybook -s ./public -p 6006",
 		"build-storybook": "build-storybook"
 	},

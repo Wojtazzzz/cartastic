@@ -17,7 +17,13 @@
 		"start": {
 			"cache": false
 		},
-		"test": {
+		"test:unit": {
+			"cache": false
+		},
+		"test:e2e": {
+			"cache": false
+		},
+		"cypress": {
 			"cache": false
 		},
 		"storybook": {

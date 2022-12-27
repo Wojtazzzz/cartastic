@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "npx cypress run",
+		"test:e2e": "npx cypress run",
 		"cypress": "npx cypress open",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix --quiet"

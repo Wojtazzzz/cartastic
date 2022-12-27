@@ -6,7 +6,7 @@ import FuelIcon from 'components/icons/fuel.svg';
 import EngineIcon from 'components/icons/engine.svg';
 import RoadIcon from 'components/icons/road.svg';
 import GearboxIcon from 'components/icons/gearbox.svg';
-import VehicleBodyIcon from 'components/icons/vehicle.svg';
+import VehicleBodyIcon from 'components/icons/vehicle-body.svg';
 import { formatPrice } from 'utils/formatPrice';
 import type { Car } from 'utils/types';
 

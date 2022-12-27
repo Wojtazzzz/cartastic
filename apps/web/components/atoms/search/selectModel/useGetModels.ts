@@ -10,8 +10,8 @@ export const useGetModels = () => {
 	/* brand is number | undefined */
 	/* assertion because it will be called only when brand is defined */
 	return useQuery({
-		queryKey: getBrandModelsQK(brand ),
-		queryFn: async () => await fetchModels(brand ),
+		queryKey: getBrandModelsQK(brand),
+		queryFn: async () => await fetchModels(brand),
 		enabled: Boolean(brand),
 	});
 };

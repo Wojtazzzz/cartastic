@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { axios } from 'utils/axios';
 import { getSearchCarOffersCountQK } from 'utils/queryKeys';
 import type { CarOffersCountResponse } from 'utils/types';
@@ -14,7 +14,11 @@ export const useGetResultsCount = () => {
 		animate();
 	}, 100);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
+		if (typeof window === 'undefined') {
+			return;
+		}
+
 		return () => clearInterval(interval);
 	}, [interval]);
 

@@ -24,9 +24,9 @@ export const carOfferSchema = {
 };
 
 export const getCarOffersCountSchema = {
-	response: Type.Object({
+	response: {
 		200: Type.Number(),
-	}),
+	},
 } satisfies FastifySchemaTypeBox;
 
 export const getLatestCarOffersSchema = {

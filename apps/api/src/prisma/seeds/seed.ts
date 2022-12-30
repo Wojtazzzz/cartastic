@@ -3,9 +3,9 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const main = async () => {
-	await prisma.car.deleteMany({});
+	await prisma.carOffer.deleteMany({});
 
-	await prisma.car.createMany({
+	await prisma.carOffer.createMany({
 		data: [
 			{
 				images: {},

@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox';
 import { createSchema } from '../../utils/createSchema';
 
-export const carSchema = {
+export const carOfferSchema = {
 	id: Type.Number(),
 	images: Type.Array(Type.String()),
 	price: Type.Number(),
@@ -21,16 +21,16 @@ export const carSchema = {
 		id: Type.Number(),
 		name: Type.String(),
 	}),
-} as const;
+};
 
-export const getCarsCountSchema = createSchema({
+export const getCarOffersCountSchema = createSchema({
 	response: {
 		200: Type.Number(),
 	},
 });
 
-export const getLatestCarsSchema = {
+export const getLatestCarOffersSchema = {
 	response: {
-		200: Type.Array(Type.Object(carSchema)),
+		200: Type.Array(Type.Object(carOfferSchema)),
 	},
 };

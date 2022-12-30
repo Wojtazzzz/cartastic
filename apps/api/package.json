@@ -13,7 +13,8 @@
 		"dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/index.js --port 8000"
 	},
 	"prisma": {
-		"seed": "ts-node prisma/seeds/seed.ts"
+		"seed": "ts-node src/prisma/seeds/seed.ts",
+		"schema": "./src/prisma/schema.prisma"
 	},
 	"keywords": [],
 	"author": "",

@@ -12,7 +12,7 @@ describe('Form component', () => {
 
 	beforeEach(() => {
 		mockRequest({
-			path: '/cars/count',
+			path: '/carOffers/count',
 			data: 4,
 		});
 	});

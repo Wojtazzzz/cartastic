@@ -6,7 +6,7 @@ import { renderWithProviders } from 'utils/renderWithProviders';
 describe('ResultsCount component', () => {
 	it('has correct text', async () => {
 		mockRequest({
-			path: '/cars/count',
+			path: '/carOffers/count',
 			data: 5,
 		});
 
@@ -19,7 +19,7 @@ describe('ResultsCount component', () => {
 
 	it('count of offers is in correct format', async () => {
 		mockRequest({
-			path: '/cars/count',
+			path: '/carOffers/count',
 			data: 6545646743,
 		});
 

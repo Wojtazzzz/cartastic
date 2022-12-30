@@ -5,7 +5,7 @@ export const Home = () => {
 	return (
 		<div className="">
 			<Suspense fallback={<span className="text-black">Loading...</span>}>
-				{/* @ts-ignore */}
+				{/* @ts-expect-error Server Component */}
 				<LatestOffers />
 			</Suspense>
 		</div>

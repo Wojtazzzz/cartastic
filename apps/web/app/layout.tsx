@@ -7,7 +7,8 @@ import { Footer } from 'components/organisms/footer/Footer';
 import { Header } from 'components/organisms/header/Header';
 
 const font = Titillium_Web({
-	weight: ['400', '600'],
+	weight: ['400', '600', '700'],
+	variable: '--font-titillium',
 });
 
 type RootLayoutProps = {

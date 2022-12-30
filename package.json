@@ -16,7 +16,7 @@
 		"prepare": "husky install"
 	},
 	"devDependencies": {
-		"eslint-config-cartastic": "*",
+		"eslint-config-cartastic": "workspace:*",
 		"husky": "^8.0.2",
 		"prettier": "latest",
 		"turbo": "latest"

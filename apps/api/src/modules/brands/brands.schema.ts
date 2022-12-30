@@ -19,9 +19,9 @@ export const brandWithModelsSchema = Type.Intersect([
 ]);
 
 export const getBrandsSchema = {
-	response: Type.Object({
+	response: {
 		200: Type.Array(brandSchema),
-	}),
+	},
 };
 
 export const getBrandModelsSchema = {

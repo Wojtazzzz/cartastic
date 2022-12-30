@@ -10,11 +10,7 @@ const brandsModule: FastifyPluginCallbackTypebox = (fastify, options, done) => {
 		method: 'GET',
 		schema: getBrandsSchema,
 		async handler() {
-			const brands = await fastify.prisma.brand.findMany({
-				include: {
-					models: true,
-				},
-			});
+			const brands = await fastify.prisma.brand.findMany();
 
 			return brands;
 		},

@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/dom';
 import { CardOffer } from './CardOffer';
 import { renderWithProviders } from 'utils/renderWithProviders';
-import type { Car } from 'utils/types';
+import type { CarOffer } from 'utils/types';
 
-const car = {
+const carOffer = {
 	id: 24,
 	images: ['/img/no-image.jpg'],
 	price: 9700,
@@ -23,11 +23,11 @@ const car = {
 		id: 1,
 		name: 'A7',
 	},
-} satisfies Car;
+} satisfies CarOffer;
 
 describe('CardOffer component', () => {
 	it('has correct link', () => {
-		renderWithProviders(<CardOffer {...car} />);
+		renderWithProviders(<CardOffer {...carOffer} />);
 
 		const link = screen.getByRole('link');
 
@@ -35,7 +35,7 @@ describe('CardOffer component', () => {
 	});
 
 	it('has correct header', () => {
-		renderWithProviders(<CardOffer {...car} />);
+		renderWithProviders(<CardOffer {...carOffer} />);
 
 		const header = screen.getByRole('heading', { level: 3 });
 
@@ -43,7 +43,7 @@ describe('CardOffer component', () => {
 	});
 
 	it('has correct production year', () => {
-		renderWithProviders(<CardOffer {...car} />);
+		renderWithProviders(<CardOffer {...carOffer} />);
 
 		const year = screen.getByText('2021');
 
@@ -51,7 +51,7 @@ describe('CardOffer component', () => {
 	});
 
 	it('main image has correct alt', () => {
-		renderWithProviders(<CardOffer {...car} />);
+		renderWithProviders(<CardOffer {...carOffer} />);
 
 		const image = screen.getByRole('img', { name: 'Audi, A7' });
 
@@ -61,7 +61,7 @@ describe('CardOffer component', () => {
 	it('has correct count of images ', () => {
 		renderWithProviders(
 			<CardOffer
-				{...car}
+				{...carOffer}
 				images={[
 					'/img/no-image.jpg',
 					'/img/no-image.jpg',
@@ -84,7 +84,7 @@ describe('CardOffer component', () => {
 	});
 
 	it('has button for liking offers', () => {
-		renderWithProviders(<CardOffer {...car} />);
+		renderWithProviders(<CardOffer {...carOffer} />);
 
 		const button = screen.getByRole('button', { name: 'Like offer' });
 
@@ -92,7 +92,7 @@ describe('CardOffer component', () => {
 	});
 
 	it('has correct price', () => {
-		renderWithProviders(<CardOffer {...car} />);
+		renderWithProviders(<CardOffer {...carOffer} />);
 
 		const price = screen.getByRole('heading', { level: 4 });
 
@@ -100,7 +100,7 @@ describe('CardOffer component', () => {
 	});
 
 	it('has correct details ', () => {
-		renderWithProviders(<CardOffer {...car} />);
+		renderWithProviders(<CardOffer {...carOffer} />);
 
 		const fuelIcon = screen.getByAltText('Fuel type');
 		const fuel = screen.getByText('petrol');

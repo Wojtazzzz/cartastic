@@ -1,9 +1,9 @@
 import { Heading } from 'components/atoms/heading/Heading';
-import { Car } from 'utils/types';
+import type { CarOffer } from 'utils/types';
 
 type HeaderProps = {
 	text: string;
-} & Pick<Car, 'productionYear'>;
+} & Pick<CarOffer, 'productionYear'>;
 
 export const Header = ({ text, productionYear }: HeaderProps) => {
 	return (

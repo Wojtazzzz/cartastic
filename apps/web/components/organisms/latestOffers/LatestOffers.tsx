@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import type { CarsLatestResponse } from 'utils/types';
+import type { CarOffersLatestResponse } from 'utils/types';
 import SadSmileIcon from 'components/icons/sad-smile.svg';
 import { Heading } from 'components/atoms/heading/Heading';
 import { CardOffer } from '../cardOffer/CardOffer';
 import { fetchData } from 'utils/fetchData';
 
 export const LatestOffers = async () => {
-	const cars = await fetchData<CarsLatestResponse>('/cars/latest');
+	const carOffers = await fetchData<CarOffersLatestResponse>('/carOffers/latest');
 
 	return (
 		<section className="w-full max-w-[1700px] flex flex-col gap-5 mt-8 mx-auto py-2 md:py-4 px-3 md:px-6 lg:px-10">
@@ -14,7 +14,7 @@ export const LatestOffers = async () => {
 				Latest Offers
 			</Heading>
 
-			{cars.length <= 0 ? (
+			{carOffers.length <= 0 ? (
 				<div className="w-full flex flex-col gap-5 items-center">
 					<Image src={SadSmileIcon} width="120" height="120" alt="Long face" />
 
@@ -24,9 +24,9 @@ export const LatestOffers = async () => {
 				</div>
 			) : (
 				<ul className="flex flex-wrap justify-center gap-6">
-					{cars.map((car, i) => (
+					{carOffers.map((carOffer, i) => (
 						<li key={i}>
-							<CardOffer {...car} />
+							<CardOffer {...carOffer} />
 						</li>
 					))}
 				</ul>

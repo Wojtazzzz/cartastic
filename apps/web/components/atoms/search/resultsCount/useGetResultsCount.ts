@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { useLayoutEffect, useState } from 'react';
 import { axios } from 'utils/axios';
-import { getSearchCarsCountQK } from 'utils/queryKeys';
-import type { CarsCountResponse } from 'utils/types';
+import { getSearchCarOffersCountQK } from 'utils/queryKeys';
+import type { CarOffersCountResponse } from 'utils/types';
 
 const MIN = 10000;
 const MAX = 99999;
@@ -23,7 +23,7 @@ export const useGetResultsCount = () => {
 	};
 
 	const { data: count } = useQuery({
-		queryKey: getSearchCarsCountQK(),
+		queryKey: getSearchCarOffersCountQK(),
 		queryFn: async () => await queryFn(),
 	});
 
@@ -31,5 +31,7 @@ export const useGetResultsCount = () => {
 };
 
 const queryFn = async () => {
-	return await axios.get<CarsCountResponse>('/cars/count').then((response) => response.data);
+	return await axios
+		.get<CarOffersCountResponse>('/carOffers/count')
+		.then((response) => response.data);
 };

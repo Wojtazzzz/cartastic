@@ -8,10 +8,10 @@ import RoadIcon from 'components/icons/road.svg';
 import GearboxIcon from 'components/icons/gearbox.svg';
 import VehicleBodyIcon from 'components/icons/vehicle-body.svg';
 import { formatPrice } from 'utils/formatPrice';
-import type { Car } from 'utils/types';
+import type { CarOffer } from 'utils/types';
 
 export type DetailsProps = Pick<
-	Car,
+	CarOffer,
 	'price' | 'fuel' | 'engine' | 'miles' | 'transmission' | 'body'
 >;
 

@@ -19,7 +19,7 @@
 		"axios": "^1.2.1",
 		"clsx": "^1.2.1",
 		"eslint": "8.29.0",
-		"eslint-config-custom": "*",
+		"eslint-config-custom": "workspace:*",
 		"eslint-config-next": "13.0.6",
 		"invariant": "^2.2.4",
 		"next": "13.0.6",

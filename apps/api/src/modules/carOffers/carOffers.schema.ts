@@ -1,5 +1,4 @@
 import { Type } from '@sinclair/typebox';
-import { createSchema } from '../../utils/createSchema';
 
 export const carOfferSchema = {
 	id: Type.Number(),
@@ -23,10 +22,10 @@ export const carOfferSchema = {
 	}),
 };
 
-export const getCarOffersCountSchema = createSchema({
-	response: {
+export const getCarOffersCountSchema = Type.Object({
+	response: Type.Object({
 		200: Type.Number(),
-	},
+	}),
 });
 
 export const getLatestCarOffersSchema = {

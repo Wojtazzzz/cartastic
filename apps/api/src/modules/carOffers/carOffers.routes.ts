@@ -2,15 +2,15 @@ import type {
 	FastifyPluginCallbackTypebox,
 	TypeBoxTypeProvider,
 } from '@fastify/type-provider-typebox';
-import { getCarsCountSchema, getLatestCarsSchema } from './cars.schema';
+import { getCarOffersCountSchema, getLatestCarOffersSchema } from './carOffers.schema';
 
-const carsModule: FastifyPluginCallbackTypebox = (fastify, options, done) => {
+const carOffersModule: FastifyPluginCallbackTypebox = (fastify, options, done) => {
 	fastify.withTypeProvider<TypeBoxTypeProvider>().route({
 		url: '/count',
 		method: 'GET',
-		schema: getCarsCountSchema,
+		schema: getCarOffersCountSchema,
 		async handler() {
-			const count = await fastify.prisma.car.count();
+			const count = await fastify.prisma.carOffer.count();
 
 			return count;
 		},
@@ -19,9 +19,9 @@ const carsModule: FastifyPluginCallbackTypebox = (fastify, options, done) => {
 	fastify.withTypeProvider<TypeBoxTypeProvider>().route({
 		url: '/latest',
 		method: 'GET',
-		schema: getLatestCarsSchema,
+		schema: getLatestCarOffersSchema,
 		async handler() {
-			const cars = await fastify.prisma.car.findMany({
+			const carOffers = await fastify.prisma.carOffer.findMany({
 				include: {
 					brand: {
 						select: {
@@ -38,10 +38,10 @@ const carsModule: FastifyPluginCallbackTypebox = (fastify, options, done) => {
 				},
 			});
 
-			const data = cars.map((car) => ({
-				...car,
-				images: Array.isArray(car.images)
-					? car.images?.map((img) => JSON.stringify(img))
+			const data = carOffers.map((carOffer) => ({
+				...carOffer,
+				images: Array.isArray(carOffer.images)
+					? carOffer.images?.map((img) => JSON.stringify(img))
 					: [],
 			}));
 
@@ -52,4 +52,4 @@ const carsModule: FastifyPluginCallbackTypebox = (fastify, options, done) => {
 	done();
 };
 
-export default carsModule;
+export default carOffersModule;

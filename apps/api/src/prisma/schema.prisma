@@ -11,18 +11,18 @@ datasource db {
 }
 
 model Brand {
-  id     Int     @id @default(autoincrement())
-  name   String  @unique
-  models Model[]
-  Car    Car[]
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  models    Model[]
+  CarOffers CarOffer[]
 }
 
 model Model {
-  id      Int    @id @default(autoincrement())
-  name    String
-  brand   Brand  @relation(fields: [brandId], references: [id], onDelete: Cascade)
-  brandId Int
-  Car     Car[]
+  id        Int        @id @default(autoincrement())
+  name      String
+  brand     Brand      @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  brandId   Int
+  CarOffers CarOffer[]
 }
 
 enum Fuel {
@@ -48,7 +48,7 @@ enum Transmission {
   auto
 }
 
-model Car {
+model CarOffer {
   id             Int          @id @default(autoincrement())
   images         Json
   price          Float

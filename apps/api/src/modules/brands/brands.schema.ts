@@ -10,8 +10,14 @@ export const modelSchema = Type.Object({
 export const brandSchema = Type.Object({
 	id: Type.Number(),
 	name: Type.String(),
-	models: Type.Array(modelSchema),
 });
+
+export const brandWithModelsSchema = Type.Intersect([
+	brandSchema,
+	Type.Object({
+		models: Type.Array(modelSchema),
+	}),
+]);
 
 export const getBrandsSchema = createSchema({
 	response: {

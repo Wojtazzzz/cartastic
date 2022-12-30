@@ -1,5 +1,4 @@
 import { Type } from '@sinclair/typebox';
-import { createSchema } from '../../utils/createSchema';
 
 export const modelSchema = Type.Object({
 	id: Type.Number(),
@@ -19,11 +18,11 @@ export const brandWithModelsSchema = Type.Intersect([
 	}),
 ]);
 
-export const getBrandsSchema = createSchema({
-	response: {
+export const getBrandsSchema = {
+	response: Type.Object({
 		200: Type.Array(brandSchema),
-	},
-});
+	}),
+};
 
 export const getBrandModelsSchema = {
 	params: Type.Object({

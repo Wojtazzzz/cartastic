@@ -26,7 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 				<Providers>
 					<Header />
 
-					{/* @ts-ignore */}
+					{/* @ts-expect-error Server Component */}
 					<Search />
 
 					{children}

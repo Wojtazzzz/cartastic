@@ -1,4 +1,5 @@
 import { Type } from '@sinclair/typebox';
+import type { FastifySchemaTypeBox } from 'src/types';
 
 export const carOfferSchema = {
 	id: Type.Number(),
@@ -22,14 +23,14 @@ export const carOfferSchema = {
 	}),
 };
 
-export const getCarOffersCountSchema = Type.Object({
+export const getCarOffersCountSchema = {
 	response: Type.Object({
 		200: Type.Number(),
 	}),
-});
+} satisfies FastifySchemaTypeBox;
 
 export const getLatestCarOffersSchema = {
 	response: {
 		200: Type.Array(Type.Object(carOfferSchema)),
 	},
-};
+} satisfies FastifySchemaTypeBox;

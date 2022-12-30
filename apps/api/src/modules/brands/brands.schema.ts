@@ -1,4 +1,5 @@
 import { Type } from '@sinclair/typebox';
+import type { FastifySchemaTypeBox } from 'src/types';
 
 export const modelSchema = Type.Object({
 	id: Type.Number(),
@@ -19,10 +20,10 @@ export const brandWithModelsSchema = Type.Intersect([
 ]);
 
 export const getBrandsSchema = {
-	response: Type.Object({
+	response: {
 		200: Type.Array(brandSchema),
-	}),
-};
+	},
+} satisfies FastifySchemaTypeBox;
 
 export const getBrandModelsSchema = {
 	params: Type.Object({
@@ -31,4 +32,4 @@ export const getBrandModelsSchema = {
 	response: {
 		200: Type.Array(modelSchema),
 	},
-};
+} satisfies FastifySchemaTypeBox;

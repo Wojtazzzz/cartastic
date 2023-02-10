@@ -6,6 +6,10 @@ export type Model =
 export type CarOffer =
 	paths['/carOffers/latest']['get']['responses']['200']['content']['application/json'][0];
 
+export type CarOffersResponse =
+	paths['/carOffers/']['get']['responses']['200']['content']['application/json'];
+export type CarOfferByIdResponse =
+	paths['/carOffers/{carOfferId}']['get']['responses']['200']['content']['application/json'];
 export type CarOffersLatestResponse =
 	paths['/carOffers/latest']['get']['responses']['200']['content']['application/json'];
 export type BrandsResponse =

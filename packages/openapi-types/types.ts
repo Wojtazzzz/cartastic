@@ -41,6 +41,75 @@ export interface paths {
       };
     };
   };
+  "/carOffers/": {
+    get: {
+      responses: {
+        /** @description Default Response */
+        200: {
+          content: {
+            "application/json": ({
+                id: number;
+                images: (string)[];
+                price: number;
+                productionYear: number;
+                miles: number;
+                fuel: string;
+                engine: number;
+                body: string;
+                transmission: string;
+                brandId: number;
+                brand: {
+                  id: number;
+                  name: string;
+                };
+                modelId: number;
+                model: {
+                  id: number;
+                  name: string;
+                };
+              })[];
+          };
+        };
+      };
+    };
+  };
+  "/carOffers/{carOfferId}": {
+    get: {
+      parameters: {
+        path: {
+          carOfferId: number;
+        };
+      };
+      responses: {
+        /** @description Default Response */
+        200: {
+          content: {
+            "application/json": {
+              id: number;
+              images: (string)[];
+              price: number;
+              productionYear: number;
+              miles: number;
+              fuel: string;
+              engine: number;
+              body: string;
+              transmission: string;
+              brandId: number;
+              brand: {
+                id: number;
+                name: string;
+              };
+              modelId: number;
+              model: {
+                id: number;
+                name: string;
+              };
+            };
+          };
+        };
+      };
+    };
+  };
   "/carOffers/count": {
     get: {
       responses: {

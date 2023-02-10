@@ -26,7 +26,7 @@ Cartastic
 
 -   ⚡ Blazingly fast Fastify backend
 -   🖼️ Staticly generated NextJS frontend
--   🧪 Huge test coverage thanks to Jest, React Testing Library and Cypress
+-   🧪 Huge test coverage due to Jest, React Testing Library and Cypress
 -   ✨ Shared types by OpenAPI
 
 ## How To Install

@@ -31,29 +31,42 @@ Cartastic
 
 ## How To Install
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+- Clone this repository
 
 ```bash
-# Clone this repository
-$ gh repo clone Wojtazzzz/cartastic
-
-# Go into the repository
-$ cd cartastic
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
+  gh repo clone Wojtazzzz/cartastic
 ```
 
+- Go to the project directory
+
+```bash
+  cd cartastic
+```
+
+- Install dependencies
+
+```bash
+  pnpm install
+```
+
+- copy *.env.example* as *.env* and fill with own data (this should be done in both workspaces)
+
+- Generate prisma schemas
+
+```bash
+  cd ./apps/api && npx prisma generate && cd ../../
+```
+
+- Start dev server
+
+```bash
+  pnpm run dev
+```
+
+
 > **Note:**
-> ....
+> Before installation you should have mysql database
 
 ## License
 
 MIT
-
-> marcin.witas72@gmail.com &nbsp;&middot;&nbsp;
-> [GitHub](https://github.com/Wojtazzzz) &nbsp;&middot;&nbsp;
-> [Linkedin](https://www.linkedin.com/in/marcin-witas-486682202/)

@@ -24,10 +24,10 @@ Cartastic
 
 ## Key Features
 
--   ...
--   ...
--   ...
--   ...
+-   ⚡ Blazingly fast Fastify backend
+-   🖼️ Staticly generated NextJS frontend
+-   🧪 Huge test coverage thanks to Jest, React Testing Library and Cypress
+-   ✨ Shared types by OpenAPI
 
 ## How To Install
 

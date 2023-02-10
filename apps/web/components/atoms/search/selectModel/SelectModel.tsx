@@ -2,8 +2,8 @@ import { useGetModels } from './useGetModels';
 import { useModels } from './useModels';
 
 export const SelectModel = () => {
-	const { model, changeModel } = useModels();
 	const { data: models } = useGetModels();
+	const { model, changeModel } = useModels();
 
 	return (
 		<div className="relative">

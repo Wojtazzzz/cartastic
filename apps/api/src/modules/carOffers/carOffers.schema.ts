@@ -23,6 +23,21 @@ export const carOfferSchema = {
 	}),
 };
 
+export const getCarOffersSchema = {
+	response: {
+		200: Type.Array(Type.Object(carOfferSchema)),
+	},
+} satisfies FastifySchemaTypeBox;
+
+export const getCarOfferByIdSchema = {
+	response: {
+		200: Type.Object(carOfferSchema),
+	},
+	params: Type.Object({
+		carOfferId: Type.Integer(),
+	}),
+} satisfies FastifySchemaTypeBox;
+
 export const getCarOffersCountSchema = {
 	response: {
 		200: Type.Number(),

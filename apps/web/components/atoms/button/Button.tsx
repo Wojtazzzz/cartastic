@@ -23,7 +23,7 @@ export const Button = ({ title, label, variant, className, onClick, ...rest }: B
 			className={clsx(
 				variantsStyles[variant],
 				className,
-				'text-white font-bold rounded-md active:opacity-80 py-2 px-5'
+				'text-white font-medium rounded-md active:opacity-80 py-2 px-5'
 			)}
 			onClick={onClick}
 			{...rest}

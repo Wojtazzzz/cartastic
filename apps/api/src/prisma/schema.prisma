@@ -54,6 +54,10 @@ model CarOffer {
   price          Float
   productionYear Int
   miles          Int
+  hp             Int
+  gears          Int
+  topSpeed       Int
+  doors          Int
   fuel           Fuel
   engine         Float
   body           Body

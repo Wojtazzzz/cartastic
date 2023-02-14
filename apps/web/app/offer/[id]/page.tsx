@@ -103,7 +103,7 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 							<ul className="w-full lg:w-1/2 space-y-0.5">
 								<li className="flex justify-between">
 									<span>Fuel:</span>
-									<span>{carOffer.fuel}</span>
+									<span className="capitalize">{carOffer.fuel}</span>
 								</li>
 								<li className="flex justify-between">
 									<span>Miles:</span>
@@ -114,8 +114,8 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 									<span>{carOffer.body}</span>
 								</li>
 								<li className="flex justify-between">
-									<span>HPI:</span>
-									<span>-</span>
+									<span>HP:</span>
+									<span>{carOffer.hp}</span>
 								</li>
 								<li className="flex justify-between">
 									<span>Transmission:</span>
@@ -133,11 +133,15 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 								</li>
 								<li className="flex justify-between">
 									<span>Gears:</span>
-									<span>-</span>
+									<span>{carOffer.gears} speed</span>
 								</li>
 								<li className="flex justify-between">
 									<span>Top Speed:</span>
-									<span>-</span>
+									<span>{carOffer.topSpeed} mph</span>
+								</li>
+								<li className="flex justify-between">
+									<span>Doors:</span>
+									<span>{carOffer.doors}</span>
 								</li>
 							</ul>
 						</div>

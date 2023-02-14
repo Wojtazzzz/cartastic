@@ -54,6 +54,10 @@ export interface paths {
                 productionYear: number;
                 miles: number;
                 fuel: string;
+                gears: number;
+                topSpeed: number;
+                hp: number;
+                doors: number;
                 engine: number;
                 body: string;
                 transmission: string;
@@ -91,6 +95,10 @@ export interface paths {
               productionYear: number;
               miles: number;
               fuel: string;
+              gears: number;
+              topSpeed: number;
+              hp: number;
+              doors: number;
               engine: number;
               body: string;
               transmission: string;
@@ -135,6 +143,10 @@ export interface paths {
                 productionYear: number;
                 miles: number;
                 fuel: string;
+                gears: number;
+                topSpeed: number;
+                hp: number;
+                doors: number;
                 engine: number;
                 body: string;
                 transmission: string;

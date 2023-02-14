@@ -7,11 +7,12 @@ export const ResetButton = () => {
 	return (
 		<Button
 			type="reset"
-			title="Reset"
 			label="Reset"
 			variant="outline"
 			className="w-[130px] md:w-[150px] text-sm md:text-base"
 			onClick={reset}
-		/>
+		>
+			Reset
+		</Button>
 	);
 };

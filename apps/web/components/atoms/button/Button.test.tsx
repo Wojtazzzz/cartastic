@@ -10,7 +10,9 @@ describe('Button component', () => {
 		const onClick = jest.fn();
 
 		renderWithProviders(
-			<Button title="Test Button" label="Test" variant="classic" onClick={onClick} />
+			<Button label="Test" variant="classic" onClick={onClick}>
+				Test Button
+			</Button>
 		);
 
 		const button = screen.getByRole('button');
@@ -22,7 +24,9 @@ describe('Button component', () => {
 		const onClick = jest.fn();
 
 		renderWithProviders(
-			<Button title="Test Button" label="Test" variant="classic" onClick={onClick} />
+			<Button label="Test" variant="classic" onClick={onClick}>
+				Text Button
+			</Button>
 		);
 
 		const button = screen.getByRole('button');
@@ -34,7 +38,9 @@ describe('Button component', () => {
 		const onClick = jest.fn();
 
 		renderWithProviders(
-			<Button title="Test Button" label="Test" variant="classic" onClick={onClick} />
+			<Button label="Test" variant="classic" onClick={onClick}>
+				Test Button
+			</Button>
 		);
 
 		const button = screen.getByRole('button');

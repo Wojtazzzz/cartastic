@@ -3,9 +3,11 @@ import { fetchData } from 'utils/fetchData';
 import { formatNumber } from 'utils/formatNumber';
 import { formatPrice } from 'utils/formatPrice';
 import type { CarOfferByIdResponse, CarOffersResponse } from 'utils/types';
-
 import 'lightbox.js-react/dist/index.css';
 import { Gallery } from 'components/atoms/gallery/Gallery';
+import { ContactWithSeller } from 'components/molecules/contactWithSeller/ContactWithSeller';
+import Image from 'next/image';
+import MagnifyingGlassIcon from 'components/icons/magnifying_glass.svg';
 
 type OfferPageProps = {
 	params: {
@@ -36,7 +38,7 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 	const carOffer = await fetchCarOfferById(params.id);
 
 	return (
-		<section className="w-full max-w-[1600px] flex flex-col gap-5 mt-8 mx-auto py-2 md:py-4 px-3 md:px-6 lg:px-10">
+		<section className="w-full max-w-[1408px] flex flex-col gap-5 mt-8 mx-auto py-2 md:py-4 px-3 md:px-6 lg:px-10">
 			<Heading tag="h2" className="text-2xl font-extrabold">
 				{carOffer.brand.name}, {carOffer.model.name}
 			</Heading>
@@ -73,13 +75,21 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 
 						<p className="my-2.5 font-semibold space-x-1">
 							<span className="text-2xl">{formatPrice(carOffer.price)}</span>
-							<span className="text-lg">PLN</span>
+							<span className="text-xl"> €</span>
 						</p>
 
-						<div>
-							{/* TODO: CHANGE TO CORRECT BUTTON */}
-							<button>Contact with seller</button>
-						</div>
+						<section className="w-full border p-4 flex flex-col gap-4 mt-5">
+							<Heading tag="h4" className="text-xl font-semibold">
+								Krzysztof Skowroński
+							</Heading>
+
+							<p className="flex gap-2 items-center">
+								<Image src={MagnifyingGlassIcon} width="13" height="13" alt="" />
+								<span>Łambinowice, nyski, Opolskie</span>
+							</p>
+
+							<ContactWithSeller />
+						</section>
 					</section>
 				</div>
 

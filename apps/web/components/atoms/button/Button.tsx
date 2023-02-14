@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import type { ButtonHTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 const variantsStyles = {
 	classic: 'bg-blue-600 hover:opacity-90 transition-opacity',
@@ -9,14 +9,14 @@ const variantsStyles = {
 } as const;
 
 type ButtonProps = {
-	title: string;
 	label: string;
 	variant: 'classic' | 'outline';
 	className?: string;
 	onClick: () => void;
+	children: ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ title, label, variant, className, onClick, ...rest }: ButtonProps) => {
+export const Button = ({ label, variant, className, onClick, children, ...rest }: ButtonProps) => {
 	return (
 		<button
 			aria-label={label}
@@ -28,7 +28,7 @@ export const Button = ({ title, label, variant, className, onClick, ...rest }: B
 			onClick={onClick}
 			{...rest}
 		>
-			{title}
+			{children}
 		</button>
 	);
 };

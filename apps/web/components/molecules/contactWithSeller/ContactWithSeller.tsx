@@ -25,7 +25,7 @@ export const ContactWithSeller = () => {
 					className="w-full"
 					onClick={open}
 				>
-					Show Contact
+					Show contact
 				</Button>
 			</Trigger>
 
@@ -35,7 +35,7 @@ export const ContactWithSeller = () => {
 					onClick={close}
 				/>
 
-				<Content className="w-11/12 max-h-[85vh] max-w-md shadow-md fixed top-1/2 left-1/2 z-40 space-y-3 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-md">
+				<Content className="w-11/12 max-h-[85vh] max-w-md shadow-md fixed top-1/2 left-1/2 z-40 space-y-4 -translate-x-1/2 -translate-y-1/2 bg-white p-5 md:p-6 rounded-md">
 					<Title className="text-2xl font-semibold">Contact with seller</Title>
 
 					<Description>

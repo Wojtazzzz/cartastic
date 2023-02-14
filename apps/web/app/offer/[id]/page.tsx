@@ -39,18 +39,18 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 
 	return (
 		<section className="w-full max-w-[1408px] flex flex-col gap-5 mt-8 mx-auto py-2 md:py-4 px-3 md:px-6 lg:px-10">
-			<Heading tag="h2" className="text-2xl font-extrabold">
+			<Heading tag="h2" className="text-2xl font-extrabold border-b pb-3 mb-1">
 				{carOffer.brand.name}, {carOffer.model.name}
 			</Heading>
 
 			<article className="flex flex-col gap-8">
-				<div className="flex justify-center gap-8">
+				<div className="flex justify-between lg:space-x-8 flex-col lg:flex-row space-y-8 lg:space-y-0">
 					<section className="w-full lg:w-2/3 flex justify-center">
 						<Heading tag="h3" className="sr-only">
 							Photos
 						</Heading>
 
-						<div className="w-[850px] h-[450px] overflow-hidden bg-gray-100">
+						<div className="w-full h-[450px] overflow-hidden bg-gray-100">
 							<Gallery images={images} />
 						</div>
 					</section>
@@ -78,7 +78,7 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 							<span className="text-xl"> €</span>
 						</p>
 
-						<section className="w-full border p-4 flex flex-col gap-4 mt-5">
+						<section className="max-w-md w-full border p-4 flex flex-col gap-4 mt-5">
 							<Heading tag="h4" className="text-xl font-semibold">
 								Krzysztof Skowroński
 							</Heading>
@@ -94,12 +94,12 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 				</div>
 
 				<div>
-					<section className="w-full lg:w-2/3">
+					<section className="w-full lg:w-2/3 space-y-1">
 						<Heading tag="h3" className="text-xl font-semibold">
 							Details
 						</Heading>
 
-						<div className="flex gap-5 w-2/3 text-sm">
+						<div className="flex gap-7 w-2/3">
 							<ul className="w-full lg:w-1/2 space-y-0.5">
 								<li className="flex justify-between">
 									<span>Fuel:</span>

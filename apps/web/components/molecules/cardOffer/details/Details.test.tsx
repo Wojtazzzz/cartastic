@@ -6,7 +6,7 @@ import { renderWithProviders } from 'utils/renderWithProviders';
 const details: DetailsProps = {
 	price: 218700,
 	fuel: 'diesel',
-	engine: 20,
+	engine: 2000,
 	miles: 812345,
 	transmission: 'auto',
 	body: 'peopleCarrier',
@@ -35,7 +35,7 @@ describe('Details component', () => {
 		renderWithProviders(<Details {...details} />);
 
 		const sizeIcon = screen.getByAltText('Engine size');
-		const size = screen.getByText('20.0 L');
+		const size = screen.getByText('2.0 l');
 
 		expect(sizeIcon).toBeInTheDocument();
 		expect(size).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe('Details component', () => {
 		renderWithProviders(<Details {...details} />);
 
 		const milesIcon = screen.getByAltText('Miles');
-		const miles = screen.getByText('812,345 mi');
+		const miles = screen.getByText('812.3 k');
 
 		expect(milesIcon).toBeInTheDocument();
 		expect(miles).toBeInTheDocument();

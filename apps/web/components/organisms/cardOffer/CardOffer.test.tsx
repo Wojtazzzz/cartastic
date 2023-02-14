@@ -6,11 +6,17 @@ import type { CarOffer } from 'utils/types';
 const carOffer = {
 	id: 24,
 	images: ['/img/no-image.jpg'],
+	description:
+		'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro ipsum architecto, odit quam aliquam a amet voluptatem cupiditate obcaecati soluta iusto reprehenderit necessitatibus officia dolores, perspiciatis fuga nesciunt velit mollitia.',
 	price: 9700,
+	gears: 4,
+	topSpeed: 250,
+	doors: 4,
+	hp: 200,
 	productionYear: 2021,
 	miles: 11700,
 	fuel: 'petrol',
-	engine: 2,
+	engine: 1910,
 	body: 'saloon',
 	transmission: 'manual',
 	brandId: 1,
@@ -106,10 +112,10 @@ describe('CardOffer component', () => {
 		const fuel = screen.getByText('petrol');
 
 		const sizeIcon = screen.getByAltText('Engine size');
-		const size = screen.getByText('2.0 L');
+		const size = screen.getByText('1.9 l');
 
 		const milesIcon = screen.getByAltText('Miles');
-		const miles = screen.getByText('11,700 mi');
+		const miles = screen.getByText('11.7 k');
 
 		const gearboxIcon = screen.getByAltText('Gearbox');
 		const gearbox = screen.getByText('manual');

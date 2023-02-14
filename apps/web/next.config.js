@@ -6,7 +6,7 @@ const nextConfig = {
 		appDir: true,
 	},
 	images: {
-		domains: ['source.unsplash.com'],
+		domains: ['source.unsplash.com', 'loremflickr.com'],
 	},
 	webpack(config) {
 		config.module.rules.push({

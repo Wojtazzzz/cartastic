@@ -19,14 +19,16 @@ export const CardOffer = ({
 	brand,
 	model,
 }: CardOfferProps) => {
+	const offerName = `${brand.name}${model?.name ? `, ${model.name}` : ''}`;
+
 	return (
 		<Link href={`/offer/${id}`}>
-			<article className="w-[295px] h-[400px] rounded-lg shadow-[0_0_4px_2px_rgba(0,0,0,0.3)] hover:shadow-[0_0_6px_3px_rgba(0,0,0,0.3)] transition-shadow ease-in">
-				<Header text={`${brand.name}, ${model.name}`} productionYear={productionYear} />
+			<article className="w-[295px] h-[400px] rounded-lg bg-gray-100 shadow-md transition-shadow ease-in">
+				<Header text={offerName} productionYear={productionYear} />
 				<OfferImage
 					src={images[0] ?? '/img/no-image.jpg'}
 					imagesCount={images.length}
-					alt={`${brand.name}, ${model.name}`}
+					alt={offerName}
 				/>
 				<Details
 					price={price}

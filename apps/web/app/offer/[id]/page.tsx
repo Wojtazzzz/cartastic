@@ -19,28 +19,14 @@ const fetchCarOfferById = async (id: number) => {
 	return await fetchData<CarOfferByIdResponse>(`/carOffers/${id}`);
 };
 
-const images = [
-	{
-		src: 'https://source.unsplash.com/sQZ_A17cufs/549x711',
-		alt: 'Mechanical keyboard with white keycaps.',
-	},
-	{
-		src: 'https://source.unsplash.com/rsAeSMzOX9Y/768x512',
-		alt: 'Mechanical keyboard with white, pastel green and red keycaps.',
-	},
-	{
-		src: 'https://source.unsplash.com/Z6SXt1v5tP8/768x512',
-		alt: 'Mechanical keyboard with white, pastel pink, yellow and red keycaps.',
-	},
-];
-
 export default async function CarOfferPage({ params }: OfferPageProps) {
 	const carOffer = await fetchCarOfferById(params.id);
 
 	return (
 		<section className="w-full max-w-[1408px] flex flex-col gap-5 mt-8 mx-auto py-2 md:py-4 px-3 md:px-6 lg:px-10">
 			<Heading tag="h2" className="text-2xl font-extrabold border-b pb-3 mb-1">
-				{carOffer.brand.name}, {carOffer.model.name}
+				{carOffer.brand.name}
+				{carOffer.model?.name && `, ${carOffer.model.name}`}
 			</Heading>
 
 			<article className="flex flex-col gap-8">
@@ -51,13 +37,13 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 						</Heading>
 
 						<div className="w-full h-[450px] overflow-hidden bg-gray-100">
-							<Gallery images={images} />
+							<Gallery images={carOffer.images} />
 						</div>
 					</section>
 
 					<section className="w-full lg:w-1/3">
 						<Heading tag="h3" className="text-xl font-semibold">
-							{carOffer.brand.name} {carOffer.model.name} {carOffer.fuel}
+							{carOffer.brand.name} {carOffer.model?.name} {carOffer.fuel}
 						</Heading>
 
 						<ul role="list" className="flex gap-2 text-gray-700">
@@ -154,12 +140,7 @@ export default async function CarOfferPage({ params }: OfferPageProps) {
 							Description
 						</Heading>
 
-						<span className="prose prose-base">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-							asperiores commodi iure nobis? Explicabo, numquam itaque aperiam
-							eligendi, temporibus id maiores vitae voluptatibus sint iure laudantium
-							magnam! Assumenda, eligendi error?
-						</span>
+						<span className="prose prose-base">{carOffer.description}</span>
 					</section>
 				</div>
 			</article>

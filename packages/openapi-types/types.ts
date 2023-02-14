@@ -49,6 +49,7 @@ export interface paths {
           content: {
             "application/json": ({
                 id: number;
+                description: string;
                 images: (string)[];
                 price: number;
                 productionYear: number;
@@ -66,11 +67,11 @@ export interface paths {
                   id: number;
                   name: string;
                 };
-                modelId: number;
+                modelId: number | null;
                 model: {
                   id: number;
                   name: string;
-                };
+                } | null;
               })[];
           };
         };
@@ -90,6 +91,7 @@ export interface paths {
           content: {
             "application/json": {
               id: number;
+              description: string;
               images: (string)[];
               price: number;
               productionYear: number;
@@ -107,11 +109,11 @@ export interface paths {
                 id: number;
                 name: string;
               };
-              modelId: number;
+              modelId: number | null;
               model: {
                 id: number;
                 name: string;
-              };
+              } | null;
             };
           };
         };
@@ -138,6 +140,7 @@ export interface paths {
           content: {
             "application/json": ({
                 id: number;
+                description: string;
                 images: (string)[];
                 price: number;
                 productionYear: number;
@@ -155,11 +158,11 @@ export interface paths {
                   id: number;
                   name: string;
                 };
-                modelId: number;
+                modelId: number | null;
                 model: {
                   id: number;
                   name: string;
-                };
+                } | null;
               })[];
           };
         };

@@ -3,6 +3,7 @@ import type { FastifySchemaTypeBox } from 'src/types';
 
 export const carOfferSchema = {
 	id: Type.Number(),
+	description: Type.String(),
 	images: Type.Array(Type.String()),
 	price: Type.Number(),
 	productionYear: Type.Number(),
@@ -20,11 +21,14 @@ export const carOfferSchema = {
 		id: Type.Number(),
 		name: Type.String(),
 	}),
-	modelId: Type.Number(),
-	model: Type.Object({
-		id: Type.Number(),
-		name: Type.String(),
-	}),
+	modelId: Type.Union([Type.Number(), Type.Null()]),
+	model: Type.Union([
+		Type.Object({
+			id: Type.Number(),
+			name: Type.String(),
+		}),
+		Type.Null(),
+	]),
 };
 
 export const getCarOffersSchema = {

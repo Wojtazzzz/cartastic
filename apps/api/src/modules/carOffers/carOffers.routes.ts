@@ -35,7 +35,7 @@ const carOffersModule: FastifyPluginCallbackTypebox = (fastify, options, done) =
 			const data = carOffers.map((carOffer) => ({
 				...carOffer,
 				images: Array.isArray(carOffer.images)
-					? carOffer.images?.map((img) => JSON.stringify(img))
+					? carOffer.images?.map((img) => JSON.stringify(img).replaceAll('"', ''))
 					: [],
 			}));
 
@@ -71,7 +71,7 @@ const carOffersModule: FastifyPluginCallbackTypebox = (fastify, options, done) =
 			return {
 				...carOffer,
 				images: Array.isArray(carOffer.images)
-					? carOffer.images?.map((img) => JSON.stringify(img))
+					? carOffer.images?.map((img) => JSON.stringify(img).replaceAll('"', ''))
 					: [],
 			};
 		},
@@ -113,7 +113,7 @@ const carOffersModule: FastifyPluginCallbackTypebox = (fastify, options, done) =
 			const data = carOffers.map((carOffer) => ({
 				...carOffer,
 				images: Array.isArray(carOffer.images)
-					? carOffer.images?.map((img) => JSON.stringify(img))
+					? carOffer.images?.map((img) => JSON.stringify(img).replaceAll('"', ''))
 					: [],
 			}));
 

@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { carOfferSeeder } from './carOfferSeeder';
 
 const prisma = new PrismaClient();
 
@@ -7,38 +8,12 @@ const main = async () => {
 
 	await prisma.carOffer.createMany({
 		data: [
-			{
-				images: {},
-				price: 20000,
-				productionYear: 2021,
-				miles: 1000,
-				fuel: 'diesel',
-				doors: 5,
-				hp: 80,
-				topSpeed: 120,
-				gears: 4,
-				engine: 2.0,
-				body: 'saloon',
-				transmission: 'auto',
-				brandId: 1,
-				modelId: 1,
-			},
-			{
-				images: {},
-				price: 20000,
-				productionYear: 2021,
-				miles: 1000,
-				fuel: 'diesel',
-				doors: 5,
-				hp: 80,
-				topSpeed: 120,
-				gears: 4,
-				engine: 2.0,
-				body: 'saloon',
-				transmission: 'auto',
-				brandId: 1,
-				modelId: 2,
-			},
+			await carOfferSeeder(prisma),
+			await carOfferSeeder(prisma),
+			await carOfferSeeder(prisma),
+			await carOfferSeeder(prisma),
+			await carOfferSeeder(prisma),
+			await carOfferSeeder(prisma),
 		],
 	});
 };

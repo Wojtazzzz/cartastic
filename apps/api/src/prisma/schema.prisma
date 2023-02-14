@@ -50,6 +50,7 @@ enum Transmission {
 
 model CarOffer {
   id             Int          @id @default(autoincrement())
+  description    String       @db.Text
   images         Json
   price          Float
   productionYear Int
@@ -64,6 +65,6 @@ model CarOffer {
   transmission   Transmission
   brand          Brand        @relation(fields: [brandId], references: [id], onDelete: Cascade)
   brandId        Int
-  model          Model        @relation(fields: [modelId], references: [id], onDelete: Cascade)
-  modelId        Int
+  model          Model?       @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  modelId        Int?
 }

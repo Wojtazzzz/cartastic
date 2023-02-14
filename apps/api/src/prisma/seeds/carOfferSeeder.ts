@@ -15,13 +15,8 @@ export const carOfferSeeder = async (prisma: PrismaClient, carOffer?: Partial<Ca
 
 	return {
 		images: faker.helpers.arrayElements(
-			[
-				faker.image.imageUrl(768, 512, 'car'),
-				faker.image.imageUrl(768, 512, 'car'),
-				faker.image.imageUrl(768, 512, 'car'),
-				faker.image.imageUrl(768, 512, 'car'),
-			],
-			faker.datatype.number({ min: 1, max: 3 })
+			[faker.image.imageUrl(768, 512, 'car')],
+			faker.datatype.number({ min: 1, max: 20 })
 		),
 		description: faker.lorem.paragraphs(faker.datatype.number({ min: 1, max: 5 })),
 		price: faker.datatype.number({ min: 4000, max: 100000 }),

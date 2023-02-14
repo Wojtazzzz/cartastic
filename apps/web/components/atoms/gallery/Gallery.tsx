@@ -2,6 +2,7 @@
 
 import { SlideshowLightbox } from 'lightbox.js-react';
 import Image from 'next/image';
+import { ImagesCount } from '../imagesCount/ImagesCount';
 
 type GalleryProps = {
 	images: string[];
@@ -46,7 +47,7 @@ export const Gallery = ({ images }: GalleryProps) => {
 				</SlideshowLightbox>
 			</ul>
 
-			<div className="absolute bottom-2 right-2">{images.length}</div>
+			<ImagesCount count={images.length} position="bottom-right" />
 		</div>
 	);
 };
